@@ -1,5 +1,5 @@
+import mainFunction from "./test";
 
-export default function mainFunction(arg: number) {
-  console.log('init function', arg);
-  return Math.pow(arg, 2);
-};
+mainFunction(5);
+
+document.body.innerHTML = `<div style="background: pink">HELLO WORLD!</div>`
