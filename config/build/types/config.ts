@@ -5,6 +5,7 @@ export interface BuildPaths {
   entry: string,
   build: string,
   index: string,
+  src: string,
 }
 
 export interface BuildOptions {

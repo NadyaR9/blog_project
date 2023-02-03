@@ -9,7 +9,8 @@ export default (env: EnvVariables) => {
   const paths: BuildPaths = {
     index:  path.resolve(__dirname, 'public', 'index.html'),
     entry: path.resolve(__dirname, 'src', 'index.tsx'),
-    build: path.resolve(__dirname, 'build')
+    build: path.resolve(__dirname, 'build'),
+    src: path.resolve(__dirname, 'src'),
   };
   const mode = env.mode || 'development';
   const isDev = mode === 'development';
