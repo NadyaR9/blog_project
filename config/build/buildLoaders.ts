@@ -2,7 +2,7 @@ import { RuleSetRule } from "webpack";
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BuildOptions } from "./types/config";
 
-export default function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
+export default function buildLoaders({ isDev, paths }: BuildOptions): RuleSetRule[] {
   const stylesLoader = {
     test: /\.s[ac]ss$/i,
     use: [
@@ -26,8 +26,26 @@ export default function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
     use: 'ts-loader',
     exclude: /node_modules/,
   };
+
+  const fileLoader = {
+    test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+    use: [
+        {
+            loader: 'file-loader'
+        }
+    ]
+  }
+  
+  const svgLoader = {
+    test: /\.svg$/,
+    use: ['@svgr/webpack']
+  }
+  
+
   return [
     typescriptLoader,
     stylesLoader,
+    fileLoader,
+    svgLoader,
   ]
 }
