@@ -7,8 +7,8 @@ const ThemeProvider: FC = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(defaultThemeValue);
 
   const defaultValue = useMemo(() => ({
-    theme: theme,
-    setTheme: setTheme,
+    theme,
+    setTheme,
   }), [theme]);
 
   return (

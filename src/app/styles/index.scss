@@ -9,3 +9,13 @@
   color: var(--primary-color);
   min-height: 100vh;
 }
+
+.pages-container {
+  display: flex;
+}
+
+.page-wrapper {
+  flex-grow: 1;
+  padding: 24px;
+  // height: calc(100vh - var(--navbar-height));
+}

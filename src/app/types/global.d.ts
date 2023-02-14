@@ -6,7 +6,7 @@ declare module '*.scss' {
   export = classNames;
 }
 
-declare module "*.svg" {
+declare module '*.svg' {
   import React from 'react';
 
   const SVG: React.VFC<React.SVGProps<SVGSVGElement>>;
@@ -16,3 +16,4 @@ declare module "*.svg" {
 declare module '*.png';
 declare module '*.jpg';
 declare module '*.jpeg';
+declare const __DEV__: boolean;
