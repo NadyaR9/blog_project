@@ -1,7 +1,7 @@
-@import "./reset.scss";
-@import "./variables/global.scss";
-@import "./Theme/dark.scss";
-@import "./Theme/normal.scss";
+@import "./reset";
+@import "./variables/global";
+@import "./Theme/dark";
+@import "./Theme/normal";
 
 .app {
   font-size: var(--font-m);
@@ -17,5 +17,6 @@
 .page-wrapper {
   flex-grow: 1;
   padding: 24px;
+
   // height: calc(100vh - var(--navbar-height));
 }
