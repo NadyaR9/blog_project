@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/config/lib/classNames';
+import { classNames } from 'shared/config/lib/classNames/classNames';
 import { AppLink } from 'shared/ui';
 import { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import cls from './Navbar.module.scss';

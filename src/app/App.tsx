@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { classNames } from 'shared/config/lib/classNames';
+import { classNames } from 'shared/config/lib/classNames/classNames';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 import { useTheme } from './providers/ThemeProvider';

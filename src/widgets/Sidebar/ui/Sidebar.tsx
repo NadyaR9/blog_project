@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { classNames } from 'shared/config/lib/classNames';
+import { classNames } from 'shared/config/lib/classNames/classNames';
 import { Button, LanguageSwitcher, ThemeSwitcher } from 'shared/ui';
-import { VatiantsButton } from 'shared/ui/Button/Button';
+import { VariantsButton } from 'shared/ui/Button/Button';
 import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
@@ -16,11 +16,15 @@ export function Sidebar({ className }: SidebarProps) {
   };
 
   return (
-    <div className={classNames(cls.Sidebar, { [cls.collapsed]: collapsedSidebar }, [className])}>
+    <div
+      className={classNames(cls.Sidebar, { [cls.collapsed]: collapsedSidebar }, [className])}
+      data-testid="sidebar"
+    >
       <Button
         onClick={toggleSidebar}
         className={cls.toggle}
-        variants={VatiantsButton.DEFAULT}
+        variants={VariantsButton.DEFAULT}
+        data-testid="sidebar-toggle"
       >
         Toggle
       </Button>

@@ -3,6 +3,18 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BuildOptions } from './types/config';
 
 export default function buildLoaders({ isDev, paths }: BuildOptions): RuleSetRule[] {
+  const babelLoader = {
+    test: /\.(js|jsx|tsx|ts)$/,
+    exclude: /node_modules/,
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: [
+          ['@babel/preset-env'],
+        ],
+      },
+    },
+  };
   const stylesLoader = {
     test: /\.s[ac]ss$/i,
     use: [
@@ -42,9 +54,10 @@ export default function buildLoaders({ isDev, paths }: BuildOptions): RuleSetRul
   };
 
   return [
-    typescriptLoader,
-    stylesLoader,
-    fileLoader,
     svgLoader,
+    stylesLoader,
+    babelLoader,
+    typescriptLoader,
+    fileLoader,
   ];
 }

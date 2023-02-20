@@ -1,8 +1,8 @@
 import { ButtonHTMLAttributes, DetailedHTMLProps } from 'react';
-import { classNames } from 'shared/config/lib/classNames';
+import { classNames } from 'shared/config/lib/classNames/classNames';
 import cls from './Button.module.scss';
 
-export enum VatiantsButton {
+export enum VariantsButton {
   DEFAULT = 'default'
 }
 
@@ -10,7 +10,7 @@ interface ButtonProps
   extends DetailedHTMLProps
     <ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
   className?: string,
-  variants?: VatiantsButton,
+  variants?: VariantsButton,
 }
 
 export function Button(props: ButtonProps) {

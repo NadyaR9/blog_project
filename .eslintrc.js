@@ -45,7 +45,7 @@ module.exports = {
     'no-underscore-dangle': 'off',
     '@typescript-eslint/no-unused-vars': ['warn'],
     camelcase: 'off',
-    'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['to'] }],
+    'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['to', 'data-testid'] }],
   },
   globals: {
     __DEV__: true,

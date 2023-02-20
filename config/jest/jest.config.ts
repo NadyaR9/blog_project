@@ -1,3 +1,4 @@
+const path = require('path');
 /*
  * For a detailed explanation regarding each configuration property and type check, visit:
  * https://jestjs.io/docs/configuration
@@ -22,6 +23,14 @@ export default {
   testMatch: [
     '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
   ],
+  modulePaths: [
+    '<rootDir>src',
+  ],
+  moduleNameMapper: {
+    '\\.(scss)$': 'identity-obj-proxy',
+    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent'),
+  },
+  setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
   // An array of regexp pattern strings used to skip coverage collection
   coveragePathIgnorePatterns: [
     '\\\\node_modules\\\\',
