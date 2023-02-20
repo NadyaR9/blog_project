@@ -1,5 +1,8 @@
 {
   "English": "Русский",
   "Main": "Основной",
-  "About": "О нас"
+  "About": "О нас",
+  "Page not found": "Страница не найдена",
+  "Something went wrong": "Ошибка! \nЧто-то пошло не так",
+  "create error": "Создать ошибку"
 }
