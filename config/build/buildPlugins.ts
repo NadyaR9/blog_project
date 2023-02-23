@@ -6,9 +6,8 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BuildOptions } from './types/config';
 
 export default function buildPlugins({ paths, isDev }: BuildOptions): WebpackPluginInstance[] {
-  return [
+  const plugins: WebpackPluginInstance[] = [
     new HtmlWebpackPlugin({ template: paths.index }),
-    new ProgressPlugin(),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash:8].css',
       chunkFilename: 'css/[name].[contenthash:8].css',
@@ -16,8 +15,11 @@ export default function buildPlugins({ paths, isDev }: BuildOptions): WebpackPlu
     new DefinePlugin({
       __DEV__: isDev,
     }),
-    new BundleAnalyzerPlugin({
-      openAnalyzer: false,
-    }),
+    new ProgressPlugin(),
   ];
+
+  if (isDev) {
+    plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }));
+  }
+  return plugins;
 }
