@@ -26,7 +26,8 @@ export function Sidebar({ className }: SidebarProps) {
         variants={VariantsButton.DEFAULT}
         data-testid="sidebar-toggle"
       >
-        Toggle
+        +
+
       </Button>
       <div className={cls.switchers}>
         <ThemeSwitcher />

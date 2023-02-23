@@ -1,38 +1,29 @@
 import { RuleSetRule } from 'webpack';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BuildOptions } from './types/config';
+import { buildCssLoader } from './loaders/buildCssLoader';
+import { buildSvgLoader } from './loaders/buildSvgLoader';
 
 export default function buildLoaders({ isDev, paths }: BuildOptions): RuleSetRule[] {
   const babelLoader = {
-    test: /\.(js|jsx|tsx|ts)$/,
+    test: /\.(js|jsx|tsx)$/,
     exclude: /node_modules/,
     use: {
       loader: 'babel-loader',
       options: {
-        presets: [
-          ['@babel/preset-env'],
+        presets: ['@babel/preset-env'],
+        plugins: [
+          [
+            'i18next-extract',
+            {
+              locales: ['ru', 'en'],
+              keyAsDefaultValue: true,
+            },
+          ],
         ],
       },
     },
   };
-  const stylesLoader = {
-    test: /\.s[ac]ss$/i,
-    use: [
-      isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-      {
-        loader: 'css-loader',
-        options: {
-          modules: {
-            auto: (resPath: string) => Boolean(resPath.includes('.module.')),
-            localIdentName: isDev
-              ? '[path][name]__[local]--[hash:base64:5]'
-              : '[hash:base64:5]',
-          },
-        },
-      },
-      'sass-loader',
-    ],
-  };
+  const stylesLoader = buildCssLoader(isDev);
   const typescriptLoader = {
     test: /\.tsx?$/,
     use: 'ts-loader',
@@ -48,10 +39,7 @@ export default function buildLoaders({ isDev, paths }: BuildOptions): RuleSetRul
     ],
   };
 
-  const svgLoader = {
-    test: /\.svg$/,
-    use: ['@svgr/webpack'],
-  };
+  const svgLoader = buildSvgLoader();
 
   return [
     svgLoader,

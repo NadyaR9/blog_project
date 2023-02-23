@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui';
+import { VariantsButton } from 'shared/ui/Button/Button';
 
 export const BugButton = () => {
   const { t } = useTranslation();
@@ -17,6 +18,7 @@ export const BugButton = () => {
   return (
     <Button
       onClick={onThrowError}
+      variants={VariantsButton.OUTLINE}
     >
       {t('create error')}
     </Button>
