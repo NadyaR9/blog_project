@@ -20,12 +20,12 @@ jobs:
       - name: install modules
         run: npm install
       - name: build production project
-        run: npn run build:prod
+        run: npm run build:prod
       - name: lint typescript
-        run: npn run lint:ts
+        run: npm run lint:ts
       - name: lint css
-        run: npn run lint:scss
+        run: npm run lint:scss
       - name: unit testing
-        run: npn run test:unit
+        run: npm run test:unit
       - name: build storybook
-        run: npn run storybook
+        run: npm run storybook
