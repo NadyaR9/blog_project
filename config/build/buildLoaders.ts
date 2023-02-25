@@ -24,8 +24,9 @@ export default function buildLoaders({ isDev, paths }: BuildOptions): RuleSetRul
     },
   };
   const stylesLoader = {
-    test: /\.scss$/i,
-    use: [MiniCssExtractPlugin.loader,
+    test: /\.s[ac]ss$/i,
+    use: [
+      isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
       {
         loader: 'css-loader',
         options: {
