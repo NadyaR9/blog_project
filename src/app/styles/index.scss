@@ -1,7 +1,8 @@
+/* stylelint-disable scss/at-import-partial-extension */
 @import "./reset";
 @import "./variables/global";
-@import "./Theme/dark";
-@import "./Theme/normal";
+@import "./Theme/dark.scss";
+@import "./Theme/normal.scss";
 
 .app {
   font-size: var(--font-m);
