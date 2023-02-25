@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { Button, VariantsButton } from './Button';
+import { Button, ButtonVariants } from './Button';
 
 describe('test Button', () => {
   test('test button render', () => {
@@ -7,7 +7,7 @@ describe('test Button', () => {
     expect(screen.getByText('Test')).toBeInTheDocument();
   });
   test('test default button render', () => {
-    render(<Button variants={VariantsButton.DEFAULT}>Test</Button>);
+    render(<Button variants={ButtonVariants.DEFAULT}>Test</Button>);
     expect(screen.getByText('Test')).toHaveClass('default');
     screen.debug();
   });

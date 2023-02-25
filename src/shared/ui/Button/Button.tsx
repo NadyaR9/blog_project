@@ -2,27 +2,48 @@ import { ButtonHTMLAttributes, DetailedHTMLProps } from 'react';
 import { classNames } from 'shared/config/lib/classNames/classNames';
 import cls from './Button.module.scss';
 
-export enum VariantsButton {
+export enum ButtonVariants {
   DEFAULT = 'default',
-  OUTLINE = 'outline'
+  OUTLINE = 'outline',
+  BACKGROUND = 'background',
+  BACKGROUND_INVERTED = 'background-inverted',
+}
+
+export enum ButtonSize {
+  M = 'size-m',
+  L = 'size-l',
+  XL = 'size-xl',
 }
 
 interface ButtonProps
   extends DetailedHTMLProps
     <ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
   className?: string,
-  variants?: VariantsButton,
+  variants?: ButtonVariants,
+  size?: ButtonSize,
+  square?: boolean,
 }
 
 export function Button(props: ButtonProps) {
   const {
-    children, onClick, className, variants, ...otherProps
+    children,
+    onClick,
+    className,
+    variants = ButtonVariants.DEFAULT,
+    size = ButtonSize.M,
+    square,
+    ...otherProps
   } = props;
+
+  const mods: Record<string, boolean> = {
+    [cls.square]: square,
+  };
+
   return (
     <button
       type="button"
       onClick={onClick}
-      className={classNames(cls.Button, {}, [className, cls[variants]])}
+      className={classNames(cls.Button, mods, [className, cls[variants], cls[size]])}
       {...otherProps}
     >
       {children}
