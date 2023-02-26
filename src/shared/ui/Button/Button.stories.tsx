@@ -33,6 +33,18 @@ BackgroundInverted.args = {
   variants: ButtonVariants.BACKGROUND_INVERTED,
 };
 
+export const Secondary = Template.bind({});
+Secondary.args = {
+  children: 'Secondary',
+  variants: ButtonVariants.SECONDARY,
+};
+
+export const Primary = Template.bind({});
+Primary.args = {
+  children: 'Primary',
+  variants: ButtonVariants.PRIMARY,
+};
+
 export const SquareM = Template.bind({});
 SquareM.args = {
   children: '>',

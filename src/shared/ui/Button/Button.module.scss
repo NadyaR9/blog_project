@@ -15,6 +15,16 @@
   border: 1px solid var(--primary-color);
 }
 
+.primary {
+  background: transparent;
+  color: var(--primary-color);
+}
+
+.secondary {
+  background: transparent;
+  color: var(--secondary-color);
+}
+
 .background {
   background: transparent;
 }

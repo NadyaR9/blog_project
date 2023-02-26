@@ -3,6 +3,8 @@ import { ThemeSwitcher } from './ThemeSwitcher/ThemeSwitcher';
 import { Button, ButtonVariants, ButtonSize } from './Button/Button';
 import { LanguageSwitcher } from './LanguageSwitcher/LanguageSwitcher';
 import { Loader } from './Loader/Loader';
+import { Modal } from './Modal/Modal';
+import { Portal } from './Portal/Portal';
 
 export {
   AppLink,
@@ -13,4 +15,6 @@ export {
   ButtonSize,
   LanguageSwitcher,
   Loader,
+  Modal,
+  Portal,
 };
