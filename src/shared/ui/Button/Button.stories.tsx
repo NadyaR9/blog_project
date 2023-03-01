@@ -9,12 +9,6 @@ export default {
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {
-  children: 'Default',
-  variants: ButtonVariants.DEFAULT,
-};
-
 export const Outline = Template.bind({});
 Outline.args = {
   children: 'Outline',

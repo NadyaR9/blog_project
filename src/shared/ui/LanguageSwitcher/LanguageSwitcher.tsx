@@ -17,7 +17,7 @@ export function LanguageSwitcher({ className, short }: LanguageSwitcherProps) {
   return (
     <Button
       className={classNames('', {}, [className])}
-      variants={ButtonVariants.DEFAULT}
+      variants={ButtonVariants.BACKGROUND}
       onClick={handleLanguageChange}
     >
       {short ? t('Short lang') : t('Lang')}

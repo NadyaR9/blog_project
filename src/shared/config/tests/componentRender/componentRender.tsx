@@ -10,10 +10,10 @@ export interface componentRenderOptions {
   route?: string,
   initialState?: DeepPartial<StateSchema>
 }
-export function componentRender(component: ReactNode, options: componentRenderOptions) {
+export function componentRender(component: ReactNode, options: componentRenderOptions = {}) {
   const {
     route = '',
-    initialState,
+    initialState = {},
   } = options;
 
   return render(

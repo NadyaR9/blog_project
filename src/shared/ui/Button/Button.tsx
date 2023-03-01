@@ -3,7 +3,6 @@ import { classNames } from 'shared/config/lib/classNames/classNames';
 import cls from './Button.module.scss';
 
 export enum ButtonVariants {
-  DEFAULT = 'default',
   OUTLINE = 'outline',
   BACKGROUND = 'background',
   BACKGROUND_INVERTED = 'background-inverted',
@@ -31,7 +30,7 @@ export function Button(props: ButtonProps) {
     children,
     onClick,
     className,
-    variants = ButtonVariants.DEFAULT,
+    variants = ButtonVariants.BACKGROUND,
     size = ButtonSize.M,
     square,
     ...otherProps

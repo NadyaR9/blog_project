@@ -6,9 +6,9 @@ describe('test Button', () => {
     render(<Button>Test</Button>);
     expect(screen.getByText('Test')).toBeInTheDocument();
   });
-  test('test default button render', () => {
-    render(<Button variants={ButtonVariants.DEFAULT}>Test</Button>);
-    expect(screen.getByText('Test')).toHaveClass('default');
+  test('test background button render', () => {
+    render(<Button variants={ButtonVariants.BACKGROUND}>Test</Button>);
+    expect(screen.getByText('Test')).toHaveClass('background');
     screen.debug();
   });
 });

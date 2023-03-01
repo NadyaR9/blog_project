@@ -7,5 +7,7 @@
   "create error": "Создать ошибку",
   "Short lang": "En",
   "Lang": "English",
-  "LogIn": "Войти"
+  "LogIn": "Войти",
+  "Username": "Введите username",
+  "password": "Введите пароль"
 }

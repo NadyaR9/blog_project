@@ -7,5 +7,7 @@
   "create error": "Create error",
   "Lang": "Russian",
   "Short lang": "Ru",
-  "LogIn": "Log In"
+  "LogIn": "Log In",
+  "Username": "Username",
+  "password": "Password"
 }
