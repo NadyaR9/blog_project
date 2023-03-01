@@ -18,10 +18,6 @@ export const useTheme = (): useThemeResult => {
     localStorage.setItem(LS_Theme_KEY, newtheme);
   };
 
-  // useEffect(() => {
-  //   document.body.className = theme;
-  // }, [theme]);
-
   return {
     theme, toggleTheme,
   };

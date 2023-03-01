@@ -1,3 +1,4 @@
+/* eslint-disable */
 const path = require('path');
 /*
  * For a detailed explanation regarding each configuration property and type check, visit:
@@ -115,7 +116,6 @@ export default {
   // An enum that specifies notification mode. Requires { notify: true }
   // notifyMode: "failure-change",
 
-
   // Run tests from one or more projects
   // projects: undefined,
 
@@ -133,7 +133,6 @@ export default {
 
   // Automatically restore mock state and implementation before every test
   // restoreMocks: false,
-
 
   // Allows you to use a custom runner instead of Jest's default test runner
   // runner: "jest-runner",

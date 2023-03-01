@@ -20,7 +20,6 @@ export function AppLink(props: AppLinkProps) {
     theme = AppLinkTheme.PRIMARY,
     ...otherProps
   } = props;
-  console.log('AppLink className', className);
   return (
     <Link
       {...otherProps}

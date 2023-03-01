@@ -1,7 +1,6 @@
 import {
   InputHTMLAttributes, ChangeEvent, useState, useRef, useEffect,
 } from 'react';
-import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/config/lib/classNames/classNames';
 import cls from './Input.module.scss';
 
@@ -18,7 +17,6 @@ export const Input = (props: InputProps) => {
   const {
     className, value, onChange, type = 'text', placeholder, autofocus, ...other
   } = props;
-  const { t } = useTranslation();
   const [isFocused, setIsFocused] = useState<boolean>(false);
   const [caretPosition, setCaretPosition] = useState<number>(0);
   const inputRef = useRef<HTMLInputElement>();
