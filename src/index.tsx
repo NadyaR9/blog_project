@@ -1,13 +1,22 @@
-import { render } from "react-dom";
-import { BrowserRouter } from "react-router-dom";
-import { App } from "./app/App";
-import ThemeProvider from "./app/providers/ThemeProvider/ui/ThemeProvider";
+import { render } from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import { ErrorBoundary } from 'app/providers/ErrorBoundary';
+import { ThemeProvider } from 'app/providers/ThemeProvider';
+import { StoreProvider } from 'app/providers/StoreProvider';
+import { App } from 'app/App';
+
+import 'app/styles/index.scss';
+import 'shared/config/i18/i18';
 
 render(
-  <BrowserRouter>
-    <ThemeProvider>
-      <App />
-    </ThemeProvider>
-  </BrowserRouter>,
-  document.getElementById('root')
-); 
+  <StoreProvider>
+    <BrowserRouter>
+      <ErrorBoundary>
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
+      </ErrorBoundary>
+    </BrowserRouter>
+  </StoreProvider>,
+  document.getElementById('root'),
+);

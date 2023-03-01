@@ -1,11 +1,25 @@
-@import "./reset.scss";
-@import "./variables/global.scss";
-@import "./Theme/dark.scss";
-@import "./Theme/normal.scss";
+@import "./reset";
+@import "./variables/global";
+@import "./Theme/dark";
+@import "./Theme/light";
+
+body,
+.app_light_theme,
+.app_daark_theme {
+  font-size: var(--font-m);
+  color: var(--primary-color);
+  background: var(--bg-color);
+}
 
 .app {
-  font-size: var(--font-m);
-  background: var(--bg-color);
-  color: var(--primary-color);
   min-height: 100vh;
+}
+
+.pages-container {
+  display: flex;
+}
+
+.page-wrapper {
+  flex-grow: 1;
+  padding: 24px;
 }
