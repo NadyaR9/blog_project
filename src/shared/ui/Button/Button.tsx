@@ -8,6 +8,7 @@ export enum ButtonVariants {
   BACKGROUND_INVERTED = 'background-inverted',
   PRIMARY = 'primary',
   SECONDARY = 'secondary',
+  DISABLED = 'disabled',
 }
 
 export enum ButtonSize {
@@ -33,18 +34,22 @@ export function Button(props: ButtonProps) {
     variants = ButtonVariants.BACKGROUND,
     size = ButtonSize.M,
     square,
+    disabled = false,
     ...otherProps
   } = props;
 
   const mods: Record<string, boolean> = {
     [cls.square]: square,
+    [cls[variants]]: true,
+    [cls[size]]: true,
+    [cls.disabled]: disabled,
   };
 
   return (
     <button
       type="button"
       onClick={onClick}
-      className={classNames(cls.Button, mods, [className, cls[variants], cls[size]])}
+      className={classNames(cls.Button, mods, [className])}
       {...otherProps}
     >
       {children}

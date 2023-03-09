@@ -1,5 +1,7 @@
 import React from 'react';
+import { Theme } from 'app/providers/ThemeProvider';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Button, ButtonSize, ButtonVariants } from './Button';
 
 export default {
@@ -83,3 +85,16 @@ SizeXL.args = {
   variants: ButtonVariants.OUTLINE,
   size: ButtonSize.XL,
 };
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  children: 'Disabled',
+  variants: ButtonVariants.OUTLINE,
+};
+
+export const DisabledDark = Template.bind({});
+DisabledDark.args = {
+  children: 'DisabledDark',
+  variants: ButtonVariants.OUTLINE,
+};
+DisabledDark.decorators = [ThemeDecorator(Theme.DARK)];
