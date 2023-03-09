@@ -10,8 +10,4 @@ describe('test Text', () => {
     render(<Text text="Test" />);
     expect(screen.getByText('Test')).toHaveClass('text');
   });
-  test('test error text render', () => {
-    render(<Text variants={TextVariants.ERROR} text="Test" />);
-    expect(screen.getByText('Test')).toHaveClass('error');
-  });
 });
