@@ -4,6 +4,7 @@
   "Lang": "Lang",
   "Log In": "Log In",
   "LogIn": "LogIn",
+  "LogOut": "LogOut",
   "Lorem ipsum dolor, sit amet consectetur adipisicing elit": {
     " Deserunt tempora repellendus doloremque autem odio id quasi, ut magni minus deleniti culpa omnis provident nostrum quae fuga? Ullam eum dolor aliquam?": " Deserunt tempora repellendus doloremque autem odio id quasi, ut magni minus deleniti culpa omnis provident nostrum quae fuga? Ullam eum dolor aliquam?"
   },
@@ -14,6 +15,7 @@
   "Something went wrong": "Something went wrong",
   "Username": "Username",
   "about": "about",
+  "auth form": "auth form",
   "create error": "create error",
   "main": "main",
   "password": "password"

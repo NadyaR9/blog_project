@@ -1,0 +1,4 @@
+*.ts -crlf
+*.tsx -crlf
+*.scss -crlf
+*.js -crlf

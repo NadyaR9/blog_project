@@ -29,6 +29,7 @@ module.exports = {
     'react-hooks',
   ],
   rules: {
+    'max-len': ['error', { code: 120 }],
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
     indent: [2, 2],
@@ -52,6 +53,7 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
     'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
     'no-param-reassign': 'off',
+    'linebreak-style': ['error', 'windows'],
   },
   globals: {
     __DEV__: true,

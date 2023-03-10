@@ -13,7 +13,7 @@ export default function buildPlugins({ paths, isDev }: BuildOptions): WebpackPlu
       chunkFilename: 'css/[name].[contenthash:8].css',
     }),
     new DefinePlugin({
-      __DEV__: isDev,
+      __DEV__: JSON.stringify(isDev),
     }),
     new ProgressPlugin(),
   ];

@@ -6,6 +6,7 @@ import { Loader } from './Loader/Loader';
 import { Modal } from './Modal/Modal';
 import { Portal } from './Portal/Portal';
 import { Input } from './Input/Input';
+import { Text, TextVariants } from './Text/Text';
 
 export {
   AppLink,
@@ -19,4 +20,6 @@ export {
   Modal,
   Portal,
   Input,
+  Text,
+  TextVariants,
 };

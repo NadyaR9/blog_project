@@ -8,6 +8,10 @@
   "Lang": "Russian",
   "Short lang": "Ru",
   "LogIn": "Log In",
+  "LogOut": "Log Out",
   "Username": "Username",
-  "password": "Password"
+  "password": "Password",
+  "auth error": "Auth error! Invalid username or password",
+  "auth form": "Authorization form",
+  "authError": "Auth error! Invalid username or password"
 }
