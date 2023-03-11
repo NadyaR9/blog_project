@@ -14,7 +14,6 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, { re
   async (data: LoginByUsernameProps, thunkAPI) => {
     try {
       const response = await axios.post('http://localhost:8000/login', data);
-      console.log('response', response);
       if (!response.data) {
         throw new Error();
       }
@@ -22,7 +21,6 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, { re
       thunkAPI.dispatch(userActions.setAuthData(response.data));
       return response.data;
     } catch (e) {
-      console.log(e);
       return thunkAPI.rejectWithValue('authError');
     }
   },
