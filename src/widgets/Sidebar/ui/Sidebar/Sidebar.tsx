@@ -1,31 +1,34 @@
-import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { memo, useMemo, useState } from 'react';
 import { classNames } from 'shared/config/lib/classNames/classNames';
-import { RoutePath } from 'shared/config/route/routeConfig/routeConfig';
 import {
-  AppLink,
-  AppLinkTheme,
   Button,
   ButtonSize,
   ButtonVariants,
   LanguageSwitcher,
   ThemeSwitcher,
 } from 'shared/ui';
-import MainIcon from '../assets/main.svg';
-import AboutIcon from '../assets/about.svg';
+import { SidebarItemsList } from 'widgets/Sidebar/model/items';
+import { SidebarItem } from '../SidebarItem/SidebarItem';
 import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
   className?: string,
 }
 
-export function Sidebar({ className }: SidebarProps) {
+export const Sidebar = memo(({ className }: SidebarProps) => {
   const [collapsedSidebar, setCollapsedSidebar] = useState(false);
-  const { t } = useTranslation();
 
   const toggleSidebar = () => {
     setCollapsedSidebar((prev) => !prev);
   };
+
+  const itemsList = useMemo(() => SidebarItemsList.map((item) => (
+    <SidebarItem
+      item={item}
+      collapsed={collapsedSidebar}
+      key={item.path}
+    />
+  )), [collapsedSidebar]);
 
   return (
     <div
@@ -33,22 +36,7 @@ export function Sidebar({ className }: SidebarProps) {
       data-testid="sidebar"
     >
       <div className={cls.items}>
-        <AppLink
-          to={RoutePath.main}
-          theme={AppLinkTheme.SECONDARY}
-          className={cls.item}
-        >
-          <MainIcon className={cls.icon} />
-          <span className={cls.link}>{t('Main')}</span>
-        </AppLink>
-        <AppLink
-          to={RoutePath.about}
-          theme={AppLinkTheme.SECONDARY}
-          className={cls.item}
-        >
-          <AboutIcon className={cls.icon} />
-          <span className={cls.link}>{t('About')}</span>
-        </AppLink>
+        {itemsList}
       </div>
       <Button
         onClick={toggleSidebar}
@@ -68,4 +56,4 @@ export function Sidebar({ className }: SidebarProps) {
       </div>
     </div>
   );
-}
+});

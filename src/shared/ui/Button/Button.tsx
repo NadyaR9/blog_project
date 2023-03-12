@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, DetailedHTMLProps } from 'react';
+import { ButtonHTMLAttributes, memo } from 'react';
 import { classNames } from 'shared/config/lib/classNames/classNames';
 import cls from './Button.module.scss';
 
@@ -18,15 +18,14 @@ export enum ButtonSize {
 }
 
 interface ButtonProps
-  extends DetailedHTMLProps
-    <ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+  extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string,
   variants?: ButtonVariants,
   size?: ButtonSize,
   square?: boolean,
 }
 
-export function Button(props: ButtonProps) {
+export const Button = memo((props: ButtonProps) => {
   const {
     children,
     onClick,
@@ -55,4 +54,4 @@ export function Button(props: ButtonProps) {
       {children}
     </button>
   );
-}
+});

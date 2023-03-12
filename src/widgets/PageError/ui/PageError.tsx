@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/config/lib/classNames/classNames';
 import { Button } from 'shared/ui';
@@ -7,7 +8,7 @@ interface PageErrorProps {
   className?: string,
 }
 
-export const PageError = ({ className }: PageErrorProps) => {
+export const PageError = memo(({ className }: PageErrorProps) => {
   const { t } = useTranslation();
   const reloadPage = () => {
     // eslint-disable-next-line no-restricted-globals
@@ -26,4 +27,4 @@ export const PageError = ({ className }: PageErrorProps) => {
       </Button>
     </div>
   );
-};
+});
