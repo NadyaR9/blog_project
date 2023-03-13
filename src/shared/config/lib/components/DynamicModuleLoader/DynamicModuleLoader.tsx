@@ -3,8 +3,6 @@ import { StateSchemaKyes, ReduxStoreWithManager } from 'app/providers/StoreProvi
 import { FC, useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
 
-type ReducerListEntries = [StateSchemaKyes, Reducer];
-
 export type ReducerList = {
   [name in StateSchemaKyes]?: Reducer
 }
@@ -22,15 +20,15 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
   const store = useStore() as ReduxStoreWithManager;
 
   useEffect(() => {
-    Object.entries(reducerList).forEach(([name, reducer]: ReducerListEntries) => {
-      store.reducerManager.add(name, reducer);
+    Object.entries(reducerList).forEach(([name, reducer]) => {
+      store.reducerManager.add(name as StateSchemaKyes, reducer);
       dispatch({ type: `@INIT ${name} form reducer` });
     });
 
     return () => {
       if (removeAfterUnmount) {
-        Object.entries(reducerList).forEach(([name, _reducer]: ReducerListEntries) => {
-          store.reducerManager.remove(name);
+        Object.entries(reducerList).forEach(([name, reducer]) => {
+          store.reducerManager.remove(name as StateSchemaKyes);
           dispatch({ type: `@DESTROY ${name} form reducer` });
         });
       }

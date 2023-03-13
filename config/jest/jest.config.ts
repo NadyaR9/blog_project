@@ -39,6 +39,7 @@ export default {
   // A set of global variables that need to be available in all test environments
   globals: {
     __DEV__: true,
+    __API__: '',
   },
   // An array of file extensions your modules use
   moduleFileExtensions: [
