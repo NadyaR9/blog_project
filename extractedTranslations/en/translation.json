@@ -17,7 +17,10 @@
   "auth error": "",
   "auth form": "",
   "create error": "create error",
+  "edit": "edit",
   "main": "main",
+  "name": "name",
   "password": "password",
-  "profile": "profile"
+  "profile": "profile",
+  "surname": "surname"
 }

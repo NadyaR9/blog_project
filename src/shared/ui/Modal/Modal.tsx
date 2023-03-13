@@ -1,7 +1,7 @@
 import {
-  MouseEvent, ReactNode, useCallback, useEffect, useRef, useState,
+  MouseEvent, MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
-import { classNames } from 'shared/config/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/config/lib/classNames/classNames';
 import { Portal } from 'shared/ui';
 import cls from './Modal.module.scss';
 
@@ -25,8 +25,8 @@ export const Modal = (props: ModalProps) => {
   } = props;
   const [isMounted, setIsMounted] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
-  const timerRef = useRef<ReturnType<typeof setTimeout>>();
-  const mods: Record<string, boolean> = {
+  const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
+  const mods: Mods = {
     [cls.opened]: isOpen,
     [cls.isClosing]: isClosing,
   };
