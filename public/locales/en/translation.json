@@ -14,5 +14,8 @@
   "password": "Password",
   "auth error": "Auth error! Invalid username or password",
   "auth form": "Authorization form",
-  "authError": "Auth error! Invalid username or password"
+  "authError": "Auth error! Invalid username or password",
+  "currency": "Currency",
+  "country": "Country",
+  "Country": "Country"
 }

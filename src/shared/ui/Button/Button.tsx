@@ -8,6 +8,8 @@ export enum ButtonVariants {
   BACKGROUND_INVERTED = 'background-inverted',
   PRIMARY = 'primary',
   SECONDARY = 'secondary',
+  PRIMARY_OUTLINED = 'primary-outlined',
+  SECONDARY_OUTLINED = 'secondary-outlined',
   DISABLED = 'disabled',
 }
 

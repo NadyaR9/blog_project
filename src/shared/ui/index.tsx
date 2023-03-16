@@ -6,7 +6,9 @@ import { Loader } from './Loader/Loader';
 import { Modal } from './Modal/Modal';
 import { Portal } from './Portal/Portal';
 import { Input } from './Input/Input';
-import { Text, TextVariants } from './Text/Text';
+import { Text, TextVariants, TextAligns } from './Text/Text';
+import { Avatar } from './Avatar/Avatar';
+import { Select } from './Select/Select';
 
 export {
   AppLink,
@@ -22,4 +24,7 @@ export {
   Input,
   Text,
   TextVariants,
+  TextAligns,
+  Avatar,
+  Select,
 };

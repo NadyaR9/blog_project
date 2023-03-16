@@ -21,6 +21,18 @@
   color: var(--secondary-color);
 }
 
+.primary-outlined {
+  background: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.secondary-outlined {
+  background: transparent;
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+}
+
 .background {
   background: transparent;
 }
