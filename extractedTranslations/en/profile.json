@@ -1,6 +1,16 @@
 {
+  "ProfileErrorDescription": "",
+  "ProfileErrorTitle": "",
+  "age": "",
+  "avatar": "",
+  "cancel": "",
+  "city": "",
+  "country": "",
+  "currency": "",
   "edit": "",
   "name": "",
   "profile": "",
-  "surname": ""
+  "save": "",
+  "surname": "",
+  "username": ""
 }

@@ -3,5 +3,13 @@
   "Profile": "Profile",
   "edit": "Edit",
   "name": "Name",
-  "surname": "Surname"
+  "surname": "Surname",
+  "ProfileErrorTitle": "Something went wrong",
+  "ProfileErrorDescription": "Please, try again later",
+  "cancel": "Cancel",
+  "save": "Save",
+  "city": "City",
+  "age": "Age",
+  "username": "Username",
+  "avatar": "Profile photo"
 }

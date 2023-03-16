@@ -41,6 +41,18 @@ Primary.args = {
   variants: ButtonVariants.PRIMARY,
 };
 
+export const SecondaryOutlined = Template.bind({});
+Secondary.args = {
+  children: 'Secondary',
+  variants: ButtonVariants.SECONDARY_OUTLINED,
+};
+
+export const PrimaryOutlined = Template.bind({});
+Primary.args = {
+  children: 'Primary',
+  variants: ButtonVariants.PRIMARY_OUTLINED,
+};
+
 export const SquareM = Template.bind({});
 SquareM.args = {
   children: '>',
