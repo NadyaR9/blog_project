@@ -27,11 +27,16 @@
   "create error": "create error",
   "currency": "currency",
   "edit": "edit",
+  "invalid age": "invalid age",
+  "invalid country": "invalid country",
+  "invalid user data": "invalid user data",
   "main": "main",
   "name": "name",
+  "no data": "no data",
   "password": "password",
   "profile": "profile",
   "save": "save",
+  "server error": "server error",
   "surname": "surname",
   "username": "username"
 }
