@@ -11,5 +11,10 @@
   "city": "City",
   "age": "Age",
   "username": "Username",
-  "avatar": "Profile photo"
+  "avatar": "Profile photo",
+  "invalid age": "Invalid age",
+  "invalid user data": "Invalid user data",
+  "invalid country": "Invalid country",
+  "no data": "No data",
+  "server error": "Server error on save"
 }
