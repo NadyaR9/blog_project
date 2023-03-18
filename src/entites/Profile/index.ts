@@ -7,7 +7,7 @@ import { getProfileLoading } from './model/selectors/getProfileLoading/getProfil
 import { getProfileError } from './model/selectors/getProfileError/getProfileError';
 import { getProfileReadonly } from './model/selectors/getProfileReadonly/getProfileReadonly';
 import { getProfileForm } from './model/selectors/getProfileForm/getProfileForm';
-import { getProfileValidateErrors } from './model/selectors/getProfileValidateErrors/getProfileError';
+import { getProfileValidateErrors } from './model/selectors/getProfileValidateErrors/getProfileValidateErrors';
 import { updateProfileData } from './model/services/updateProfileData/updateProfileData';
 
 export {
