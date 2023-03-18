@@ -8,9 +8,14 @@
   "country": "",
   "currency": "",
   "edit": "",
+  "invalid age": "",
+  "invalid country": "",
+  "invalid user data": "",
   "name": "",
+  "no data": "",
   "profile": "",
   "save": "",
+  "server error": "",
   "surname": "",
   "username": ""
 }

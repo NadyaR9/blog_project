@@ -6,6 +6,7 @@ import {
 import { Profile } from 'entites/Profile';
 import { Currency, CurrencySelect } from 'entites/Currency';
 import { Country, CountrySelect } from 'entites/Country';
+import { memo } from 'react';
 import cls from './ProfileCard.module.scss';
 
 interface ProfileCardProps {
@@ -24,7 +25,7 @@ interface ProfileCardProps {
   onChangeCountry?: (country: Country) => void,
 }
 
-export const ProfileCard = (props: ProfileCardProps) => {
+export const ProfileCard = memo((props: ProfileCardProps) => {
   const { t } = useTranslation('profile');
   const {
     className,
@@ -78,7 +79,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
         )}
         <Input
           placeholder={t('name')}
-          value={data?.first}
+          value={data?.firstname}
           onChange={onChangeFirstname}
           readonly={readonly}
         />
@@ -125,4 +126,4 @@ export const ProfileCard = (props: ProfileCardProps) => {
       </div>
     </div>
   );
-};
+});

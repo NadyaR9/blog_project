@@ -41,11 +41,13 @@ const ProfilePage = () => {
     [ValidateProfileError.SERVER_ERROR]: t('server error'),
   };
   useEffect(() => {
-    dispatch(fetchProfileData());
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(fetchProfileData());
+    }
   }, [dispatch]);
 
   const onChangeFirstname = useCallback((value: string = '') => {
-    dispatch(profileActions.updateProfile({ first: value }));
+    dispatch(profileActions.updateProfile({ firstname: value }));
   }, [dispatch]);
 
   const onChangeLastname = useCallback((value: string = '') => {

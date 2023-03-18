@@ -42,14 +42,14 @@ Primary.args = {
 };
 
 export const SecondaryOutlined = Template.bind({});
-Secondary.args = {
-  children: 'Secondary',
+SecondaryOutlined.args = {
+  children: 'SecondaryOutlined',
   variants: ButtonVariants.SECONDARY_OUTLINED,
 };
 
 export const PrimaryOutlined = Template.bind({});
-Primary.args = {
-  children: 'Primary',
+PrimaryOutlined.args = {
+  children: 'PrimaryOutlined',
   variants: ButtonVariants.PRIMARY_OUTLINED,
 };
 

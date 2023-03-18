@@ -40,6 +40,7 @@ export default {
   globals: {
     __DEV__: true,
     __API__: '',
+    __PROJECT__: 'jest',
   },
   // An array of file extensions your modules use
   moduleFileExtensions: [
