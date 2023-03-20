@@ -21,3 +21,8 @@ export const Dark = Template.bind({});
 Dark.args = {};
 
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const BLUE = Template.bind({});
+BLUE.args = {};
+
+BLUE.decorators = [ThemeDecorator(Theme.BLUE)];

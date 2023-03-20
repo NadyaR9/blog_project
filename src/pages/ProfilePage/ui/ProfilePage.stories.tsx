@@ -49,3 +49,20 @@ Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
     },
   },
 })];
+
+export const Blue = Template.bind({});
+Blue.args = {};
+
+Blue.decorators = [ThemeDecorator(Theme.BLUE), StoreDecorator({
+  profile: {
+    form: {
+      username: 'admin',
+      age: 23,
+      country: Country.Russia,
+      currency: Currency.EUR,
+      lastname: 'admin',
+      firstname: 'admin',
+      city: 'admin',
+    },
+  },
+})];
