@@ -3,6 +3,7 @@
   "Main": "Main",
   "About": "About",
   "Profile": "Profile",
+  "Articles": "Articles",
   "Page not found": "Page not found",
   "Something went wrong": "Error! Something went wrong",
   "create error": "Create error",
@@ -17,5 +18,6 @@
   "authError": "Auth error! Invalid username or password",
   "currency": "Currency",
   "country": "Country",
-  "Country": "Country"
+  "Country": "Country",
+  "Articles Page": "Articles Page"
 }
