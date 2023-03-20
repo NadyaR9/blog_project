@@ -18,7 +18,7 @@ export const LanguageSwitcher = memo(({ className, short }: LanguageSwitcherProp
   return (
     <Button
       className={classNames('', {}, [className])}
-      variants={ButtonVariants.BACKGROUND}
+      variants={ButtonVariants.SECONDARY}
       onClick={handleLanguageChange}
     >
       {short ? t('Short lang') : t('Lang')}
