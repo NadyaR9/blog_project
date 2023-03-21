@@ -6,9 +6,14 @@ import { Loader } from './Loader/Loader';
 import { Modal } from './Modal/Modal';
 import { Portal } from './Portal/Portal';
 import { Input } from './Input/Input';
-import { Text, TextVariants, TextAligns } from './Text/Text';
+import {
+  Text, TextVariants, TextAligns, TextSize,
+} from './Text/Text';
 import { Avatar } from './Avatar/Avatar';
 import { Select } from './Select/Select';
+import { Skeleton } from './Skeleton/Skeleton';
+import { Icon } from './Icon/Icon';
+import { Code } from './Code/Code';
 
 export {
   AppLink,
@@ -27,4 +32,8 @@ export {
   TextAligns,
   Avatar,
   Select,
+  Skeleton,
+  TextSize,
+  Icon,
+  Code,
 };

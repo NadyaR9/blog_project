@@ -13,12 +13,18 @@ export enum TextAligns {
   RIGHT = 'right',
 }
 
+export enum TextSize {
+  M = 'size_m',
+  L = 'size_l',
+}
+
 interface TextProps {
   className?: string,
   variants?: TextVariants,
   align?: TextAligns,
   title?: string,
   text?: string,
+  size?: string,
 }
 
 export const Text = memo((props: TextProps) => {
@@ -28,11 +34,13 @@ export const Text = memo((props: TextProps) => {
     text = '',
     title = '',
     align = TextAligns.LEFT,
+    size = TextSize.M,
   } = props;
 
   const mods: Mods = {
     [cls[variants]]: true,
     [cls[align]]: true,
+    [cls[size]]: true,
   };
 
   return (

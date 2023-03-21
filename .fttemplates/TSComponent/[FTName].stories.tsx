@@ -9,7 +9,7 @@ export default {
   },
 } as ComponentMeta<typeof [FTName]>;
 
-const Template: ComponentStory<typeof [FTName]> = (args) => <[FTName] {...args }/>;
+const Template: ComponentStory<typeof [FTName]> = (args) => <[FTName] {...args} />;
 
 export const Normal = Template.bind({});
 Normal.args = {
