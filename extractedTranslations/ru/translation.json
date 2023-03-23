@@ -1,5 +1,6 @@
 {
   "About": "About",
+  "Add New Comment": "Add New Comment",
   "Articles": "Articles",
   "Articles Details Page": "Articles Details Page",
   "Articles Details Page Not Found": "Articles Details Page Not Found",
@@ -24,6 +25,7 @@
   "ProfileErrorTitle": "ProfileErrorTitle",
   "Short lang": "Short lang",
   "Something went wrong": "Something went wrong",
+  "Type your comment here": "Type your comment here",
   "Username": "Username",
   "about": "about",
   "age": "age",

@@ -19,7 +19,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -100,6 +102,36 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "gggggg",
+      "id": "44vZodt"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "12211221",
+      "id": "K_t3tY2"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "user",
+      "id": "hTNYDMq"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "comment",
+      "id": "K8UE0Pd"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "kek",
+      "id": "CxgRW2I"
     }
   ],
   "users": [
@@ -115,17 +147,31 @@
       "username": "user",
       "password": "123",
       "role": "USER",
-      "avatar": "https://i.pinimg.com/564x/81/09/1a/81091a8004c62607962adaaea674dc39.jpg"
+      "avatar": "https://www.pngall.com/wp-content/uploads/12/Avatar-Profile.png"
     }
   ],
-  "profile": {
-    "firstname": "Nadya",
-    "lastname": "Razinkova",
-    "age": 24,
-    "currency": "EUR",
-    "country": "Kazakhstan",
-    "city": "Belgorod",
-    "username": "admin",
-    "avatar": "https://i.pinimg.com/564x/81/09/1a/81091a8004c62607962adaaea674dc39.jpg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "firstname": "Nadya",
+      "lastname": "Razinkova",
+      "age": 24,
+      "currency": "EUR",
+      "country": "Kazakhstan",
+      "city": "Belgorod",
+      "username": "admin",
+      "avatar": "https://i.pinimg.com/564x/81/09/1a/81091a8004c62607962adaaea674dc39.jpg"
+    },
+    {
+      "id": "2",
+      "firstname": "User",
+      "lastname": "Reuse2",
+      "age": 42,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "admin",
+      "avatar": "https://www.pngall.com/wp-content/uploads/12/Avatar-Profile.png"
+    }
+  ]
 }
