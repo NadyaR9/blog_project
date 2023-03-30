@@ -4,12 +4,13 @@ import { AddNewCommentForm } from 'features/AddNewComment';
 import { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { classNames } from 'shared/config/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducerList } from 'shared/config/lib/components';
 import { useAppDispatch } from 'shared/config/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/config/lib/hooks/useInitialEffect/useInitialEffect';
-import { Text } from 'shared/ui';
+import { RoutePath } from 'shared/config/route/routeConfig/routeConfig';
+import { Button, ButtonVariants, Text } from 'shared/ui';
 import { getArticleCommentsError, getArticleCommentsIsLoading } from '../model/selectors/comments';
 import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle';
 import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
@@ -29,6 +30,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
   const { t } = useTranslation('articles');
   const { id } = useParams<{ id: string }>();
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   const comments = useSelector(getArticleComments.selectAll);
   const isLoading = useSelector(getArticleCommentsIsLoading);
   const error = useSelector(getArticleCommentsError);
@@ -40,6 +42,10 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     dispatch(addCommentForArticle(text));
   }, [dispatch]);
 
+  const onBackToList = useCallback(() => {
+    navigate(RoutePath.articles);
+  }, [navigate]);
+
   if (!id) {
     return (
       <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
@@ -50,6 +56,13 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
   return (
     <DynamicModuleLoader removeAfterUnmount reducerList={reducerList}>
       <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+        <Button
+          className={cls.backButton}
+          variants={ButtonVariants.BACKGROUND_INVERTED}
+          onClick={onBackToList}
+        >
+          {t('Go Back')}
+        </Button>
         <ArticleDetails id={id} />
         <Text title={t('Comment Block')} />
         <AddNewCommentForm onSendComment={onSendComment} />

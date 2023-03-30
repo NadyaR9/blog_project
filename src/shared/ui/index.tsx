@@ -14,6 +14,7 @@ import { Select } from './Select/Select';
 import { Skeleton } from './Skeleton/Skeleton';
 import { Icon } from './Icon/Icon';
 import { Code } from './Code/Code';
+import { Card } from './Card/Card';
 
 export {
   AppLink,
@@ -36,4 +37,5 @@ export {
   TextSize,
   Icon,
   Code,
+  Card,
 };
