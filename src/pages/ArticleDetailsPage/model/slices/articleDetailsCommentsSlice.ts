@@ -21,7 +21,7 @@ const articleDetailsCommentsSlice = createSlice({
   initialState: commentsAdapter.getInitialState<ArticleDetailsCommentsSchema>({
     isLoading: false,
     error: undefined,
-    ids: ['1', '2'],
+    ids: [],
     entities: {},
   }),
   reducers: {},
