@@ -10,7 +10,9 @@ import { DynamicModuleLoader, ReducerList } from 'shared/config/lib/components';
 import { useAppDispatch } from 'shared/config/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/config/lib/hooks/useInitialEffect/useInitialEffect';
 import { RoutePath } from 'shared/config/route/routeConfig/routeConfig';
-import { Button, ButtonVariants, Text } from 'shared/ui';
+import {
+  Button, ButtonVariants, Page, Text,
+} from 'shared/ui';
 import { getArticleCommentsError, getArticleCommentsIsLoading } from '../model/selectors/comments';
 import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle';
 import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
@@ -48,14 +50,14 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 
   if (!id) {
     return (
-      <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+      <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
         {t('Articles Details Page Not Found')}
-      </div>
+      </Page>
     );
   }
   return (
     <DynamicModuleLoader removeAfterUnmount reducerList={reducerList}>
-      <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+      <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
         <Button
           className={cls.backButton}
           variants={ButtonVariants.BACKGROUND_INVERTED}
@@ -67,7 +69,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
         <Text title={t('Comment Block')} />
         <AddNewCommentForm onSendComment={onSendComment} />
         <CommentList comments={comments} isLoading={isLoading} />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };
