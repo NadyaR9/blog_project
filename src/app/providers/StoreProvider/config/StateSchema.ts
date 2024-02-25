@@ -8,11 +8,12 @@ import { ProfileSchema } from 'entites/Profile';
 import { UserSchema } from 'entites/User';
 import { AddNewCommentSchema } from 'features/AddNewComment';
 import { LoginSchema } from 'features/AuthByUsername';
+import { ScrollSaverSchema } from 'features/ScrollSaver';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
-import { NavigateOptions, To } from 'react-router-dom';
 
 export interface StateSchema {
+  scrollSaver: ScrollSaverSchema,
   counter: CounterSchema,
   user: UserSchema,
   loginForm?: LoginSchema,
