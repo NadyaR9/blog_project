@@ -29,7 +29,7 @@ export const CommentList = memo((props: CommentListProps) => {
   return (
     <div className={classNames(cls.CommentList, {}, [className])}>
       {comments?.length ? (
-        comments.map((comment) => <CommentCard comment={comment} isLoading={isLoading} />)
+        comments.map((comment) => <CommentCard key={comment.id} comment={comment} isLoading={isLoading} />)
       ) : (
         <Text text={t('Comments not found')} />
       )}
