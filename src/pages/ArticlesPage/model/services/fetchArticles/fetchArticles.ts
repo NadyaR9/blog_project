@@ -21,7 +21,6 @@ export const fetchArticles = createAsyncThunk<Article[], fetchArticlesListProps,
           _page: page,
         },
       });
-      console.log('response', response.data);
       if (!response.data) {
         throw new Error();
       }
