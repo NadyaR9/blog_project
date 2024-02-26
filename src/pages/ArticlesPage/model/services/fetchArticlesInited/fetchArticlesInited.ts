@@ -1,22 +1,37 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
+import { ArticleSortField, ArticleTypes } from 'entites/Article';
+import { SortOrder } from 'shared/config/types';
 import {
-  getArticlesInited, getArticlesPage,
+  getArticlesInited,
 } from '../../selectors/getArticlesSelectors';
 import { articlesActions } from '../../slices/articlesPageSlice';
 import { fetchArticles } from '../fetchArticles/fetchArticles';
 
-export const fetchArticlesInited = createAsyncThunk<void, void, ThunkConfig<string>>(
+export const fetchArticlesInited = createAsyncThunk<void, URLSearchParams, ThunkConfig<string>>(
   'articles/fetchArticlesInited',
-  async (_, thunkApi) => {
+  async (searchParams, thunkApi) => {
     const { dispatch, getState } = thunkApi;
-    const page = getArticlesPage(getState());
     const isInited = getArticlesInited(getState());
     if (!isInited) {
+      const orderFromUrl = searchParams.get('order') as SortOrder;
+      const sortFromUrl = searchParams.get('sort') as ArticleSortField;
+      const searchFromUrl = searchParams.get('search');
+      const typeFromUrl = searchParams.get('type') as ArticleTypes;
+      if (orderFromUrl) {
+        dispatch(articlesActions.setOrder(orderFromUrl));
+      }
+      if (sortFromUrl) {
+        dispatch(articlesActions.setSort(sortFromUrl));
+      }
+      if (searchFromUrl) {
+        dispatch(articlesActions.setSearch(searchFromUrl));
+      }
+      if (typeFromUrl) {
+        dispatch(articlesActions.setType(typeFromUrl));
+      }
       dispatch(articlesActions.initState());
-      dispatch(fetchArticles({
-        page,
-      }));
+      dispatch(fetchArticles({}));
     }
   },
 );

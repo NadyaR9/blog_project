@@ -10,12 +10,13 @@ import {
   Text, TextVariants, TextAligns, TextSize,
 } from './Text/Text';
 import { Avatar } from './Avatar/Avatar';
-import { Select } from './Select/Select';
+import { Select, SelectOption } from './Select/Select';
 import { Skeleton } from './Skeleton/Skeleton';
 import { Icon } from './Icon/Icon';
 import { Code } from './Code/Code';
 import { Card } from './Card/Card';
 import { Page } from './Page/Page';
+import { Tabs, TabItem } from './Tabs/Tabs';
 
 export {
   AppLink,
@@ -34,10 +35,13 @@ export {
   TextAligns,
   Avatar,
   Select,
+  SelectOption,
   Skeleton,
   TextSize,
   Icon,
   Code,
   Card,
   Page,
+  Tabs,
+  TabItem,
 };
