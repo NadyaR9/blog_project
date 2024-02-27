@@ -4,8 +4,11 @@ import {
   PayloadAction,
 } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
-import { Article, ArticleView } from 'entites/Article';
+import {
+  Article, ArticleSortField, ArticleTypes, ArticleView,
+} from 'entites/Article';
 import { ARTICLE_VIEW_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
+import { SortOrder } from 'shared/config/types';
 import { fetchArticles } from '../services/fetchArticles/fetchArticles';
 
 import { ArticlesPageSchema } from '../types/articlesPageSchema';
@@ -30,6 +33,11 @@ const articlesSlice = createSlice({
     hasMore: false,
     page: 1,
     _inited: false,
+    sort: ArticleSortField.CREATED,
+    order: 'asc',
+    search: '',
+    limit: 9,
+    type: ArticleTypes.ALL,
   }),
   reducers: {
     setView: (state, action: PayloadAction<ArticleView>) => {
@@ -40,6 +48,18 @@ const articlesSlice = createSlice({
     setPage: (state, action: PayloadAction<number>) => {
       state.page = action.payload;
     },
+    setOrder: (state, action: PayloadAction<SortOrder>) => {
+      state.order = action.payload;
+    },
+    setSort: (state, action: PayloadAction<ArticleSortField>) => {
+      state.sort = action.payload;
+    },
+    setSearch: (state, action: PayloadAction<string>) => {
+      state.search = action.payload;
+    },
+    setType: (state, action: PayloadAction<ArticleTypes>) => {
+      state.type = action.payload;
+    },
     initState: (state) => {
       const view = localStorage.getItem(ARTICLE_VIEW_LOCALSTORAGE_KEY) as ArticleView;
       state.view = view;
@@ -49,18 +69,25 @@ const articlesSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchArticles.fulfilled, (state, action:PayloadAction<Article[]>) => {
+      .addCase(fetchArticles.fulfilled, (state, action) => {
         state.isLoading = false;
-        Adapter.addMany(state, action.payload);
-        state.hasMore = action.payload.length > 0;
+        state.hasMore = action.payload.length > state.limit;
+        if (action.meta.arg.replace) {
+          Adapter.setAll(state, action.payload);
+        } else {
+          Adapter.addMany(state, action.payload);
+        }
       })
       .addCase(fetchArticles.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
       })
-      .addCase(fetchArticles.pending, (state) => {
+      .addCase(fetchArticles.pending, (state, action) => {
         state.isLoading = true;
         state.error = undefined;
+        if (action.meta.arg.replace) {
+          Adapter.removeAll(state);
+        }
       });
   },
 });

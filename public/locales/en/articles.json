@@ -4,5 +4,17 @@
   "Articles Details Page Not Found": "Article not found",
   "Articles Details Request Error": "Something went wrong",
   "Comment Block": "Comments",
-  "Go Back": "Back"
+  "Go Back": "Back",
+  "Sort label": "by",
+  "Filter by": "Sort by",
+  "created at": "created date",
+  "title": "name",
+  "views": "views",
+  "asc": "asc",
+  "desc": "desc",
+  "Search": "Search",
+  "economics": "Economics",
+  "IT": "IT",
+  "science": "Science",
+  "all": "All"
 }
