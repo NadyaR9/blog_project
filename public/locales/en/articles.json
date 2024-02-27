@@ -16,5 +16,8 @@
   "economics": "Economics",
   "IT": "IT",
   "science": "Science",
-  "all": "All"
+  "all": "All",
+  "articles": {
+    "Recommendations Block": "Recommendations"
+  }
 }
