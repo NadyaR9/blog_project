@@ -16,5 +16,8 @@
   "economics": "Экономика",
   "IT": "IT",
   "science": "Наука",
-  "all": "Все"
+  "all": "Все",
+  "articles": {
+    "Recommendations Block": "Рекомендуем"
+  }
 }

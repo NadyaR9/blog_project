@@ -1,4 +1,4 @@
-import { memo, useCallback } from 'react';
+import { HTMLAttributeAnchorTarget, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/config/lib/classNames/classNames';
 import { Article, ArticleView } from '../../model/types/article';
@@ -11,6 +11,7 @@ interface ArticleListProps {
   articles: Article[],
   view?: ArticleView,
   isLoading: boolean,
+  target?: HTMLAttributeAnchorTarget,
 }
 
 const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 9 : 3)
@@ -23,6 +24,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     articles,
     view = ArticleView.SMALL,
     isLoading,
+    target = '_self',
   } = props;
   const { t } = useTranslation();
 
@@ -31,8 +33,9 @@ export const ArticleList = memo((props: ArticleListProps) => {
       article={article}
       view={view}
       key={article.id}
+      target={target}
     />
-  )), [articles, view]);
+  )), [articles, view, target]);
 
   return (
     <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>

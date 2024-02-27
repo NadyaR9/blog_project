@@ -56,6 +56,7 @@ module.exports = {
     'linebreak-style': ['error', 'windows'],
     'no-undef': 'off',
     'react/no-array-index-key': 'warn',
+    'arrow-body-style': 'off',
   },
   globals: {
     __DEV__: true,
