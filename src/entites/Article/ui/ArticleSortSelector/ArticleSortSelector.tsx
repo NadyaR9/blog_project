@@ -13,7 +13,7 @@ interface FieldsFilterProps {
 
 export const ArticleSortSelector = memo((props: FieldsFilterProps) => {
   const { className, sort, onChange } = props;
-  const { t } = useTranslation();
+  const { t } = useTranslation('articles');
 
   const sortOptions = useMemo<SelectOption<ArticleSortField>[]>(() => [
     {

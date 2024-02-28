@@ -12,7 +12,7 @@ import {
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/config/lib/hooks/useAppDispatch/useAppDispatch';
 import {
-  Card, Input, TabItem, Tabs,
+  Card, Input,
 } from 'shared/ui';
 import { SortOrder } from 'shared/config/types';
 import { useDebounce } from 'shared/config/lib/hooks/useDebounce/useDebounce';
@@ -30,7 +30,7 @@ interface FiltersProps {
 export const ArticlesPageFilters = memo((props: FiltersProps) => {
   const { className } = props;
   const dispatch = useAppDispatch();
-  const { t } = useTranslation();
+  const { t } = useTranslation('articles');
   const view = useSelector(getArticlesView);
   const order = useSelector(getArticlesOrder);
   const sort = useSelector(getArticlesSort);
