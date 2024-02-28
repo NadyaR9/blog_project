@@ -1,5 +1,4 @@
 import { HTMLAttributeAnchorTarget, memo, useCallback } from 'react';
-import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/config/lib/classNames/classNames';
 import { Article, ArticleView } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
@@ -26,7 +25,6 @@ export const ArticleList = memo((props: ArticleListProps) => {
     isLoading,
     target = '_self',
   } = props;
-  const { t } = useTranslation();
 
   const renderArticleList = useCallback(() => articles.map((article) => (
     <ArticleListItem

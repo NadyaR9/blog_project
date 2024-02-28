@@ -5,6 +5,8 @@ export interface BuildPaths {
   build: string,
   index: string,
   src: string,
+  locales: string,
+  buildLocales: string,
 }
 
 export interface BuildOptions {

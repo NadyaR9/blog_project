@@ -13,7 +13,7 @@ interface FiltersProps {
 
 export const ArticleOrderSelector = memo((props: FiltersProps) => {
   const { className, order, onChange } = props;
-  const { t } = useTranslation();
+  const { t } = useTranslation('articles');
 
   const orderOptions = useMemo<SelectOption<SortOrder>[]>(() => [
     {

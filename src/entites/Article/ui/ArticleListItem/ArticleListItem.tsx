@@ -31,7 +31,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     target = '_self',
   } = props;
   const [isHover, bindHover] = useHover();
-  const { t } = useTranslation();
+  const { t } = useTranslation('articles');
   const navigate = useNavigate();
 
   const onOpenArticle = useCallback(() => {
