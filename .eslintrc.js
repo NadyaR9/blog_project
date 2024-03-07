@@ -27,6 +27,7 @@ module.exports = {
     '@typescript-eslint',
     'i18next',
     'react-hooks',
+    'eslint-check-relative-path',
   ],
   rules: {
     'max-len': ['error', { code: 120 }],
@@ -57,6 +58,7 @@ module.exports = {
     'no-undef': 'off',
     'react/no-array-index-key': 'warn',
     'arrow-body-style': 'off',
+    'eslint-check-relative-path/relative-path-checker': 'error',
   },
   globals: {
     __DEV__: true,
