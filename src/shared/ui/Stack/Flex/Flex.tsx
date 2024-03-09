@@ -1,4 +1,4 @@
-import { ReactNode, memo } from 'react';
+import { DetailedHTMLProps, HTMLAttributes, ReactNode, memo } from 'react';
 import { Mods, classNames } from 'shared/config/lib/classNames/classNames';
 import cls from './Flex.module.scss';
 
@@ -32,7 +32,8 @@ const directionClasses: Record<FlexDirection, string> = {
   row: cls.directionRow,
 };
 
-export interface FlexProps {
+type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+export interface FlexProps extends DivProps {
   className?: string,
   children: ReactNode,
   justify?: FlexJustify,

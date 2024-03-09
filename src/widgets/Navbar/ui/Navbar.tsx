@@ -43,7 +43,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     );
   }
   return (
-    <div className={classNames(cls.Navbar, {}, [className])}>
+    <header className={classNames(cls.Navbar, {}, [className])}>
       <Button
         variants={ButtonVariants.SECONDARY}
         onClick={onOpenModal}
@@ -56,6 +56,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
           onClose={onCloseModal}
         />
       )}
-    </div>
+    </header>
   );
 });
