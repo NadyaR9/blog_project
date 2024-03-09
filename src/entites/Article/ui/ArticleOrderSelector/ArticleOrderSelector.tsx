@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/config/lib/classNames/classNames';
 import { Select, SelectOption } from 'shared/ui';
 import { SortOrder } from 'shared/config/types';
-import cls from './ArticleOrderSelector.module.scss';
 
 interface FiltersProps {
   className?: string,
@@ -27,13 +26,12 @@ export const ArticleOrderSelector = memo((props: FiltersProps) => {
   ], [t]);
 
   return (
-    <div className={classNames(cls.Filters, {}, [className])}>
-      <Select
-        value={order}
-        onChange={onChange}
-        options={orderOptions}
-        label={t('Sort label')}
-      />
-    </div>
+    <Select
+      value={order}
+      onChange={onChange}
+      options={orderOptions}
+      label={t('Sort label')}
+      className={classNames('', {}, [className])}
+    />
   );
 });

@@ -1,4 +1,6 @@
-import { DetailedHTMLProps, HTMLAttributes, ReactNode, memo } from 'react';
+import {
+  DetailedHTMLProps, HTMLAttributes, ReactNode, memo,
+} from 'react';
 import { Mods, classNames } from 'shared/config/lib/classNames/classNames';
 import cls from './Flex.module.scss';
 
@@ -43,7 +45,7 @@ export interface FlexProps extends DivProps {
   max?: boolean,
 }
 
-export const Flex = memo((props: FlexProps) => {
+export const Flex = (props: FlexProps) => {
   const {
     className,
     children,
@@ -71,4 +73,4 @@ export const Flex = memo((props: FlexProps) => {
       {children}
     </div>
   );
-});
+};

@@ -19,6 +19,7 @@ import { Page } from './Page/Page';
 import { HStack } from './Stack/HStack/HStack';
 import { VStack } from './Stack/VStack/VStack';
 import { Tabs, TabItem } from './Tabs/Tabs';
+import { ListBox } from './ListBox/ListBox';
 
 export {
   AppLink,
@@ -48,4 +49,5 @@ export {
   TabItem,
   HStack,
   VStack,
+  ListBox,
 };
