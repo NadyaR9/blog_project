@@ -1,5 +1,5 @@
 import { classNames } from 'shared/config/lib/classNames/classNames';
-import { Loader } from 'shared/ui';
+import { HStack, Loader } from 'shared/ui';
 import cls from './PageLoader.module.scss';
 
 interface PageLoaderProps {
@@ -7,7 +7,7 @@ interface PageLoaderProps {
 }
 
 export const PageLoader = ({ className }: PageLoaderProps) => (
-  <div className={classNames(cls.PageLoader, {}, [className])}>
+  <HStack justify="center" className={classNames(cls.PageLoader, {}, [className])}>
     <Loader />
-  </div>
+  </HStack>
 );

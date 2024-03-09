@@ -453,7 +453,8 @@
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT", "ECONOMICS"
+        "IT",
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -1069,6 +1070,12 @@
       "userId": "2",
       "text": "kek",
       "id": "CxgRW2I"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "ksjdfnkjnkjnka",
+      "id": "Qggphh9"
     }
   ],
   "users": [

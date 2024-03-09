@@ -16,6 +16,8 @@ import { Icon } from './Icon/Icon';
 import { Code } from './Code/Code';
 import { Card } from './Card/Card';
 import { Page } from './Page/Page';
+import { HStack } from './Stack/HStack/HStack';
+import { VStack } from './Stack/VStack/VStack';
 import { Tabs, TabItem } from './Tabs/Tabs';
 
 export {
@@ -44,4 +46,6 @@ export {
   Page,
   Tabs,
   TabItem,
+  HStack,
+  VStack,
 };

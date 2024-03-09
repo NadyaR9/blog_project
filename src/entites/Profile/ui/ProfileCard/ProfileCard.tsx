@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { classNames, Mods } from 'shared/config/lib/classNames/classNames';
 import {
-  TextAligns, Input, Loader, Text, TextVariants, Avatar,
+  TextAligns, Input, Loader, Text, TextVariants, Avatar, VStack, HStack,
 } from 'shared/ui';
 import { Profile } from 'entites/Profile';
 import { Currency, CurrencySelect } from 'entites/Currency';
@@ -49,81 +49,79 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
 
   if (isLoading) {
     return (
-      <div className={classNames(cls.ProfileCard, {}, [className, cls.isLoading])}>
+      <HStack justify="center" className={classNames(cls.ProfileCard, {}, [className, cls.isLoading])}>
         <Loader />
-      </div>
+      </HStack>
     );
   }
   if (error) {
     return (
-      <div className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+      <HStack justify="center" className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
         <Text
           title={t('ProfileErrorTitle')}
           text={t('ProfileErrorDescription')}
           align={TextAligns.CENTER}
           variants={TextVariants.ERROR}
         />
-      </div>
+      </HStack>
     );
   }
 
   return (
-    <div className={classNames(cls.ProfileCard, mods, [className])}>
-      <div className={cls.data}>
-        {data?.avatar && (
-          <div className={cls.avatarWrapper}>
-            <Avatar
-              src={data.avatar}
-            />
-          </div>
-        )}
-        <Input
-          placeholder={t('name')}
-          value={data?.firstname}
-          onChange={onChangeFirstname}
-          readonly={readonly}
-        />
-        <Input
-          placeholder={t('surname')}
-          value={data?.lastname}
-          onChange={onChangeLastname}
-          readonly={readonly}
-        />
-        <Input
-          placeholder={t('age')}
-          value={data?.age}
-          onChange={onChangeAge}
-          readonly={readonly}
-        />
-        <Input
-          placeholder={t('city')}
-          value={data?.city}
-          onChange={onChangeCity}
-          readonly={readonly}
-        />
-        <Input
-          placeholder={t('username')}
-          value={data?.username}
-          onChange={onChangeUsername}
-          readonly={readonly}
-        />
-        <Input
-          placeholder={t('avatar')}
-          value={data?.avatar}
-          onChange={onChangeAvatar}
-          readonly={readonly}
-        />
-        <CurrencySelect
-          value={data?.currency}
-          onChange={onChangeCurrency}
-          readonly={readonly}
-        />
-        <CountrySelect
-          value={data?.country}
-          onChange={onChangeCountry}
-          readonly={readonly}
-        />
-      </div>
-    </div>
+    <VStack gap="16" max className={classNames(cls.ProfileCard, mods, [className])}>
+      {data?.avatar && (
+        <HStack justify="center" max>
+          <Avatar
+            src={data.avatar}
+          />
+        </HStack>
+      )}
+      <Input
+        placeholder={t('name')}
+        value={data?.firstname}
+        onChange={onChangeFirstname}
+        readonly={readonly}
+      />
+      <Input
+        placeholder={t('surname')}
+        value={data?.lastname}
+        onChange={onChangeLastname}
+        readonly={readonly}
+      />
+      <Input
+        placeholder={t('age')}
+        value={data?.age}
+        onChange={onChangeAge}
+        readonly={readonly}
+      />
+      <Input
+        placeholder={t('city')}
+        value={data?.city}
+        onChange={onChangeCity}
+        readonly={readonly}
+      />
+      <Input
+        placeholder={t('username')}
+        value={data?.username}
+        onChange={onChangeUsername}
+        readonly={readonly}
+      />
+      <Input
+        placeholder={t('avatar')}
+        value={data?.avatar}
+        onChange={onChangeAvatar}
+        readonly={readonly}
+      />
+      <CurrencySelect
+        value={data?.currency}
+        onChange={onChangeCurrency}
+        readonly={readonly}
+      />
+      <CountrySelect
+        value={data?.country}
+        onChange={onChangeCountry}
+        readonly={readonly}
+      />
+    </VStack>
   );
 });
