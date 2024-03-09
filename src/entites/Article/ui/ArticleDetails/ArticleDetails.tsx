@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/config/lib/classNames/classNames';
 import {
-  Avatar, Skeleton, Text, TextSize, TextVariants, Icon,
+  Avatar, Skeleton, Text, TextSize, TextVariants, Icon, HStack, VStack,
 } from 'shared/ui';
 import { DynamicModuleLoader, ReducerList } from 'shared/config/lib/components';
 import { useAppDispatch } from 'shared/config/lib/hooks/useAppDispatch/useAppDispatch';
@@ -68,47 +68,49 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     );
   } else if (isLoading) {
     content = (
-      <div className={cls.skeletonWrapper}>
+      <VStack max justify="center">
         <Skeleton className={cls.avatar} width={150} height={150} border="50%" />
         <Skeleton className={cls.title} width="100%" height={32} />
         <Skeleton className={cls.skeleton} width={600} height={24} />
         <Skeleton className={cls.skeleton} width="100%" height={200} />
         <Skeleton className={cls.skeleton} width="100%" height={200} />
-      </div>
+      </VStack>
     );
   } else {
     content = (
-      <div className={cls.skeletonWrapper}>
-        <div className={cls.avatarWrapper}>
+      <>
+        <HStack max justify="center">
           <Avatar size={150} src={data?.img} />
-        </div>
-        <Text
-          title={data?.title}
-          text={data?.subtitle}
-          size={TextSize.L}
-        />
-        <div className={cls.articleItem}>
-          <Icon Svg={EyeIcon} />
+        </HStack>
+        <VStack gap="4" max>
           <Text
-            text={String(data?.views)}
+            title={data?.title}
+            text={data?.subtitle}
+            size={TextSize.L}
           />
-        </div>
-        <div className={cls.articleItem}>
-          <Icon Svg={CalendarIcon} />
-          <Text
-            text={data?.createdAt}
-          />
-        </div>
+          <HStack justify="center" gap="8">
+            <Icon Svg={EyeIcon} />
+            <Text
+              text={String(data?.views)}
+            />
+          </HStack>
+          <HStack justify="center" gap="8">
+            <Icon Svg={CalendarIcon} />
+            <Text
+              text={data?.createdAt}
+            />
+          </HStack>
+        </VStack>
         {data?.blocks.map(renderBlock)}
-      </div>
+      </>
     );
   }
 
   return (
     <DynamicModuleLoader reducerList={initialReducers} removeAfterUnmount>
-      <div className={classNames(cls.ArticleDetails, {}, [className])}>
+      <VStack gap="16" max className={classNames(cls.ArticleDetails, {}, [className])}>
         {content}
-      </div>
+      </VStack>
     </DynamicModuleLoader>
   );
 });

@@ -11,7 +11,7 @@ import { useAppDispatch } from 'shared/config/lib/hooks/useAppDispatch/useAppDis
 import { useInitialEffect } from 'shared/config/lib/hooks/useInitialEffect/useInitialEffect';
 import { RoutePath } from 'shared/config/route/routeConfig/routeConfig';
 import {
-  Button, ButtonVariants, Page, Text, TextSize,
+  Button, ButtonVariants, Page, Text, TextSize, VStack,
 } from 'shared/ui';
 import { getArticleCommentsError, getArticleCommentsIsLoading } from '../model/selectors/comments';
 import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle';
@@ -60,7 +60,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 
   if (!id) {
     return (
-      <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+      <Page className={classNames('', {}, [className])}>
         {t('Articles Details Page Not Found')}
       </Page>
     );
@@ -68,27 +68,33 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 
   return (
     <DynamicModuleLoader removeAfterUnmount reducerList={reducerList}>
-      <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-        <Button
-          className={cls.backButton}
-          variants={ButtonVariants.BACKGROUND_INVERTED}
-          onClick={onBackToList}
-        >
-          {t('Go Back')}
-        </Button>
-        <ArticleDetails id={id} />
-        <Text size={TextSize.L} title={t('Recommendations Block')} />
-        <ArticleList
-          articles={recommendations}
-          isLoading={recommendationsIsLoading}
-          className={cls.recommendations}
-          // eslint-disable-next-line i18next/no-literal-string
-          target="_blank"
-        />
-        <Text size={TextSize.L} title={t('Comment Block')} />
-        <AddNewCommentForm onSendComment={onSendComment} />
-        <CommentList comments={comments} isLoading={isLoading} />
+      <Page className={classNames('', {}, [className])}>
+        <VStack gap="32" max>
+          <Button
+            className={cls.backButton}
+            variants={ButtonVariants.BACKGROUND_INVERTED}
+            onClick={onBackToList}
+          >
+            {t('Go Back')}
+          </Button>
+          <VStack gap="16" max>
+            <ArticleDetails id={id} />
+            <Text size={TextSize.L} title={t('Recommendations Block')} />
+            <ArticleList
+              articles={recommendations}
+              isLoading={recommendationsIsLoading}
+              className={cls.recommendations}
+              // eslint-disable-next-line i18next/no-literal-string
+              target="_blank"
+            />
+            <Text size={TextSize.L} title={t('Comment Block')} />
+            <AddNewCommentForm onSendComment={onSendComment} />
+            <CommentList comments={comments} isLoading={isLoading} />
+          </VStack>
+
+        </VStack>
       </Page>
+
     </DynamicModuleLoader>
   );
 };

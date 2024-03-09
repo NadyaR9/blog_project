@@ -1,8 +1,7 @@
 import { ArticleBlockCode } from 'entites/Article/model/types/article';
 import { memo } from 'react';
 import { classNames } from 'shared/config/lib/classNames/classNames';
-import { Code } from 'shared/ui';
-import cls from './ArticleCodeBlockComponent.module.scss';
+import { Code, HStack } from 'shared/ui';
 
 interface ArticleCodeBlockComponentProps {
   className?: string,
@@ -13,8 +12,8 @@ export const ArticleCodeBlockComponent = memo((props: ArticleCodeBlockComponentP
   const { className, block } = props;
 
   return (
-    <div className={classNames(cls.articleCodeBlockComponent, {}, [className])}>
+    <HStack justify="center" max className={classNames('', {}, [className])}>
       <Code text={block.code} />
-    </div>
+    </HStack>
   );
 });

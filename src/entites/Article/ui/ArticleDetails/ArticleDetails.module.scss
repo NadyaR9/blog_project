@@ -2,23 +2,6 @@
   width: 100%;
 }
 
-.skeletonWrapper {
-  display: flex;
-  flex-direction: column;
-  row-gap: 24px;
-}
-
-.articleItem {
-  display: flex;
-  column-gap: 24px;
-  align-items: center;
-}
-
-.avatarWrapper {
-  display: flex;
-  justify-content: center;
-}
-
 .block {
   margin-top: 16px;
 }

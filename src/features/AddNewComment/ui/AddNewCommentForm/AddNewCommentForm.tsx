@@ -4,7 +4,9 @@ import { useSelector } from 'react-redux';
 import { classNames } from 'shared/config/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducerList } from 'shared/config/lib/components';
 import { useAppDispatch } from 'shared/config/lib/hooks/useAppDispatch/useAppDispatch';
-import { Button, ButtonVariants, Input } from 'shared/ui';
+import {
+  Button, ButtonVariants, HStack, Input,
+} from 'shared/ui';
 import { getAddNewCommentError, getAddNewCommentText } from '../../model/selectors/addNewCommentSelectors';
 import { addNewCommentActions, addNewCommentReducer } from '../../model/slices/addNewCommentSlice';
 import cls from './AddNewCommentForm.module.scss';
@@ -36,7 +38,7 @@ const AddNewCommentForm = memo((props: AddNewCommentFormProps) => {
 
   return (
     <DynamicModuleLoader reducerList={reducersList}>
-      <div className={classNames(cls.AddNewCommentForm, {}, [className])}>
+      <HStack max justify="between" className={classNames(cls.AddNewCommentForm, {}, [className])}>
         <Input
           placeholder={t('Type your comment here')}
           value={text}
@@ -48,7 +50,7 @@ const AddNewCommentForm = memo((props: AddNewCommentFormProps) => {
         >
           {t('Add New Comment')}
         </Button>
-      </div>
+      </HStack>
     </DynamicModuleLoader>
   );
 });

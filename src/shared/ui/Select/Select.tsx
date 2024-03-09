@@ -1,6 +1,7 @@
 import { ChangeEvent, useMemo } from 'react';
 import { classNames, Mods } from 'shared/config/lib/classNames/classNames';
 import cls from './Select.module.scss';
+import { HStack } from '../Stack/HStack/HStack';
 
 export interface SelectOption<T extends string> {
   value: T,
@@ -44,8 +45,8 @@ export const Select = <T extends string>(props: SelectProps<T>) => {
   };
 
   return (
-    <div
-      className={classNames(cls.Wrapper, mods, [className])}
+    <HStack
+      className={classNames('', mods, [className])}
     >
       {label && (
         <span className={cls.label}>
@@ -60,6 +61,6 @@ export const Select = <T extends string>(props: SelectProps<T>) => {
       >
         {optionsList}
       </select>
-    </div>
+    </HStack>
   );
 };

@@ -7,8 +7,9 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/config/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/config/lib/hooks/useAppDispatch/useAppDispatch';
-import { Text, Button, ButtonVariants } from 'shared/ui';
-import cls from './ProfilePageHeader.module.scss';
+import {
+  Text, Button, ButtonVariants, HStack,
+} from 'shared/ui';
 
 interface ProfilePageHeaderProps {
   className?: string,
@@ -34,40 +35,37 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
   }, [dispatch]);
 
   return (
-    <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
+    <HStack max justify="between" className={classNames('', {}, [className])}>
       <Text title={t('profile')} />
       {canEdit && (
-        <div className={cls.btnsWrapper}>
+        <div>
           {readonly ? (
             <Button
               variants={ButtonVariants.OUTLINE}
-              className={cls.editBtn}
               onClick={onEdit}
             >
               {t('edit')}
             </Button>
           )
             : (
-              <div className={cls.actionBtns}>
+              <HStack gap="16">
                 <Button
                   variants={ButtonVariants.SECONDARY_OUTLINED}
-                  className={cls.editBtn}
                   onClick={onCancel}
                 >
                   {t('cancel')}
                 </Button>
                 <Button
                   variants={ButtonVariants.PRIMARY_OUTLINED}
-                  className={cls.editBtn}
                   onClick={onSave}
                 >
                   {t('save')}
                 </Button>
-              </div>
+              </HStack>
             )}
         </div>
       )}
 
-    </div>
+    </HStack>
   );
 };
