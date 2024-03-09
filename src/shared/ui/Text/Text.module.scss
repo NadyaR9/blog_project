@@ -18,6 +18,18 @@
   text-align: center;
 }
 
+.size_s {
+  .title {
+    color: var(--primary-color);
+    font: var(--font-m);
+  }
+
+  .text {
+    color: var(--secondary-color);
+    font: var(--font-s);
+  }
+}
+
 .size_m {
   .title {
     color: var(--primary-color);

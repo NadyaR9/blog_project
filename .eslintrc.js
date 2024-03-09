@@ -50,7 +50,12 @@ module.exports = {
     camelcase: 'off',
     'i18next/no-literal-string': ['error', {
       markupOnly: true,
-      ignoreAttribute: ['to', 'data-testid', 'name', 'justify',
+      ignoreAttribute: [
+        'role',
+        'to',
+        'data-testid',
+        'name',
+        'justify',
         'align',
         'direction',
         'gap'],
