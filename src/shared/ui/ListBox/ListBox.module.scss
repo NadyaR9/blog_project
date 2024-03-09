@@ -1,0 +1,47 @@
+.ListBox {
+  position: relative;
+}
+
+.options {
+  position: absolute;
+  z-index: 1000;
+  min-width: 100%;
+  background-color: var(--list-bg);
+  border-radius: 4px;
+  border: none;
+  box-shadow: 1px 1px 2px var(--list-bg);
+}
+
+.optionsBottom {
+  top: 100%;
+
+}
+
+.optionsTop {
+  bottom: 100%;
+
+}
+
+.option {
+  padding: 10px 20px;
+}
+
+.active {
+  background-color: var(--inverted-bg-color);
+}
+
+.disabled {
+  background-color: var(--code-bg);
+}
+
+.trigger {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+.button {
+  padding: 5px 15px;
+}

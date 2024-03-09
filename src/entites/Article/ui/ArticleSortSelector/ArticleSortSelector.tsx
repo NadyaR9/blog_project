@@ -2,7 +2,6 @@ import { memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/config/lib/classNames/classNames';
 import { Select, SelectOption } from 'shared/ui';
-import cls from './ArticleSortSelector.module.scss';
 import { ArticleSortField } from '../../model/types/article';
 
 interface FieldsFilterProps {
@@ -31,13 +30,12 @@ export const ArticleSortSelector = memo((props: FieldsFilterProps) => {
   ], [t]);
 
   return (
-    <div className={classNames(cls.FieldsFilter, {}, [className])}>
-      <Select
-        onChange={onChange}
-        value={sort}
-        options={sortOptions}
-        label={t('Filter by')}
-      />
-    </div>
+    <Select
+      onChange={onChange}
+      value={sort}
+      options={sortOptions}
+      label={t('Filter by')}
+      className={classNames('', {}, [className])}
+    />
   );
 });
