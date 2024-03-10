@@ -2,10 +2,13 @@ import { LoginModal } from 'features/AuthByUsername';
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/config/lib/classNames/classNames';
-import { Button, ButtonVariants } from 'shared/ui';
+import {
+  Avatar, Button, ButtonVariants, Dropdown,
+} from 'shared/ui';
 import { getUserAuthData, userActions } from 'entites/User';
 
 import { useDispatch, useSelector } from 'react-redux';
+import { RoutePath } from 'shared/config/route/routeConfig/routeConfig';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -13,7 +16,7 @@ interface NavbarProps {
 }
 
 export const Navbar = memo(({ className }: NavbarProps) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('main');
   const authData = useSelector(getUserAuthData);
   const dispatch = useDispatch();
   const [isAuthModal, setIsAuthModal] = useState<boolean>(false);
@@ -32,14 +35,23 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
   if (authData) {
     return (
-      <div className={classNames(cls.Navbar, {}, [className])}>
-        <Button
-          variants={ButtonVariants.SECONDARY}
-          onClick={onLogout}
-        >
-          {t('LogOut')}
-        </Button>
-      </div>
+      <Dropdown
+        directions="bottom left"
+        className={cls.Navbar}
+        trigger={<Avatar size={30} src={authData.avatar} />}
+        items={[
+          {
+            content: t('User Profile'),
+            value: 'profile',
+            href: RoutePath.profile + authData.id,
+          },
+          {
+            content: t('Log Out'),
+            value: 'logout',
+            onClick: onLogout,
+          },
+        ]}
+      />
     );
   }
   return (

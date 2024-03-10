@@ -19,5 +19,9 @@
   "currency": "Валюта",
   "country": "Страна",
   "Country": "Страна",
-  "Search": "Поиск"
+  "Search": "Поиск",
+  "translation": {},
+  "main": {
+    "User Profile": "Профиль"
+  }
 }

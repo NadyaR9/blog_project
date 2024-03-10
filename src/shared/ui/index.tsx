@@ -20,6 +20,7 @@ import { HStack } from './Stack/HStack/HStack';
 import { VStack } from './Stack/VStack/VStack';
 import { Tabs, TabItem } from './Tabs/Tabs';
 import { ListBox } from './ListBox/ListBox';
+import { Dropdown } from './Dropdown/Dropdown';
 
 export {
   AppLink,
@@ -50,4 +51,5 @@ export {
   HStack,
   VStack,
   ListBox,
+  Dropdown,
 };
