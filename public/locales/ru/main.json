@@ -1,5 +1,8 @@
 {
   "main": "Главная страница",
   "Read more": "Читать далее",
-  "Choose the value": "Выберите значение"
+  "Choose the value": "Выберите значение",
+  "User Profile": "Профиль",
+  "Log Out": "Выйти",
+  "LogIn": "Войти"
 }

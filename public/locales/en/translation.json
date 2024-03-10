@@ -20,5 +20,9 @@
   "country": "Country",
   "Country": "Country",
   "Articles Page": "Articles Page",
-  "Search": "Search"
+  "Search": "Search",
+  "translation": {},
+  "main": {
+    "User Profile": "Profile"
+  }
 }

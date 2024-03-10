@@ -1,5 +1,8 @@
 {
   "main": "Main page",
   "Read more": "Read more",
-  "Choose the value": "Choose a value"
+  "Choose the value": "Choose a value",
+  "User Profile": "Profile",
+  "Log Out": "Log out",
+  "LogIn": "Log in"
 }
