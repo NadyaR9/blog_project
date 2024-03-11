@@ -19,6 +19,7 @@ import cls from './ArticlesPage.module.scss';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { fetchArticlesInited } from '../../model/services/fetchArticlesInited/fetchArticlesInited';
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
+import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
 
 interface ArticlesPageProps {
   className?: string;
@@ -32,9 +33,6 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
   const { className } = props;
   const { t } = useTranslation('articles');
   const dispatch = useAppDispatch();
-  const articles = useSelector(getArticles.selectAll);
-  const isLoading = useSelector(getArticlesIsLoading);
-  const view = useSelector(getArticlesView);
   const [searchParams] = useSearchParams();
 
   useInitialEffect(() => {
@@ -53,11 +51,7 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
       >
         <ArticlesPageFilters />
         {t('Articles Page')}
-        <ArticleList
-          articles={articles}
-          isLoading={isLoading}
-          view={view}
-        />
+        <ArticleInfiniteList />
       </Page>
     </DynamicModuleLoader>
   );
