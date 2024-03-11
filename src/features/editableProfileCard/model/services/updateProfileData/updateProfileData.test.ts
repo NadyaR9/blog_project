@@ -1,8 +1,8 @@
 import { Country } from 'entites/Country';
 import { Currency } from 'entites/Currency';
 import { TestAsyncThunk } from 'shared/config/tests/TestAsyncThunk/TestAsyncThunk';
-import { ValidateProfileError } from '../../types/profile';
 import { updateProfileData } from './updateProfileData';
+import { ValidateProfileError } from '../../types/editableProfileCardSchema';
 
 const data = {
   id: '1',

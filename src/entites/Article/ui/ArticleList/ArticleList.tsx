@@ -9,7 +9,7 @@ interface ArticleListProps {
   className?: string,
   articles: Article[],
   view?: ArticleView,
-  isLoading: boolean,
+  isLoading?: boolean,
   target?: HTMLAttributeAnchorTarget,
 }
 
@@ -22,7 +22,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     className,
     articles,
     view = ArticleView.SMALL,
-    isLoading,
+    isLoading = false,
     target = '_self',
   } = props;
 

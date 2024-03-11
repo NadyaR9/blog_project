@@ -16,5 +16,6 @@
   "invalid user data": "Invalid user data",
   "invalid country": "Invalid country",
   "no data": "No data",
-  "server error": "Server error on save"
+  "server error": "Server error on save",
+  "Profile not found": "Profile not found"
 }

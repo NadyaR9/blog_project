@@ -1076,6 +1076,12 @@
       "userId": "1",
       "text": "ksjdfnkjnkjnka",
       "id": "Qggphh9"
+    },
+    {
+      "articleId": "8",
+      "userId": "1",
+      "text": "comment",
+      "id": "ec4U0kF"
     }
   ],
   "users": [
@@ -1102,7 +1108,7 @@
       "age": 24,
       "currency": "EUR",
       "country": "Kazakhstan",
-      "city": "Belgorod",
+      "city": "Belgorod still",
       "username": "admin",
       "avatar": "https://i.pinimg.com/564x/81/09/1a/81091a8004c62607962adaaea674dc39.jpg"
     },
