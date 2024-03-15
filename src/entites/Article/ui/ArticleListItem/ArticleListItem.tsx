@@ -9,9 +9,8 @@ import EyeIcon from 'shared/assets/icons/eye.svg';
 import { useHover } from 'shared/config/lib/hooks/useHover/useHover';
 import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/route/routeConfig/routeConfig';
-import {
-  Article, ArticleBlockText, ArticleBlockType, ArticleView,
-} from '../../model/types/article';
+import { Article, ArticleBlockText } from '../../model/types/article';
+import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 
 import cls from './ArticleListItem.module.scss';

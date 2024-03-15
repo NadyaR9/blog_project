@@ -5,7 +5,7 @@ import { classNames } from 'shared/config/lib/classNames/classNames';
 import {
   Button, ButtonVariants, Input, Text, TextVariants,
 } from 'shared/ui';
-import { DynamicModuleLoader, ReducerList } from 'shared/config/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { DynamicModuleLoader, ReducerList } from 'shared/config/lib/components';
 import { useAppDispatch } from 'shared/config/lib/hooks/useAppDispatch/useAppDispatch';
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
