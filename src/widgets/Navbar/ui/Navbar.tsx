@@ -5,7 +5,9 @@ import { classNames } from 'shared/config/lib/classNames/classNames';
 import {
   Avatar, Button, ButtonVariants, Dropdown,
 } from 'shared/ui';
-import { getUserAuthData, userActions } from 'entites/User';
+import {
+  getUserAuthData, isUserAdmin, isUserManager, userActions,
+} from 'entites/User';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { RoutePath } from 'shared/config/route/routeConfig/routeConfig';
@@ -20,7 +22,8 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   const authData = useSelector(getUserAuthData);
   const dispatch = useDispatch();
   const [isAuthModal, setIsAuthModal] = useState<boolean>(false);
-
+  const isAdmin = useSelector(isUserAdmin);
+  const isManager = useSelector(isUserManager);
   const onCloseModal = useCallback(() => {
     setIsAuthModal(false);
   }, []);
@@ -40,6 +43,11 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         className={cls.Navbar}
         trigger={<Avatar size={30} src={authData.avatar} />}
         items={[
+          ...(isAdmin || isManager ? [{
+            content: t('Admin'),
+            value: 'admin',
+            href: RoutePath.admin,
+          }] : []),
           {
             content: t('User Profile'),
             value: 'profile',

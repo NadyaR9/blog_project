@@ -1,6 +1,8 @@
 {
   "About": "About",
+  "Access denied": "Access denied",
   "Add New Comment": "Add New Comment",
+  "Admin": "Admin",
   "Articles": "Articles",
   "Articles Details Page": "Articles Details Page",
   "Articles Details Page Not Found": "Articles Details Page Not Found",
@@ -39,6 +41,7 @@
   "User Profile": "User Profile",
   "Username": "Username",
   "about": "about",
+  "admin": "admin",
   "age": "age",
   "all": "all",
   "asc": "asc",
