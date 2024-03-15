@@ -2,7 +2,7 @@ import { memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/config/lib/classNames/classNames';
 import { Select, SelectOption } from 'shared/ui';
-import { ArticleSortField } from '../../model/types/article';
+import { ArticleSortField } from '../../model/consts/consts';
 
 interface FieldsFilterProps {
   className?: string,

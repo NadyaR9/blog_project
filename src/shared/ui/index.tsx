@@ -10,7 +10,7 @@ import {
   Text, TextVariants, TextAligns, TextSize,
 } from './Text/Text';
 import { Avatar } from './Avatar/Avatar';
-import { Select, SelectOption } from './Select/Select';
+import { Select } from './Select/Select';
 import { Skeleton } from './Skeleton/Skeleton';
 import { Icon } from './Icon/Icon';
 import { Code } from './Code/Code';
@@ -18,9 +18,12 @@ import { Card } from './Card/Card';
 import { Page } from './Page/Page';
 import { HStack } from './Stack/HStack/HStack';
 import { VStack } from './Stack/VStack/VStack';
-import { Tabs, TabItem } from './Tabs/Tabs';
+import { Tabs } from './Tabs/Tabs';
 import { ListBox } from './ListBox/ListBox';
 import { Dropdown } from './Dropdown/Dropdown';
+
+export type { SelectOption } from './Select/Select';
+export type { TabItem } from './Tabs/Tabs';
 
 export {
   AppLink,
@@ -39,7 +42,6 @@ export {
   TextAligns,
   Avatar,
   Select,
-  SelectOption,
   Skeleton,
   TextSize,
   Icon,
@@ -47,7 +49,6 @@ export {
   Card,
   Page,
   Tabs,
-  TabItem,
   HStack,
   VStack,
   ListBox,
