@@ -5,7 +5,7 @@ import { Country } from '../../model/types';
 
 export default {
   component: CountrySelect,
-  title: 'entities/Select',
+  title: 'entities/CountrySelect',
 } as ComponentMeta<typeof CountrySelect>;
 
 const Template: ComponentStory<typeof CountrySelect> = (args) => <CountrySelect {...args} />;

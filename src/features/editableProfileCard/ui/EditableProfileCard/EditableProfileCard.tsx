@@ -19,7 +19,7 @@ import { fetchProfileData } from '../../model/services/fetchProfileData/fetchPro
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
 
 interface EditableProfileCardProps {
-    id: string,
+    id?: string,
     className?: string,
 }
 

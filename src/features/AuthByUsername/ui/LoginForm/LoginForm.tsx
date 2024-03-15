@@ -36,11 +36,11 @@ const LoginForm = (props: LoginFormProps) => {
 
   const { t } = useTranslation();
 
-  const onChangeUsername = useCallback((value) => {
+  const onChangeUsername = useCallback((value: string) => {
     dispatch(setUsername(value));
   }, [dispatch]);
 
-  const onChangePassword = useCallback((value) => {
+  const onChangePassword = useCallback((value: string) => {
     dispatch(setPassword(value));
   }, [dispatch]);
 

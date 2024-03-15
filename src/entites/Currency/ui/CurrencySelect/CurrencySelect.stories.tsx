@@ -5,7 +5,7 @@ import { Currency } from '../../model/types';
 
 export default {
   component: CurrencySelect,
-  title: 'entities/Select',
+  title: 'entities/CurrencySelect',
 } as ComponentMeta<typeof CurrencySelect>;
 
 const Template: ComponentStory<typeof CurrencySelect> = (args) => <CurrencySelect {...args} />;
