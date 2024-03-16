@@ -6,7 +6,6 @@ import { useAppDispatch } from 'shared/config/lib/hooks/useAppDispatch/useAppDis
 import { useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entites/User';
 import { RoutePath } from 'shared/config/route/routeConfig/routeConfig';
-import cls from './AvatarDropdown.module.scss';
 
 interface AvatarDropdownProps {
   className?: string,
@@ -26,7 +25,7 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
     return (
       <Dropdown
         directions="bottom left"
-        className={classNames(cls.AvatarDropdown, {}, [className])}
+        className={classNames('', {}, [className])}
         trigger={<Avatar size={30} src={authData.avatar} />}
         items={[
           {

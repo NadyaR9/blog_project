@@ -1,6 +1,10 @@
-.NotificationPopup {}
+.notifications {
+  min-height: 150px;
+  max-height: 300px;
+  width: 500px;
+  overflow-y: auto;
+}
 
-.popover {
-  width: 100%;
-  border-radius: 12px;
+.notificationsDrawer {
+  max-height: unset;
 }

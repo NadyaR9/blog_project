@@ -1,13 +1,14 @@
-import { ReactNode } from 'react';
-import { classNames, Mods } from 'shared/config/lib/classNames/classNames';
+import { ReactNode, memo } from 'react';
+import { Mods, classNames } from 'shared/config/lib/classNames/classNames';
 import { useModal } from 'shared/config/lib/hooks/useModal/useModal';
-import { Portal } from '../Portal/Portal';
-import cls from './Modal.module.scss';
+import { useTheme } from 'app/providers/ThemeProvider';
+import cls from './Drawer.module.scss';
 import { Overlay } from '../Overlay/Overlay';
+import { Portal } from '../Portal/Portal';
 
-interface ModalProps {
+interface DrawerProps {
   className?: string,
-  children?: ReactNode,
+  children: ReactNode,
   isOpen: boolean,
   onClose: () => void,
   lazy: boolean,
@@ -15,31 +16,29 @@ interface ModalProps {
 
 const ANIMATION_DELAY = 300;
 
-export const Modal = (props: ModalProps) => {
+export const Drawer = memo((props: DrawerProps) => {
   const {
-    className,
-    children,
-    isOpen = false,
-    onClose,
-    lazy,
+    className, children, isOpen, onClose, lazy,
   } = props;
+  const { theme } = useTheme();
   const { close, isMounted, isClosing } = useModal({
     animation: ANIMATION_DELAY,
     onClose,
     isOpen,
   });
 
+  if (lazy && !isMounted) {
+    return null;
+  }
+
   const mods: Mods = {
     [cls.opened]: isOpen,
     [cls.isClosing]: isClosing,
   };
 
-  if (lazy && !isMounted) {
-    return null;
-  }
   return (
     <Portal>
-      <div className={classNames(cls.Modal, mods, [className])}>
+      <div className={classNames(cls.Drawer, mods, [className, theme, 'app_drawer'])}>
         <Overlay onClick={close} />
         <div className={cls.content}>
           {children}
@@ -47,4 +46,4 @@ export const Modal = (props: ModalProps) => {
       </div>
     </Portal>
   );
-};
+});
