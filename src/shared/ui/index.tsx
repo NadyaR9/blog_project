@@ -19,8 +19,8 @@ import { Page } from './Page/Page';
 import { HStack } from './Stack/HStack/HStack';
 import { VStack } from './Stack/VStack/VStack';
 import { Tabs } from './Tabs/Tabs';
-import { ListBox } from './ListBox/ListBox';
-import { Dropdown } from './Dropdown/Dropdown';
+import { ListBox } from './Popups/ui/ListBox/ListBox';
+import { Dropdown } from './Popups/ui/Dropdown/Dropdown';
 
 export type { SelectOption } from './Select/Select';
 export type { TabItem } from './Tabs/Tabs';
