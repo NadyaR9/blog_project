@@ -5,7 +5,7 @@ import { classNames } from 'shared/config/lib/classNames/classNames';
 import {
   Button, ButtonVariants, Input, Text, TextVariants,
 } from 'shared/ui';
-import { DynamicModuleLoader, ReducerList } from 'shared/config/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { DynamicModuleLoader, ReducerList } from 'shared/config/lib/components';
 import { useAppDispatch } from 'shared/config/lib/hooks/useAppDispatch/useAppDispatch';
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
@@ -36,11 +36,11 @@ const LoginForm = (props: LoginFormProps) => {
 
   const { t } = useTranslation();
 
-  const onChangeUsername = useCallback((value) => {
+  const onChangeUsername = useCallback((value: string) => {
     dispatch(setUsername(value));
   }, [dispatch]);
 
-  const onChangePassword = useCallback((value) => {
+  const onChangePassword = useCallback((value: string) => {
     dispatch(setPassword(value));
   }, [dispatch]);
 

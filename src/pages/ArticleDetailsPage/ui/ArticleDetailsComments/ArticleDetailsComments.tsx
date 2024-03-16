@@ -1,7 +1,9 @@
-import { memo, useCallback } from 'react';
+import { Suspense, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/config/lib/classNames/classNames';
-import { Text, TextSize, VStack } from 'shared/ui';
+import {
+  Loader, Text, TextSize, VStack,
+} from 'shared/ui';
 import { AddNewCommentForm } from 'features/AddNewComment';
 import { CommentList } from 'entites/Comment';
 import { useAppDispatch } from 'shared/config/lib/hooks/useAppDispatch/useAppDispatch';
@@ -14,7 +16,7 @@ import { addCommentForArticle } from '../../model/services/addCommentForArticle/
 
 interface ArticleDetailsCommentsProps {
   className?: string,
-  id: string,
+  id?: string,
 }
 
 export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) => {
@@ -25,7 +27,9 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
   const isLoading = useSelector(getArticleCommentsIsLoading);
 
   useInitialEffect(() => {
-    dispatch(fetchCommentsByArticleId(id));
+    if (id) {
+      dispatch(fetchCommentsByArticleId(id));
+    }
   });
 
   const onSendComment = useCallback((text: string) => {
@@ -35,7 +39,9 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
   return (
     <VStack max gap="8" className={classNames('', {}, [className])}>
       <Text size={TextSize.L} title={t('Comment Block')} />
-      <AddNewCommentForm onSendComment={onSendComment} />
+      <Suspense fallback={<Loader />}>
+        <AddNewCommentForm onSendComment={onSendComment} />
+      </Suspense>
       <CommentList comments={comments} isLoading={isLoading} />
     </VStack>
   );

@@ -1,6 +1,2 @@
-import { DynamicModuleLoader, ReducerList } from './DynamicModuleLoader/DynamicModuleLoader';
-
-export {
-  DynamicModuleLoader,
-  ReducerList,
-};
+export type { ReducerList } from './DynamicModuleLoader/types';
+export { DynamicModuleLoader } from './DynamicModuleLoader/DynamicModuleLoader';
