@@ -2,13 +2,12 @@ import { LoginModal } from 'features/AuthByUsername';
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/config/lib/classNames/classNames';
-import {
-  Avatar, Button, ButtonVariants, Dropdown,
-} from 'shared/ui';
-import { getUserAuthData, userActions } from 'entites/User';
+import { Button, ButtonVariants } from 'shared/ui';
+import { getUserAuthData } from 'entites/User';
 
-import { useDispatch, useSelector } from 'react-redux';
-import { RoutePath } from 'shared/config/route/routeConfig/routeConfig';
+import { useSelector } from 'react-redux';
+import { AvatarDropdown } from 'features/AvatarDropdown/ui/AvatarDropdown';
+import { NotificationPopup } from 'features/NotificationPopup/ui/NotificationPopup';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -18,7 +17,6 @@ interface NavbarProps {
 export const Navbar = memo(({ className }: NavbarProps) => {
   const { t } = useTranslation('main');
   const authData = useSelector(getUserAuthData);
-  const dispatch = useDispatch();
   const [isAuthModal, setIsAuthModal] = useState<boolean>(false);
 
   const onCloseModal = useCallback(() => {
@@ -29,29 +27,12 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     setIsAuthModal(true);
   }, []);
 
-  const onLogout = useCallback(() => {
-    dispatch(userActions.logoutUser());
-  }, [dispatch]);
-
   if (authData) {
     return (
-      <Dropdown
-        directions="bottom left"
-        className={cls.Navbar}
-        trigger={<Avatar size={30} src={authData.avatar} />}
-        items={[
-          {
-            content: t('User Profile'),
-            value: 'profile',
-            href: RoutePath.profile + authData.id,
-          },
-          {
-            content: t('Log Out'),
-            value: 'logout',
-            onClick: onLogout,
-          },
-        ]}
-      />
+      <header className={classNames(cls.Navbar, {}, [className])}>
+        <NotificationPopup />
+        <AvatarDropdown />
+      </header>
     );
   }
   return (
