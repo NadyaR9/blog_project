@@ -1,16 +1,16 @@
 /* eslint-disable max-len */
-import {
-  ArticleList, ArticleView,
-} from 'entites/Article';
 import { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { classNames } from 'shared/config/lib/classNames/classNames';
-import { DynamicModuleLoader, ReducerList } from 'shared/config/lib/components';
-import { useAppDispatch } from 'shared/config/lib/hooks/useAppDispatch/useAppDispatch';
-import { useInitialEffect } from 'shared/config/lib/hooks/useInitialEffect/useInitialEffect';
-import { Page } from 'shared/ui';
 import { useSearchParams } from 'react-router-dom';
+import {
+  ArticleList, ArticleView,
+} from '@/entites/Article';
+import { classNames } from '@/shared/config/lib/classNames/classNames';
+import { DynamicModuleLoader, ReducerList } from '@/shared/config/lib/components';
+import { useAppDispatch } from '@/shared/config/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from '@/shared/config/lib/hooks/useInitialEffect/useInitialEffect';
+import { Page } from '@/shared/ui';
 import {
   getArticlesIsLoading, getArticlesView,
 } from '../../model/selectors/getArticlesSelectors';

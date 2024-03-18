@@ -1,7 +1,7 @@
-import { ArticleBlockCode } from 'entites/Article/model/types/article';
 import { memo } from 'react';
-import { classNames } from 'shared/config/lib/classNames/classNames';
-import { Code, HStack } from 'shared/ui';
+import { ArticleBlockCode } from '@/entites/Article/model/types/article';
+import { classNames } from '@/shared/config/lib/classNames/classNames';
+import { Code, HStack } from '@/shared/ui';
 
 interface ArticleCodeBlockComponentProps {
   className?: string,

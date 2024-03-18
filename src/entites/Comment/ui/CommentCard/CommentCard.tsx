@@ -1,11 +1,11 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/config/lib/classNames/classNames';
-import { RouteName, RoutePath } from 'shared/config/route/routeConfig/routeConfig';
+import { classNames } from '@/shared/config/lib/classNames/classNames';
+import { RouteName, RoutePath } from '@/shared/config/route/routeConfig/routeConfig';
 import {
   AppLink,
   Avatar, HStack, Icon, Skeleton, Text, VStack,
-} from 'shared/ui';
+} from '@/shared/ui';
 import { Comment } from '../../model/types/comment';
 import cls from './CommentCard.module.scss';
 

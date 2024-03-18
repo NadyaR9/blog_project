@@ -1,14 +1,14 @@
 import { Suspense, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/config/lib/classNames/classNames';
+import { useSelector } from 'react-redux';
+import { classNames } from '@/shared/config/lib/classNames/classNames';
 import {
   Loader, Text, TextSize, VStack,
-} from 'shared/ui';
-import { AddNewCommentForm } from 'features/AddNewComment';
-import { CommentList } from 'entites/Comment';
-import { useAppDispatch } from 'shared/config/lib/hooks/useAppDispatch/useAppDispatch';
-import { useSelector } from 'react-redux';
-import { useInitialEffect } from 'shared/config/lib/hooks/useInitialEffect/useInitialEffect';
+} from '@/shared/ui';
+import { AddNewCommentForm } from '@/features/AddNewComment';
+import { CommentList } from '@/entites/Comment';
+import { useAppDispatch } from '@/shared/config/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from '@/shared/config/lib/hooks/useInitialEffect/useInitialEffect';
 import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';

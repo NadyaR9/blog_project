@@ -1,5 +1,5 @@
 import { HTMLAttributeAnchorTarget, memo, useCallback } from 'react';
-import { classNames } from 'shared/config/lib/classNames/classNames';
+import { classNames } from '@/shared/config/lib/classNames/classNames';
 import { Article } from '../../model/types/article';
 import { ArticleView } from '../../model/consts/consts';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';

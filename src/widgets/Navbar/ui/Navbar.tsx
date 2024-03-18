@@ -1,13 +1,13 @@
-import { LoginModal } from 'features/AuthByUsername';
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/config/lib/classNames/classNames';
-import { Button, ButtonVariants } from 'shared/ui';
-import { getUserAuthData } from 'entites/User';
-
 import { useSelector } from 'react-redux';
-import { AvatarDropdown } from 'features/AvatarDropdown/ui/AvatarDropdown';
-import { NotificationPopup } from 'features/NotificationPopup/ui/NotificationPopup';
+import { LoginModal } from '@/features/AuthByUsername';
+import { classNames } from '@/shared/config/lib/classNames/classNames';
+import { Button, ButtonVariants } from '@/shared/ui';
+import { getUserAuthData } from '@/entites/User';
+
+import { AvatarDropdown } from '@/features/AvatarDropdown/ui/AvatarDropdown';
+import { NotificationPopup } from '@/features/NotificationPopup/ui/NotificationPopup';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {

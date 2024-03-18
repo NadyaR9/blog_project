@@ -1,12 +1,12 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { classNames } from 'shared/config/lib/classNames/classNames';
-import { DynamicModuleLoader, ReducerList } from 'shared/config/lib/components';
-import { useAppDispatch } from 'shared/config/lib/hooks/useAppDispatch/useAppDispatch';
+import { classNames } from '@/shared/config/lib/classNames/classNames';
+import { DynamicModuleLoader, ReducerList } from '@/shared/config/lib/components';
+import { useAppDispatch } from '@/shared/config/lib/hooks/useAppDispatch/useAppDispatch';
 import {
   Button, ButtonVariants, HStack, Input,
-} from 'shared/ui';
+} from '@/shared/ui';
 import { getAddNewCommentError, getAddNewCommentText } from '../../model/selectors/addNewCommentSelectors';
 import { addNewCommentActions, addNewCommentReducer } from '../../model/slices/addNewCommentSlice';
 import cls from './AddNewCommentForm.module.scss';
