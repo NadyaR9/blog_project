@@ -27,7 +27,10 @@
   --collapsed-sidebar: 80px;
   --opened-sidebar: 300px;
   --overlay-color: rgba(0 0 0 / 60%);
-  --modal-z-index: 2;
+
+  // z - Индексы
+  --modal-z-index: 1000;
+  --overlay-z-index: 100;
 
   /* colors */
   --red-light: #eb455f;
