@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes, memo } from 'react';
-import { classNames, Mods } from 'shared/config/lib/classNames/classNames';
+import { classNames, Mods } from '@/shared/config/lib/classNames/classNames';
 import cls from './Button.module.scss';
 
 export enum ButtonVariants {

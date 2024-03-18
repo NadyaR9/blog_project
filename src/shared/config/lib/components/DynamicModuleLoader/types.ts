@@ -1,4 +1,4 @@
-import { StateSchema, StateSchemaKyes } from 'app/providers/StoreProvider';
+import { StateSchema, StateSchemaKyes } from '@/app/providers/StoreProvider';
 import { Reducer } from '@reduxjs/toolkit';
 
 export type ReducerList = {

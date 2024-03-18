@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
-import { User } from 'entites/User';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
+import { User } from '@/entites/User';
 import { AvatarDropdown } from './AvatarDropdown';
 
 const authData: User = {

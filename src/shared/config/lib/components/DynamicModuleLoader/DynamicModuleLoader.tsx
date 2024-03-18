@@ -1,4 +1,4 @@
-import { StateSchemaKyes, ReduxStoreWithManager } from 'app/providers/StoreProvider';
+import { StateSchemaKyes, ReduxStoreWithManager } from '@/app/providers/StoreProvider';
 import { ReactNode, useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
 import { ReducerList } from './types';

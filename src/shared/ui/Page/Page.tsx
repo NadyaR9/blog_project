@@ -2,15 +2,15 @@ import {
   MutableRefObject, ReactNode, UIEvent, memo, useRef,
 } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useInfinityScroll } from 'shared/config/lib/hooks/useInfinityScroll/useInfinityScroll';
-import { classNames } from 'shared/config/lib/classNames/classNames';
-import { useAppDispatch } from 'shared/config/lib/hooks/useAppDispatch/useAppDispatch';
 import { useLocation } from 'react-router-dom';
-import { ScrollSaverActions, getScrollSaverByPath } from 'features/ScrollSaver';
-import { useInitialEffect } from 'shared/config/lib/hooks/useInitialEffect/useInitialEffect';
 import { useSelector } from 'react-redux';
-import { StateSchema } from 'app/providers/StoreProvider';
-import { useThrottle } from 'shared/config/lib/hooks/useThrottle/useThrottle';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { useInfinityScroll } from '@/shared/config/lib/hooks/useInfinityScroll/useInfinityScroll';
+import { classNames } from '@/shared/config/lib/classNames/classNames';
+import { useAppDispatch } from '@/shared/config/lib/hooks/useAppDispatch/useAppDispatch';
+import { ScrollSaverActions, getScrollSaverByPath } from '@/features/ScrollSaver';
+import { useInitialEffect } from '@/shared/config/lib/hooks/useInitialEffect/useInitialEffect';
+import { useThrottle } from '@/shared/config/lib/hooks/useThrottle/useThrottle';
 import cls from './Page.module.scss';
 
 interface PageProps {

@@ -1,8 +1,8 @@
 import { Fragment, ReactNode } from 'react';
 import { Listbox as HListBox } from '@headlessui/react';
-import { classNames } from 'shared/config/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { DropdownDirection } from 'shared/config/types/ui';
+import { classNames } from '@/shared/config/lib/classNames/classNames';
+import { DropdownDirection } from '@/shared/config/types/ui';
 import { Button, ButtonSize, ButtonVariants } from '../../../Button/Button';
 import cls from './ListBox.module.scss';
 import popupCls from '../../styles/popup.module.scss';

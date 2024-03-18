@@ -1,14 +1,14 @@
 import { memo, useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/config/lib/classNames/classNames';
+import { classNames } from '@/shared/config/lib/classNames/classNames';
 import {
   Avatar, Skeleton, Text, TextSize, TextVariants, Icon, HStack, VStack,
-} from 'shared/ui';
-import { DynamicModuleLoader, ReducerList } from 'shared/config/lib/components';
-import { useAppDispatch } from 'shared/config/lib/hooks/useAppDispatch/useAppDispatch';
-import EyeIcon from 'shared/assets/icons/eye.svg';
-import CalendarIcon from 'shared/assets/icons/calendar.svg';
+} from '@/shared/ui';
+import { DynamicModuleLoader, ReducerList } from '@/shared/config/lib/components';
+import { useAppDispatch } from '@/shared/config/lib/hooks/useAppDispatch/useAppDispatch';
+import EyeIcon from '@/shared/assets/icons/eye.svg';
+import CalendarIcon from '@/shared/assets/icons/calendar.svg';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import { fetchArticleDetailsData } from '../../model/services/fetchArticleDetailsData/fetchArticleDetailsData';
 import cls from './ArticleDetails.module.scss';

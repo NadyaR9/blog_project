@@ -1,6 +1,6 @@
 import { memo } from 'react';
-import { classNames } from 'shared/config/lib/classNames/classNames';
-import { Text, TextAligns, VStack } from 'shared/ui';
+import { classNames } from '@/shared/config/lib/classNames/classNames';
+import { Text, TextAligns, VStack } from '@/shared/ui';
 import { ArticleBlockImage } from '../../model/types/article';
 
 interface ArticleImageBlockComponentProps {
