@@ -1,6 +1,6 @@
-import { StateSchemaKyes, ReduxStoreWithManager } from '@/app/providers/StoreProvider';
 import { ReactNode, useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
+import { StateSchemaKyes, ReduxStoreWithManager } from '@/app/providers/StoreProvider';
 import { ReducerList } from './types';
 
 export interface DynamicModuleLoaderProps {
