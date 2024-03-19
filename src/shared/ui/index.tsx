@@ -21,6 +21,7 @@ import { VStack } from './Stack/VStack/VStack';
 import { Tabs } from './Tabs/Tabs';
 import { ListBox } from './Popups/ui/ListBox/ListBox';
 import { Dropdown } from './Popups/ui/Dropdown/Dropdown';
+import { StarRating } from './StarRating/StarRating';
 
 export type { SelectOption } from './Select/Select';
 export type { TabItem } from './Tabs/Tabs';
@@ -53,4 +54,5 @@ export {
   VStack,
   ListBox,
   Dropdown,
+  StarRating,
 };

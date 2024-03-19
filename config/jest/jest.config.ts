@@ -30,6 +30,7 @@ export default {
   moduleNameMapper: {
     '\\.(scss)$': 'identity-obj-proxy',
     '\\.svg': path.resolve(__dirname, 'jestEmptyComponent'),
+    '^@/(.*)$': '<rootDir>src/$1',
   },
   reporters: [
     'default',

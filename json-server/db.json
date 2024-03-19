@@ -1143,21 +1143,28 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": ["ADMIN", "MANAGER"],
+      "roles": [
+        "ADMIN",
+        "MANAGER"
+      ],
       "avatar": "https://i.pinimg.com/564x/81/09/1a/81091a8004c62607962adaaea674dc39.jpg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://www.pngall.com/wp-content/uploads/12/Avatar-Profile.png"
     },
     {
       "id": "2",
       "username": "manager",
       "password": "123",
-      "roles": ["MANAGER"],
+      "roles": [
+        "MANAGER"
+      ],
       "avatar": "https://www.pngall.com/wp-content/uploads/12/Avatar-Profile.png"
     }
   ],
@@ -1183,6 +1190,29 @@
       "city": "Moscow",
       "username": "admin",
       "avatar": "https://www.pngall.com/wp-content/uploads/12/Avatar-Profile.png"
+    }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "2",
+      "articleId": "1"
+    },
+    {
+      "rate": 3,
+      "feedback": "awesome",
+      "articleId": "10",
+      "userId": "2",
+      "id": "tUhEuGH"
     }
   ]
 }

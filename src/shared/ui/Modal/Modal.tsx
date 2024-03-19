@@ -9,8 +9,8 @@ interface ModalProps {
   className?: string,
   children?: ReactNode,
   isOpen: boolean,
-  onClose: () => void,
-  lazy: boolean,
+  onClose?: () => void,
+  lazy?: boolean,
 }
 
 const ANIMATION_DELAY = 300;

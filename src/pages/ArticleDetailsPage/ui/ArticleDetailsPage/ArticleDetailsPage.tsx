@@ -8,6 +8,7 @@ import { ArticleRecommendationsList } from '@/features/articleRecommendationsLis
 import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
+import { ArticleRate } from '@/features/articleRating';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -21,6 +22,10 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
   const { className } = props;
   const { id } = useParams<{ id: string }>();
 
+  if (!id) {
+    return null;
+  }
+
   return (
     <DynamicModuleLoader removeAfterUnmount reducerList={reducerList}>
       <Page className={classNames('', {}, [className])}>
@@ -28,6 +33,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
           <VStack gap="16" max>
             <ArticleDetailsPageHeader />
             <ArticleDetails id={id} />
+            <ArticleRate articleId={id} />
             <ArticleRecommendationsList />
             <ArticleDetailsComments id={id} />
           </VStack>
