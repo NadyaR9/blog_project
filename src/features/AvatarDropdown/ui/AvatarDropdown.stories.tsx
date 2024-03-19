@@ -10,7 +10,7 @@ const authData: User = {
 };
 
 export default {
-  title: 'shared/AvatarDropdown',
+  title: 'features/AvatarDropdown',
   component: AvatarDropdown,
   argTypes: {
     backgroundColor: { control: 'color' },
