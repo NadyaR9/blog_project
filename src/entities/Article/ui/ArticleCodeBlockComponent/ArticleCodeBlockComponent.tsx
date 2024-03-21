@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { ArticleBlockCode } from '@/entities/Article/model/types/article';
+import { ArticleBlockCode } from '../../model/types/article';
 import { classNames } from '@/shared/config/lib/classNames/classNames';
 import { Code, HStack } from '@/shared/ui';
 

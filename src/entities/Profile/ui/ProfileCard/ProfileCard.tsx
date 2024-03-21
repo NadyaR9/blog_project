@@ -4,7 +4,7 @@ import { classNames, Mods } from '@/shared/config/lib/classNames/classNames';
 import {
   TextAligns, Input, Loader, Text, TextVariants, Avatar, VStack, HStack,
 } from '@/shared/ui';
-import { Profile } from '@/entities/Profile';
+import { Profile } from '../../model/types/profile';
 import { Currency, CurrencySelect } from '@/entities/Currency';
 import { Country, CountrySelect } from '@/entities/Country';
 import cls from './ProfileCard.module.scss';

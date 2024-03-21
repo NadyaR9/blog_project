@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { ArticleBlockText } from '@/entities/Article/model/types/article';
+import { ArticleBlockText } from '../../model/types/article';
 import { classNames } from '@/shared/config/lib/classNames/classNames';
 import { Text } from '@/shared/ui';
 import cls from './ArticleTextBlockComponent.module.scss';
