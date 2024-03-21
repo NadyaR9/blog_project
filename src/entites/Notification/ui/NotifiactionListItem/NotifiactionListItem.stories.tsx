@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { NotifiactionListItem } from './NotifiactionListItem';
 
 export default {
-  title: 'shared/NotifiactionListItem',
+  title: 'entities/Notification/NotifiactionListItem',
   component: NotifiactionListItem,
   argTypes: {
     backgroundColor: { control: 'color' },

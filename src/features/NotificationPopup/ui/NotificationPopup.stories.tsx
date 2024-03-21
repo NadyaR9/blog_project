@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { NotificationPopup } from './NotificationPopup';
 
 export default {
-  title: 'shared/NotificationPopup',
+  title: 'features/NotificationPopup',
   component: NotificationPopup,
   argTypes: {
     backgroundColor: { control: 'color' },
