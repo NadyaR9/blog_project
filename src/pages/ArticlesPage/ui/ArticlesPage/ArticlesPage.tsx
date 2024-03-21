@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 import {
   ArticleList, ArticleView,
-} from '@/entites/Article';
+} from '@/entities/Article';
 import { classNames } from '@/shared/config/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducerList } from '@/shared/config/lib/components';
 import { useAppDispatch } from '@/shared/config/lib/hooks/useAppDispatch/useAppDispatch';

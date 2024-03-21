@@ -2,7 +2,7 @@ import { memo, useCallback, useState } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
 import { classNames } from '@/shared/config/lib/classNames/classNames';
 import { Popover } from '@/shared/ui/Popups';
-import { NotificationList } from '@/entites/Notification/ui/NotificationList/NotificationList';
+import { NotificationList } from '@/entities/Notification/ui/NotificationList/NotificationList';
 import NotificationIcon from '@/shared/assets/icons/notification.svg';
 import { Button, Icon } from '@/shared/ui';
 import { Drawer } from '@/shared/ui/Drawer/Drawer';

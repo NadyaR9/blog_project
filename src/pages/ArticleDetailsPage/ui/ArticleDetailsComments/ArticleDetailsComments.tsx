@@ -6,7 +6,7 @@ import {
   Loader, Text, TextSize, VStack,
 } from '@/shared/ui';
 import { AddNewCommentForm } from '@/features/AddNewComment';
-import { CommentList } from '@/entites/Comment';
+import { CommentList } from '@/entities/Comment';
 import { useAppDispatch } from '@/shared/config/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from '@/shared/config/lib/hooks/useInitialEffect/useInitialEffect';
 import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';

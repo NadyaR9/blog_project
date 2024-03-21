@@ -7,18 +7,15 @@ project.addSourceFilesAtPaths('src/**/*.ts');
 
 const files = project.getSourceFiles();
 
-const layers = ['app', 'pages', 'entities', 'features', 'widgets', 'shared'];
-
-function isAbsolute(value: string) {
-  return layers.some((layer) => value.startsWith(layer));
-}
+const incorrect = 'entites';
+const correct = 'entities';
 
 files.forEach((sourceFile) => {
   const importDeclarations = sourceFile.getImportDeclarations();
   importDeclarations.forEach((importSource) => {
     const value = importSource.getModuleSpecifierValue();
-    if (isAbsolute(value)) {
-      importSource.setModuleSpecifier(`@/${value}`);
+    if (value.includes(incorrect)) {
+      importSource.setModuleSpecifier(value.replace(incorrect, correct));
     }
   });
 });

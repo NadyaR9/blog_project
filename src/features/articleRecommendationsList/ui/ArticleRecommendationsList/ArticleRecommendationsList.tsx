@@ -5,7 +5,7 @@ import { classNames } from '@/shared/config/lib/classNames/classNames';
 import {
   Skeleton, Text, TextSize, VStack,
 } from '@/shared/ui';
-import { ArticleList } from '@/entites/Article';
+import { ArticleList } from '@/entities/Article';
 import { useArticleRecommendationsList } from '../../api/articleRecommendationsApi';
 
 interface ArticleRecommendationsListProps {

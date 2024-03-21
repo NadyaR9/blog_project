@@ -9,7 +9,7 @@ import {
   ArticleView, ArticleViewSelector,
   ArticleTypes,
   ArticleTypeTabs,
-} from '@/entites/Article';
+} from '@/entities/Article';
 import { useAppDispatch } from '@/shared/config/lib/hooks/useAppDispatch/useAppDispatch';
 import {
   Card, Input,

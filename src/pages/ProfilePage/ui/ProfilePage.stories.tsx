@@ -3,8 +3,8 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Theme } from '@/app/providers/ThemeProvider';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
-import { Country } from '@/entites/Country';
-import { Currency } from '@/entites/Currency';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
 import ProfilePage from './ProfilePage';
 
 export default {

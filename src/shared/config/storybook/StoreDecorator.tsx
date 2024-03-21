@@ -1,6 +1,6 @@
 import { Story } from '@storybook/react';
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
-import { articleDetailsReducer } from '@/entites/Article/model/slice/articleDetailsSlice';
+import { articleDetailsReducer } from '@/entities/Article/model/slice/articleDetailsSlice';
 import { addNewCommentReducer } from '@/features/AddNewComment/model/slices/addNewCommentSlice';
 import { LoginReducer } from '@/features/AuthByUsername/model/slice/loginSlice';
 import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage';

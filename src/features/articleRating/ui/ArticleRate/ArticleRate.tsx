@@ -4,8 +4,8 @@ import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { Skeleton } from '@/shared/ui';
 import { useAddArticleRate, useGetArticleRate } from '../../api/articleRate';
-import { getUserAuthData } from '@/entites/User';
-import { RatingCard } from '@/entites/Rating';
+import { getUserAuthData } from '@/entities/User';
+import { RatingCard } from '@/entities/Rating';
 
 export interface ArticleRateProps {
     className?: string,
