@@ -4,10 +4,10 @@ import { useSelector } from 'react-redux';
 import { LoginModal } from '@/features/AuthByUsername';
 import { classNames } from '@/shared/config/lib/classNames/classNames';
 import { Button, ButtonVariants } from '@/shared/ui';
-import { getUserAuthData } from '@/entites/User';
+import { getUserAuthData } from '@/entities/User';
 
-import { AvatarDropdown } from '@/features/AvatarDropdown/ui/AvatarDropdown';
-import { NotificationPopup } from '@/features/NotificationPopup/ui/NotificationPopup';
+import { AvatarDropdown } from '@/features/AvatarDropdown';
+import { NotificationPopup } from '@/features/NotificationPopup';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {

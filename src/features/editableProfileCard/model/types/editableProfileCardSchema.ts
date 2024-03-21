@@ -1,4 +1,4 @@
-import { Profile } from '@/entites/Profile';
+import { Profile } from '@/entities/Profile';
 
 export enum ValidateProfileError {
   INVALID_USER_DATA = 'INVALID_USER_DATA',

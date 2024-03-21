@@ -1,4 +1,4 @@
-import { Article } from '@/entites/Article';
+import { Article } from '@/entities/Article';
 import { rtkApi } from '@/shared/api/rtkApi';
 
 const recommendationsApi = rtkApi.injectEndpoints({

@@ -1,5 +1,5 @@
 import { RouteProps } from 'react-router-dom';
-import { UserRole } from '@/entites/User/model/types/user';
+import { UserRole } from '@/entities/User';
 import { AboutPage } from '@/pages/AboutPage';
 import { AdminPanelPage } from '@/pages/AdminPanel';
 import { ArticleDetailsPage } from '@/pages/ArticleDetailsPage';

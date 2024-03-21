@@ -1,6 +1,6 @@
 import { FC, memo } from 'react';
 import { useParams } from 'react-router-dom';
-import { ArticleDetails } from '@/entites/Article';
+import { ArticleDetails } from '@/entities/Article';
 import { classNames } from '@/shared/config/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducerList } from '@/shared/config/lib/components';
 import { Page, VStack } from '@/shared/ui';
