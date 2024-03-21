@@ -74,7 +74,10 @@ module.exports = {
     'react/no-array-index-key': 'warn',
     'arrow-body-style': 'off',
     'eslint-check-relative-path/relative-path-checker': ['error', { alias: '@' }],
-    'eslint-check-relative-path/check-public-api-imports': ['error', { alias: '@' }],
+    'eslint-check-relative-path/check-public-api-imports': ['error', {
+      alias: '@',
+      testFilesPatterns: ['**/*.test.ts', '**/*.stories.ts', '**/StoreDecorator.tsx'],
+    }],
   },
   globals: {
     __DEV__: true,
