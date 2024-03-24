@@ -5,7 +5,7 @@ import { classNames } from '@/shared/config/lib/classNames/classNames';
 import { Avatar, Dropdown } from '@/shared/ui';
 import { useAppDispatch } from '@/shared/config/lib/hooks/useAppDispatch/useAppDispatch';
 import { getUserAuthData, userActions } from '@/entities/User';
-import { RoutePath } from '@/shared/config/route/routeConfig/routeConfig';
+import { RoutePath } from '@/shared/const/router';
 
 interface AvatarDropdownProps {
   className?: string,
