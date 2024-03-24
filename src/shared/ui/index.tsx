@@ -1,7 +1,7 @@
 import { AppLink, AppLinkTheme } from './AppLink/AppLink';
-import { ThemeSwitcher } from './ThemeSwitcher/ThemeSwitcher';
+import { ThemeSwitcher } from '../../features/ThemeSwitcher/ThemeSwitcher';
 import { Button, ButtonVariants, ButtonSize } from './Button/Button';
-import { LanguageSwitcher } from './LanguageSwitcher/LanguageSwitcher';
+import { LanguageSwitcher } from '../../features/LanguageSwitcher/LanguageSwitcher';
 import { Loader } from './Loader/Loader';
 import { Modal } from './Modal/Modal';
 import { Portal } from './Portal/Portal';
@@ -15,7 +15,7 @@ import { Skeleton } from './Skeleton/Skeleton';
 import { Icon } from './Icon/Icon';
 import { Code } from './Code/Code';
 import { Card } from './Card/Card';
-import { Page } from './Page/Page';
+import { Page } from '../../widgets/Page/ui/Page';
 import { HStack } from './Stack/HStack/HStack';
 import { VStack } from './Stack/VStack/VStack';
 import { Tabs } from './Tabs/Tabs';

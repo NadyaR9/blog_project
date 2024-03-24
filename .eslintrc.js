@@ -78,6 +78,10 @@ module.exports = {
       alias: '@',
       testFilesPatterns: ['**/*.test.ts', '**/*.stories.ts', '**/StoreDecorator.tsx'],
     }],
+    'eslint-check-relative-path/layers-import': ['error', {
+      alias: '@',
+      ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+    }],
   },
   globals: {
     __DEV__: true,

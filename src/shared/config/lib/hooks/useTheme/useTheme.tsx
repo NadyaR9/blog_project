@@ -1,7 +1,7 @@
-import { useContext, useEffect } from 'react';
-import {
-  LS_Theme_KEY, Theme, ThemeContext, ThemeContextProps,
-} from './ThemeContext';
+import { useContext } from 'react';
+import { Theme } from '@/shared/const/theme';
+import { ThemeContext, ThemeContextProps } from '../../context/ThemeContext';
+import { LS_Theme_KEY } from '@/shared/const/localstorage';
 
 interface useThemeResult {
   theme: Theme,
