@@ -2,10 +2,6 @@ import { HTMLAttributeAnchorTarget, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { classNames } from '@/shared/config/lib/classNames/classNames';
-import {
-  AppLink,
-  Avatar, Button, ButtonVariants, Card, Icon, Text,
-} from '@/shared/ui';
 import EyeIcon from '@/shared/assets/icons/eye.svg';
 import { useHover } from '@/shared/config/lib/hooks/useHover/useHover';
 import { Article, ArticleBlockText } from '../../model/types/article';
@@ -14,6 +10,12 @@ import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleT
 
 import cls from './ArticleListItem.module.scss';
 import { RoutePath } from '@/shared/const/router';
+import { Text } from '@/shared/ui/Text';
+import { Icon } from '@/shared/ui/Icon';
+import { Card } from '@/shared/ui/Card';
+import { Avatar } from '@/shared/ui/Avatar';
+import { AppLink } from '@/shared/ui/AppLink';
+import { Button, ButtonVariants } from '@/shared/ui/Button';
 
 interface ArticleListItemProps {
   className?: string,

@@ -4,13 +4,13 @@ import { useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entities/User';
 import { classNames } from '@/shared/config/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/config/lib/hooks/useAppDispatch/useAppDispatch';
-import {
-  Text, Button, ButtonVariants, HStack,
-} from '@/shared/ui';
 import { profileActions } from '../../model/slices/profileSlice';
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
 import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
+import { HStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/Text';
+import { Button, ButtonVariants } from '@/shared/ui/Button';
 
 interface ProfilePageHeaderProps {
   className?: string,

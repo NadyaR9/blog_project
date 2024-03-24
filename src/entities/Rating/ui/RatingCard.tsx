@@ -1,10 +1,14 @@
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BrowserView, MobileView } from 'react-device-detect';
-import {
-  Button, ButtonVariants, Card, HStack, Input, Modal, StarRating, Text, VStack,
-} from '@/shared/ui';
-import { Drawer } from '@/shared/ui/Drawer/Drawer';
+import { Drawer } from '@/shared/ui/Drawer';
+import { Card } from '@/shared/ui/Card';
+import { HStack, VStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/Text';
+import { StarRating } from '@/shared/ui/StarRating';
+import { Modal } from '@/shared/ui/Modal';
+import { Button, ButtonVariants } from '@/shared/ui/Button';
+import { Input } from '@/shared/ui/Input';
 
 interface RatingProps {
   className?: string,

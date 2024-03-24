@@ -3,12 +3,13 @@ import { useParams } from 'react-router-dom';
 import { ArticleDetails } from '@/entities/Article';
 import { classNames } from '@/shared/config/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducerList } from '@/shared/config/lib/components';
-import { Page, VStack } from '@/shared/ui';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { ArticleRate } from '@/features/articleRating';
+import { VStack } from '@/shared/ui/Stack';
+import { Page } from '@/widgets/Page';
 
 interface ArticleDetailsPageProps {
   className?: string;

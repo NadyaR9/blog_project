@@ -28,6 +28,7 @@ module.exports = {
     'i18next',
     'react-hooks',
     'eslint-check-relative-path',
+    'unused-imports',
   ],
   rules: {
     'max-len': ['error', { code: 120 }],
@@ -82,6 +83,7 @@ module.exports = {
       alias: '@',
       ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
     }],
+    'unused-imports/no-unused-imports': 'error',
   },
   globals: {
     __DEV__: true,

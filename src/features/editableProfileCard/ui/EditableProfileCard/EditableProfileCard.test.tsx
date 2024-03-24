@@ -1,4 +1,4 @@
-import { fireEvent, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import { userEvent } from '@storybook/testing-library';
 import { componentRender } from '@/shared/config/tests';
 import { Country } from '@/entities/Country';

@@ -4,12 +4,12 @@ import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/config/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducerList } from '@/shared/config/lib/components';
 import { useAppDispatch } from '@/shared/config/lib/hooks/useAppDispatch/useAppDispatch';
-import {
-  Button, ButtonVariants, HStack, Input,
-} from '@/shared/ui';
 import { getAddNewCommentError, getAddNewCommentText } from '../../model/selectors/addNewCommentSelectors';
 import { addNewCommentActions, addNewCommentReducer } from '../../model/slices/addNewCommentSlice';
 import cls from './AddNewCommentForm.module.scss';
+import { Input } from '@/shared/ui/Input';
+import { HStack } from '@/shared/ui/Stack';
+import { Button, ButtonVariants } from '@/shared/ui/Button';
 
 export interface AddNewCommentFormProps {
   className?: string,

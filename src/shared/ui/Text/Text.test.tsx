@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { Text, TextVariants } from './Text';
+import { Text } from './Text';
 
 describe('test Text', () => {
   test('test title render', () => {
