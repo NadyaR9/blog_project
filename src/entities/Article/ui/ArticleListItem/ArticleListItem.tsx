@@ -8,12 +8,12 @@ import {
 } from '@/shared/ui';
 import EyeIcon from '@/shared/assets/icons/eye.svg';
 import { useHover } from '@/shared/config/lib/hooks/useHover/useHover';
-import { RoutePath } from '@/shared/config/route/routeConfig/routeConfig';
 import { Article, ArticleBlockText } from '../../model/types/article';
 import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 
 import cls from './ArticleListItem.module.scss';
+import { RoutePath } from '@/shared/const/router';
 
 interface ArticleListItemProps {
   className?: string,
