@@ -2,9 +2,6 @@ import { memo, useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/config/lib/classNames/classNames';
-import {
-  Avatar, Skeleton, Text, TextSize, TextVariants, Icon, HStack, VStack,
-} from '@/shared/ui';
 import { DynamicModuleLoader, ReducerList } from '@/shared/config/lib/components';
 import { useAppDispatch } from '@/shared/config/lib/hooks/useAppDispatch/useAppDispatch';
 import EyeIcon from '@/shared/assets/icons/eye.svg';
@@ -22,6 +19,11 @@ import { ArticleBlockType } from '../../model/consts/consts';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
+import { Text, TextSize, TextVariants } from '@/shared/ui/Text';
+import { HStack, VStack } from '@/shared/ui/Stack';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Icon } from '@/shared/ui/Icon';
 
 interface ArticleDetailsProps {
   className?: string,

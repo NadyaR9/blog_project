@@ -4,9 +4,10 @@ import { classNames } from '@/shared/config/lib/classNames/classNames';
 import { Popover } from '@/shared/ui/Popups';
 import { NotificationList } from '@/entities/Notification';
 import NotificationIcon from '@/shared/assets/icons/notification.svg';
-import { Button, Icon } from '@/shared/ui';
-import { Drawer } from '@/shared/ui/Drawer/Drawer';
+import { Drawer } from '@/shared/ui/Drawer';
 import cls from './NotificationPopup.module.scss';
+import { Button } from '@/shared/ui/Button';
+import { Icon } from '@/shared/ui/Icon';
 
 interface NotificationPopupProps {
   className?: string,
@@ -23,6 +24,7 @@ export const NotificationPopup = memo((props: NotificationPopupProps) => {
   const onDrawerClose = useCallback(() => {
     setIsOpen(false);
   }, []);
+
   const trigger = (<Button onClick={onDrawerOpen}><Icon Svg={NotificationIcon} /></Button>);
 
   return (

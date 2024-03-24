@@ -5,7 +5,6 @@ import { useAppDispatch } from '@/shared/config/lib/hooks/useAppDispatch/useAppD
 import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
 import { useInitialEffect } from '@/shared/config/lib/hooks/useInitialEffect/useInitialEffect';
-import { Text, TextVariants, VStack } from '@/shared/ui';
 import { ProfileCard } from '@/entities/Profile';
 import { DynamicModuleLoader, ReducerList } from '@/shared/config/lib/components';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
@@ -17,6 +16,8 @@ import { ValidateProfileError } from '../../model/types/editableProfileCardSchem
 import { profileActions, profileReducer } from '../../model/slices/profileSlice';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
+import { VStack } from '@/shared/ui/Stack';
+import { Text, TextVariants } from '@/shared/ui/Text';
 
 interface EditableProfileCardProps {
     id?: string,

@@ -2,9 +2,6 @@ import { Suspense, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/config/lib/classNames/classNames';
-import {
-  Loader, Text, TextSize, VStack,
-} from '@/shared/ui';
 import { AddNewCommentForm } from '@/features/AddNewComment';
 import { CommentList } from '@/entities/Comment';
 import { useAppDispatch } from '@/shared/config/lib/hooks/useAppDispatch/useAppDispatch';
@@ -13,6 +10,9 @@ import { getArticleComments } from '../../model/slices/articleDetailsCommentsSli
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
+import { VStack } from '@/shared/ui/Stack';
+import { Loader } from '@/shared/ui/Loader';
+import { Text, TextSize } from '@/shared/ui/Text';
 
 interface ArticleDetailsCommentsProps {
   className?: string,
@@ -38,7 +38,10 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
 
   return (
     <VStack max gap="8" className={classNames('', {}, [className])}>
-      <Text size={TextSize.L} title={t('Comment Block')} />
+      <Text
+        size={TextSize.L}
+        title={t('Comment Block')}
+      />
       <Suspense fallback={<Loader />}>
         <AddNewCommentForm onSendComment={onSendComment} />
       </Suspense>

@@ -10,7 +10,6 @@ import { classNames } from '@/shared/config/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducerList } from '@/shared/config/lib/components';
 import { useAppDispatch } from '@/shared/config/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from '@/shared/config/lib/hooks/useInitialEffect/useInitialEffect';
-import { Page } from '@/shared/ui';
 import {
   getArticlesIsLoading, getArticlesView,
 } from '../../model/selectors/getArticlesSelectors';
@@ -20,6 +19,7 @@ import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPag
 import { fetchArticlesInited } from '../../model/services/fetchArticlesInited/fetchArticlesInited';
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
 import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
+import { Page } from '@/widgets/Page';
 
 interface ArticlesPageProps {
   className?: string;

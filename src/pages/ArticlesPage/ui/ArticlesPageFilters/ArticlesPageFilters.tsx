@@ -1,4 +1,4 @@
-import { memo, useCallback, useMemo } from 'react';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/config/lib/classNames/classNames';
@@ -11,9 +11,6 @@ import {
   ArticleTypeTabs,
 } from '@/entities/Article';
 import { useAppDispatch } from '@/shared/config/lib/hooks/useAppDispatch/useAppDispatch';
-import {
-  Card, Input,
-} from '@/shared/ui';
 import { SortOrder } from '@/shared/config/types';
 import { useDebounce } from '@/shared/config/lib/hooks/useDebounce/useDebounce';
 import { fetchArticles } from '../../model/services/fetchArticles/fetchArticles';
@@ -22,6 +19,8 @@ import {
 } from '../../model/selectors/getArticlesSelectors';
 import { articlesActions } from '../../model/slices/articlesPageSlice';
 import cls from './ArticlesPageFilters.module.scss';
+import { Card } from '@/shared/ui/Card';
+import { Input } from '@/shared/ui/Input';
 
 interface FiltersProps {
   className?: string,

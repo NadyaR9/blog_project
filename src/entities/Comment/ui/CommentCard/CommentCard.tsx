@@ -1,13 +1,14 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/config/lib/classNames/classNames';
-import {
-  AppLink,
-  Avatar, HStack, Skeleton, Text, VStack,
-} from '@/shared/ui';
 import { Comment } from '../../model/types/comment';
 import cls from './CommentCard.module.scss';
 import { RoutePath } from '@/shared/const/router';
+import { HStack, VStack } from '@/shared/ui/Stack';
+import { AppLink } from '@/shared/ui/AppLink';
+import { Text } from '@/shared/ui/Text';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 interface CommentCardProps {
   className?: string,
