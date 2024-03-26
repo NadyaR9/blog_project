@@ -1,5 +1,4 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import withMock from 'storybook-addon-mock';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 import ArticleRate from './ArticleRate';
 import { PostArticleArgs } from '../../api/articleRate';
@@ -12,7 +11,7 @@ export default {
   },
   decorators: [StoreDecorator({
     user: { authData: { id: '1' } },
-  }), withMock],
+  })],
 } as ComponentMeta<typeof ArticleRate>;
 
 const getSavedRate: PostArticleArgs = {
