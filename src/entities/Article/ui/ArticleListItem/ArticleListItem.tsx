@@ -16,6 +16,8 @@ import { Card } from '@/shared/ui/Card';
 import { Avatar } from '@/shared/ui/Avatar';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Button, ButtonVariants } from '@/shared/ui/Button';
+import { AppImage } from '@/shared/ui/AppImage';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 interface ArticleListItemProps {
   className?: string,
@@ -59,7 +61,12 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
           </div>
           <Text title={article.title} className={cls.title} />
           {types}
-          <img className={cls.img} src={article.img} alt={article.title} />
+          <AppImage
+            className={cls.img}
+            src={article.img}
+            alt={article.title}
+            fallback={<Skeleton width="100%" height={250} />}
+          />
           {textBlock && <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />}
           <div className={cls.footer}>
             <AppLink
@@ -83,7 +90,12 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
       <div {...bindHover} className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
         <Card onClick={onOpenArticle}>
           <div className={cls.imageWrapper}>
-            <img className={cls.img} src={article.img} alt={article.title} />
+            <AppImage
+              className={cls.img}
+              src={article.img}
+              alt={article.title}
+              fallback={<Skeleton width={200} height={200} />}
+            />
             <Text className={cls.date} text={article.createdAt} />
           </div>
           <div className={cls.infoWrapper}>
