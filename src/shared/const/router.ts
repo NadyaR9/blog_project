@@ -9,13 +9,11 @@ export enum RouteName {
   FORBIDDEN = 'access_denied'
 }
 
-export const RoutePath: Record<RouteName, string> = {
-  [RouteName.MAIN]: '/',
-  [RouteName.ABOUT]: '/about',
-  [RouteName.PROFILE]: '/profile/',
-  [RouteName.ARTICLES]: '/articles',
-  [RouteName.ARTICLE_DETAILS]: '/articles/',
-  [RouteName.ADMIN]: '/admin',
-  [RouteName.FORBIDDEN]: '/access_denied',
-  [RouteName.NOT_FOUND]: '*',
-};
+export const getRouteMain = () => '/';
+export const getRouteAbout = () => '/about';
+export const getRouteProfile = (id: string) => `/profile/${id}`;
+export const getRouteArticles = () => '/articles';
+export const getRouteArticleDdetails = (id: string) => `/articles/${id}`;
+export const getRouteAdmin = () => '/admin';
+export const getRouteForbidden = () => '/access_denied';
+export const getRouteNotFound = () => '*';
