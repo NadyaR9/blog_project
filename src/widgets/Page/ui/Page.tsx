@@ -1,7 +1,6 @@
 import {
   MutableRefObject, ReactNode, UIEvent, memo, useRef,
 } from 'react';
-import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { StateSchema } from '@/app/providers/StoreProvider';
@@ -12,8 +11,9 @@ import { ScrollSaverActions, getScrollSaverByPath } from '@/features/ScrollSaver
 import { useInitialEffect } from '@/shared/config/lib/hooks/useInitialEffect/useInitialEffect';
 import { useThrottle } from '@/shared/config/lib/hooks/useThrottle/useThrottle';
 import cls from './Page.module.scss';
+import { TestingProps } from '@/shared/const/test';
 
-interface PageProps {
+interface PageProps extends TestingProps {
   className?: string,
   children: ReactNode,
   onScrollEnd?: () => void;
@@ -21,7 +21,6 @@ interface PageProps {
 
 export const Page = memo((props: PageProps) => {
   const { className, children, onScrollEnd } = props;
-  const { t } = useTranslation();
   const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
   const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
   const dispatch = useAppDispatch();
@@ -50,6 +49,7 @@ export const Page = memo((props: PageProps) => {
       className={classNames(cls.Page, {}, [className])}
       ref={wrapperRef}
       onScroll={onScroll}
+      data-testid={props['data-testid']}
     >
       {children}
       {onScrollEnd ? (
