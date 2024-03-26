@@ -1,8 +1,8 @@
 import { memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/config/lib/classNames/classNames';
-import { ArticleSortField } from '../../model/consts/consts';
 import { Select, SelectOption } from '@/shared/ui/Select';
+import { ArticleSortField } from '@/entities/Article';
 
 interface FieldsFilterProps {
   className?: string,

@@ -9,7 +9,7 @@ import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 
 import cls from './ArticleListItem.module.scss';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleDdetails } from '@/shared/const/router';
 import { Text } from '@/shared/ui/Text';
 import { Icon } from '@/shared/ui/Icon';
 import { Card } from '@/shared/ui/Card';
@@ -36,7 +36,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   const navigate = useNavigate();
 
   const onOpenArticle = useCallback(() => {
-    navigate(`${RoutePath.article_details}${article.id}`);
+    navigate(getRouteArticleDdetails(article.id));
   }, [article.id, navigate]);
 
   const types = <Text className={cls.types} text={article.type.join(', ')} />;
@@ -63,7 +63,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
           {textBlock && <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />}
           <div className={cls.footer}>
             <AppLink
-              to={RoutePath.article_details + article.id}
+              to={getRouteArticleDdetails(article.id)}
               target={target}
             >
               <Button
@@ -79,7 +79,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     );
   }
   return (
-    <AppLink to={RoutePath.article_details + article.id} target={target}>
+    <AppLink to={getRouteArticleDdetails(article.id)} target={target}>
       <div {...bindHover} className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
         <Card onClick={onOpenArticle}>
           <div className={cls.imageWrapper}>

@@ -2,7 +2,7 @@ import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
 import { classNames } from '@/shared/config/lib/classNames/classNames';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticles } from '@/shared/const/router';
 import { Button, ButtonVariants } from '@/shared/ui/Button';
 
 interface ArticleDetailsPageHeaderProps {
@@ -16,7 +16,7 @@ export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderPro
   const navigate = useNavigate();
 
   const onBackToList = useCallback(() => {
-    navigate(RoutePath.articles);
+    navigate(getRouteArticles());
   }, [navigate]);
 
   return (
