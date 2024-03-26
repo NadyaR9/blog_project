@@ -1,8 +1,10 @@
+import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+
 import { ArticleOrderSelector } from './ArticleOrderSelector';
 
 export default {
-  title: 'entities/Article/ArticleOrderSelector',
+  title: 'features/ArticleOrderSelector',
   component: ArticleOrderSelector,
   argTypes: {
     backgroundColor: { control: 'color' },
