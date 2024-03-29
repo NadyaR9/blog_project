@@ -6,6 +6,6 @@
     "allowJs": true,
     "isolatedModules": false
   },
-  "include": ["**/*.ts"],
+  "include": ["**/*.ts", "**/*.tsx", "component/EditableProfileCard.cy.tsx"],
   "extends": "../tsconfig.json",
 }
