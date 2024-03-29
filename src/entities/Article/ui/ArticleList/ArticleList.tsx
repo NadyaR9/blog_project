@@ -37,7 +37,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
   )), [articles, view, target]);
 
   return (
-    <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+    <div className={classNames(cls.ArticleList, {}, [className, cls[view]])} data-testid="ArticleList">
       {articles?.length ? renderArticleList() : null}
       {isLoading && (
         <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>

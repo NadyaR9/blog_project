@@ -1140,6 +1140,13 @@
   ],
   "users": [
     {
+      "id": "111",
+      "username": "testing",
+      "password": "123",
+      "roles": [],
+      "avatar": "https://i.pinimg.com/564x/81/09/1a/81091a8004c62607962adaaea674dc39.jpg"
+    },
+    {
       "id": "1",
       "username": "admin",
       "password": "123",
@@ -1159,7 +1166,7 @@
       "avatar": "https://www.pngall.com/wp-content/uploads/12/Avatar-Profile.png"
     },
     {
-      "id": "2",
+      "id": "3",
       "username": "manager",
       "password": "123",
       "roles": [
@@ -1169,6 +1176,17 @@
     }
   ],
   "profile": [
+    {
+      "id": "111",
+      "firstname": "Testing",
+      "lastname": "Testing",
+      "age": 24,
+      "currency": "EUR",
+      "country": "Kazakhstan",
+      "city": "Belgorod still",
+      "username": "testing",
+      "avatar": "https://i.pinimg.com/564x/81/09/1a/81091a8004c62607962adaaea674dc39.jpg"
+    },
     {
       "id": "1",
       "firstname": "Nadya",

@@ -56,6 +56,8 @@ export const StarRating = memo((props: StarRatingProps) => {
           onClick={onStarSelect(star)}
           width={size}
           height={size}
+          data-testid={`StarRating.${star}`}
+          data-selected={currentStart >= star}
         />
       ))}
     </HStack>

@@ -29,7 +29,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 
   return (
     <DynamicModuleLoader removeAfterUnmount reducerList={reducerList}>
-      <Page className={classNames('', {}, [className])}>
+      <Page className={classNames('', {}, [className])} data-testid="ArticleDetailsPage">
         <VStack gap="32" max>
           <VStack gap="16" max>
             <ArticleDetailsPageHeader />
