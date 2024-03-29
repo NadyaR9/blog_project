@@ -27,9 +27,15 @@ export const CommentList = memo((props: CommentListProps) => {
   }
 
   return (
-    <VStack max gap="16" className={classNames('', {}, [className])}>
+    <VStack max gap="16" className={classNames('', {}, [className])} data-testid="CommentList">
       {comments?.length ? (
-        comments.map((comment) => <CommentCard key={comment.id} comment={comment} isLoading={isLoading} />)
+        comments.map((comment) => (
+          <CommentCard
+            key={comment.id}
+            comment={comment}
+            isLoading={isLoading}
+          />
+        ))
       ) : (
         <Text text={t('Comments not found')} />
       )}

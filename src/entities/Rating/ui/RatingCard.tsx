@@ -51,12 +51,17 @@ export const RatingCard = memo((props: RatingProps) => {
   const modalContent = (
     <>
       {feedbackTitle && <Text title={feedbackTitle} />}
-      <Input value={feedback} onChange={setFeedback} placeholder={t('Type feedback')} />
+      <Input
+        value={feedback}
+        onChange={setFeedback}
+        placeholder={t('Type feedback')}
+        data-testid="RatingCard.Input"
+      />
     </>
   );
 
   return (
-    <Card className={className} fullWidth>
+    <Card className={className} fullWidth data-testid="RatingCard">
       <VStack max gap="8" align="center">
         {title && <Text title={title} />}
         <StarRating onSelect={onSelectStar} selectedStar={starsCount} />
@@ -66,8 +71,20 @@ export const RatingCard = memo((props: RatingProps) => {
           <VStack max gap="16">
             {modalContent}
             <HStack max justify="end" gap="16">
-              <Button onClick={onCancelHandle} variants={ButtonVariants.SECONDARY_OUTLINED}>{t('Cancel')}</Button>
-              <Button onClick={onSaveHandle} variants={ButtonVariants.PRIMARY_OUTLINED}>{t('Save')}</Button>
+              <Button
+                onClick={onCancelHandle}
+                variants={ButtonVariants.SECONDARY_OUTLINED}
+                data-testid="RatingCard.Cancel"
+              >
+                {t('Cancel')}
+              </Button>
+              <Button
+                onClick={onSaveHandle}
+                variants={ButtonVariants.PRIMARY_OUTLINED}
+                data-testid="RatingCard.Save"
+              >
+                {t('Save')}
+              </Button>
             </HStack>
           </VStack>
         </Modal>
@@ -76,7 +93,13 @@ export const RatingCard = memo((props: RatingProps) => {
         <Drawer isOpen={isModalOpen} lazy onClose={onCancelHandle}>
           <VStack max gap="32">
             {modalContent}
-            <Button onClick={onSaveHandle} variants={ButtonVariants.PRIMARY}>{t('Save')}</Button>
+            <Button
+              onClick={onSaveHandle}
+              variants={ButtonVariants.PRIMARY}
+              data-testid="RatingCard.Save"
+            >
+              {t('Save')}
+            </Button>
           </VStack>
         </Drawer>
       </MobileView>
