@@ -3,10 +3,13 @@ import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/config/lib/classNames/classNames';
 import { ArticleList } from '@/entities/Article';
 import { getArticles } from '../../model/slices/articlesPageSlice';
-import { getArticlesIsLoading, getArticlesView } from '../../model/selectors/getArticlesSelectors';
+import {
+  getArticlesIsLoading,
+  getArticlesView,
+} from '../../model/selectors/getArticlesSelectors';
 
 interface ArticleInfiniteListProps {
-  className?: string,
+  className?: string;
 }
 
 export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
@@ -17,11 +20,7 @@ export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
 
   return (
     <div className={classNames('', {}, [className])}>
-      <ArticleList
-        articles={articles}
-        isLoading={isLoading}
-        view={view}
-      />
+      <ArticleList articles={articles} isLoading={isLoading} view={view} />
     </div>
   );
 });

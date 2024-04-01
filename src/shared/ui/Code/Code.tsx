@@ -5,8 +5,8 @@ import { Button } from '../Button/Button';
 import cls from './Code.module.scss';
 
 interface CodeProps {
-  className?: string,
-  text: string,
+  className?: string;
+  text: string;
 }
 
 export const Code = memo((props: CodeProps) => {
@@ -21,9 +21,7 @@ export const Code = memo((props: CodeProps) => {
       <Button className={cls.copyBtn} onClick={onCopy}>
         <CopyIcon className={cls.icon} />
       </Button>
-      <code>
-        {text}
-      </code>
+      <code>{text}</code>
     </pre>
   );
 });

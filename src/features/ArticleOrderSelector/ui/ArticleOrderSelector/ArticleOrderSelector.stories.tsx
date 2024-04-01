@@ -11,9 +11,9 @@ export default {
   },
 } as ComponentMeta<typeof ArticleOrderSelector>;
 
-const Template: ComponentStory<typeof ArticleOrderSelector> = (args) => <ArticleOrderSelector {...args} />;
+const Template: ComponentStory<typeof ArticleOrderSelector> = (args) => (
+  <ArticleOrderSelector {...args} />
+);
 
 export const Normal = Template.bind({});
-Normal.args = {
-
-};
+Normal.args = {};

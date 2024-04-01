@@ -12,8 +12,10 @@ describe('getProfileValidateErrors.test', () => {
         ],
       },
     };
-    expect(getProfileValidateErrors(state as StateSchema)).toEqual([ValidateProfileError.INVALID_AGE,
-      ValidateProfileError.NO_DATA]);
+    expect(getProfileValidateErrors(state as StateSchema)).toEqual([
+      ValidateProfileError.INVALID_AGE,
+      ValidateProfileError.NO_DATA,
+    ]);
   });
   test('should work with empty state', () => {
     const state: DeepPartial<StateSchema> = {};

@@ -12,6 +12,4 @@ export default {
 const Template: ComponentStory<typeof Tabs> = (args) => <Tabs {...args} />;
 
 export const Normal = Template.bind({});
-Normal.args = {
-
-};
+Normal.args = {};

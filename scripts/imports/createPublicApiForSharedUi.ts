@@ -31,7 +31,9 @@ componentsDirs?.forEach((directory) => {
 
   if (!indexFile) {
     const sourceCode = `export * from './${directory.getBaseName()}';`;
-    const file = directory.createSourceFile(indexFilePath, sourceCode, { overwrite: true });
+    const file = directory.createSourceFile(indexFilePath, sourceCode, {
+      overwrite: true,
+    });
 
     file.save();
   }
@@ -48,7 +50,12 @@ files.forEach((sourceFile) => {
     const isSharedLayer = segments?.[0] === 'shared';
     const isUiSlice = segments?.[1] === 'ui';
 
-    if (isAbsolute(valueWithoutAlias) && isSharedLayer && isUiSlice && segments.length < 3) {
+    if (
+      isAbsolute(valueWithoutAlias) &&
+      isSharedLayer &&
+      isUiSlice &&
+      segments.length < 3
+    ) {
       importDeclaration.remove();
       return;
     }

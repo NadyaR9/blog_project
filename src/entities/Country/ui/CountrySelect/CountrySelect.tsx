@@ -6,10 +6,10 @@ import cls from './CountrySelect.module.scss';
 import { ListBox } from '@/shared/ui/Popups';
 
 interface CountryProps {
-  className?: string,
-  value?: Country,
-  onChange?: (value: Country) => void,
-  readonly?: boolean,
+  className?: string;
+  value?: Country;
+  onChange?: (value: Country) => void;
+  readonly?: boolean;
 }
 
 const options = [
@@ -21,13 +21,14 @@ const options = [
 
 export const CountrySelect = memo((props: CountryProps) => {
   const { t } = useTranslation();
-  const {
-    className, value, onChange, readonly,
-  } = props;
+  const { className, value, onChange, readonly } = props;
 
-  const onChangaHandler = useCallback((value: string) => {
-    onChange?.(value as Country);
-  }, [onChange]);
+  const onChangaHandler = useCallback(
+    (value: string) => {
+      onChange?.(value as Country);
+    },
+    [onChange],
+  );
 
   return (
     <ListBox

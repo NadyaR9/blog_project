@@ -5,8 +5,8 @@ import { getUserAuthData, getUserRoles, UserRole } from '@/entities/User';
 import { getRouteForbidden, getRouteMain } from '@/shared/const/router';
 
 interface RequireAuthProps {
-  children: JSX.Element,
-  roles?: UserRole[],
+  children: JSX.Element;
+  roles?: UserRole[];
 }
 export const RequireAuth = ({ children, roles }: RequireAuthProps) => {
   const auth = useSelector(getUserAuthData);
@@ -22,7 +22,9 @@ export const RequireAuth = ({ children, roles }: RequireAuthProps) => {
   }, [roles, userRoles]);
 
   if (!hasRequeiredRoles) {
-    return <Navigate to={getRouteForbidden()} state={{ from: location }} replace />;
+    return (
+      <Navigate to={getRouteForbidden()} state={{ from: location }} replace />
+    );
   }
   if (!auth) {
     return <Navigate to={getRouteMain()} state={{ from: location }} replace />;

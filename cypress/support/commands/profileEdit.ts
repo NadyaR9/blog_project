@@ -1,6 +1,9 @@
 import { Profile } from '../../../src/entities/Profile';
 
-export const editProfile = (firstname: string = 'firstname', lastname: string = 'lastname') => {
+export const editProfile = (
+  firstname: string = 'firstname',
+  lastname: string = 'lastname',
+) => {
   cy.getByTestId('EditableProfileCardHeader.EditButton').click();
   cy.getByTestId('EditableProfileCard.firstname').clear().type(firstname);
   cy.getByTestId('EditableProfileCard.lastname').clear().type(lastname);
@@ -23,7 +26,8 @@ export const resetProfile = (profileId: string) => {
       country: 'Kazakhstan',
       city: 'Belgorod still',
       username: 'testing',
-      avatar: 'https://i.pinimg.com/564x/81/09/1a/81091a8004c62607962adaaea674dc39.jpg',
+      avatar:
+        'https://i.pinimg.com/564x/81/09/1a/81091a8004c62607962adaaea674dc39.jpg',
     },
   });
 };
@@ -31,8 +35,8 @@ export const resetProfile = (profileId: string) => {
 declare global {
   namespace Cypress {
     interface Chainable {
-      editProfile(firstname?: string, lastname?: string): Chainable<void>
-      resetProfile(profileId: string): Chainable<Profile>
+      editProfile(firstname?: string, lastname?: string): Chainable<void>;
+      resetProfile(profileId: string): Chainable<Profile>;
     }
   }
 }

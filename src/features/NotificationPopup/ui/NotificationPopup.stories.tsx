@@ -9,9 +9,9 @@ export default {
   },
 } as ComponentMeta<typeof NotificationPopup>;
 
-const Template: ComponentStory<typeof NotificationPopup> = (args) => <NotificationPopup {...args} />;
+const Template: ComponentStory<typeof NotificationPopup> = (args) => (
+  <NotificationPopup {...args} />
+);
 
 export const Normal = Template.bind({});
-Normal.args = {
-
-};
+Normal.args = {};

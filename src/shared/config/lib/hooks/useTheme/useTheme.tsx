@@ -4,8 +4,8 @@ import { ThemeContext, ThemeContextProps } from '../../context/ThemeContext';
 import { LS_Theme_KEY } from '@/shared/const/localstorage';
 
 interface useThemeResult {
-  theme: Theme,
-  toggleTheme: () => void,
+  theme: Theme;
+  toggleTheme: () => void;
 }
 
 export const useTheme = (): useThemeResult => {

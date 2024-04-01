@@ -8,8 +8,8 @@ import cls from './SidebarItem.module.scss';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 
 interface SidebarItemProps {
-  item: SidebarItemType,
-  collapsed: boolean,
+  item: SidebarItemType;
+  collapsed: boolean;
 }
 
 export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {

@@ -15,10 +15,7 @@ export const BugButton = () => {
     }
   }, [error]);
   return (
-    <Button
-      onClick={onThrowError}
-      variants={ButtonVariants.OUTLINE}
-    >
+    <Button onClick={onThrowError} variants={ButtonVariants.OUTLINE}>
       {t('create error')}
     </Button>
   );

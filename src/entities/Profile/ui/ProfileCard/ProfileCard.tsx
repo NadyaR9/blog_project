@@ -12,19 +12,19 @@ import { Avatar } from '@/shared/ui/Avatar';
 import { Input } from '@/shared/ui/Input';
 
 interface ProfileCardProps {
-  className?: string,
-  data?: Profile,
-  isLoading?: boolean,
-  error?: string,
-  readonly?: boolean,
-  onChangeFirstname?: (value?: string) => void,
-  onChangeLastname?: (value?: string) => void,
-  onChangeAge?: (value?: string) => void,
-  onChangeCity?: (value?: string) => void,
-  onChangeUsername?: (value?: string) => void,
-  onChangeAvatar?: (value?: string) => void,
-  onChangeCurrency?: (currency: Currency) => void,
-  onChangeCountry?: (country: Country) => void,
+  className?: string;
+  data?: Profile;
+  isLoading?: boolean;
+  error?: string;
+  readonly?: boolean;
+  onChangeFirstname?: (value?: string) => void;
+  onChangeLastname?: (value?: string) => void;
+  onChangeAge?: (value?: string) => void;
+  onChangeCity?: (value?: string) => void;
+  onChangeUsername?: (value?: string) => void;
+  onChangeAvatar?: (value?: string) => void;
+  onChangeCurrency?: (currency: Currency) => void;
+  onChangeCountry?: (country: Country) => void;
 }
 
 export const ProfileCard = memo((props: ProfileCardProps) => {
@@ -51,14 +51,20 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
 
   if (isLoading) {
     return (
-      <HStack justify="center" className={classNames(cls.ProfileCard, {}, [className, cls.isLoading])}>
+      <HStack
+        justify="center"
+        className={classNames(cls.ProfileCard, {}, [className, cls.isLoading])}
+      >
         <Loader />
       </HStack>
     );
   }
   if (error) {
     return (
-      <HStack justify="center" className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+      <HStack
+        justify="center"
+        className={classNames(cls.ProfileCard, {}, [className, cls.error])}
+      >
         <Text
           title={t('ProfileErrorTitle')}
           text={t('ProfileErrorDescription')}
@@ -70,12 +76,14 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
   }
 
   return (
-    <VStack gap="16" max className={classNames(cls.ProfileCard, mods, [className])}>
+    <VStack
+      gap="16"
+      max
+      className={classNames(cls.ProfileCard, mods, [className])}
+    >
       {data?.avatar && (
         <HStack justify="center" max>
-          <Avatar
-            src={data.avatar}
-          />
+          <Avatar src={data.avatar} />
         </HStack>
       )}
       <Input

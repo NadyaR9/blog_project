@@ -7,16 +7,17 @@ import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkele
 import cls from './ArticleList.module.scss';
 
 interface ArticleListProps {
-  className?: string,
-  articles: Article[],
-  view?: ArticleView,
-  isLoading?: boolean,
-  target?: HTMLAttributeAnchorTarget,
+  className?: string;
+  articles: Article[];
+  view?: ArticleView;
+  isLoading?: boolean;
+  target?: HTMLAttributeAnchorTarget;
 }
 
-const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 9 : 3)
-  .fill(0)
-  .map((item, index) => <ArticleListItemSkeleton view={view} key={index} />);
+const getSkeletons = (view: ArticleView) =>
+  new Array(view === ArticleView.SMALL ? 9 : 3)
+    .fill(0)
+    .map((item, index) => <ArticleListItemSkeleton view={view} key={index} />);
 
 export const ArticleList = memo((props: ArticleListProps) => {
   const {
@@ -27,20 +28,29 @@ export const ArticleList = memo((props: ArticleListProps) => {
     target = '_self',
   } = props;
 
-  const renderArticleList = useCallback(() => articles.map((article) => (
-    <ArticleListItem
-      article={article}
-      view={view}
-      key={article.id}
-      target={target}
-    />
-  )), [articles, view, target]);
+  const renderArticleList = useCallback(
+    () =>
+      articles.map((article) => (
+        <ArticleListItem
+          article={article}
+          view={view}
+          key={article.id}
+          target={target}
+        />
+      )),
+    [articles, view, target],
+  );
 
   return (
-    <div className={classNames(cls.ArticleList, {}, [className, cls[view]])} data-testid="ArticleList">
+    <div
+      className={classNames(cls.ArticleList, {}, [className, cls[view]])}
+      data-testid="ArticleList"
+    >
       {articles?.length ? renderArticleList() : null}
       {isLoading && (
-        <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+        <div
+          className={classNames(cls.ArticleList, {}, [className, cls[view]])}
+        >
           {getSkeletons(view)}
         </div>
       )}

@@ -9,7 +9,7 @@ import { Dropdown } from '@/shared/ui/Popups';
 import { Avatar } from '@/shared/ui/Avatar';
 
 interface AvatarDropdownProps {
-  className?: string,
+  className?: string;
 }
 
 export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
@@ -41,7 +41,6 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
           },
         ]}
       />
-
     );
   }
   return null;

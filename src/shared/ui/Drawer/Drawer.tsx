@@ -1,27 +1,26 @@
-import {
-  ReactNode, memo, useCallback, useEffect,
-} from 'react';
+import { ReactNode, memo, useCallback, useEffect } from 'react';
 import { classNames } from '@/shared/config/lib/classNames/classNames';
-import { AnimationProvider, useAnimationLibs } from '@/shared/config/lib/components';
+import {
+  AnimationProvider,
+  useAnimationLibs,
+} from '@/shared/config/lib/components';
 import cls from './Drawer.module.scss';
 import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
 import { useTheme } from '@/shared/config/lib/hooks/useTheme/useTheme';
 
 interface DrawerProps {
-  className?: string,
-  children: ReactNode,
-  isOpen: boolean,
-  onClose?: () => void,
-  lazy?: boolean,
+  className?: string;
+  children: ReactNode;
+  isOpen: boolean;
+  onClose?: () => void;
+  lazy?: boolean;
 }
 
 const height = window.innerHeight - 100;
 
 const DrawerContent = memo((props: DrawerProps) => {
-  const {
-    className, children, isOpen, onClose, lazy,
-  } = props;
+  const { className, children, isOpen, onClose, lazy } = props;
   const { Spring, Gesture } = useAnimationLibs();
   const [{ y }, api] = Spring.useSpring(() => ({ y: height }));
   const { theme } = useTheme();
@@ -66,7 +65,10 @@ const DrawerContent = memo((props: DrawerProps) => {
       }
     },
     {
-      from: () => [0, y.get()], filterTaps: true, bounds: { top: 0 }, rubberband: true,
+      from: () => [0, y.get()],
+      filterTaps: true,
+      bounds: { top: 0 },
+      rubberband: true,
     },
   );
 
@@ -78,7 +80,9 @@ const DrawerContent = memo((props: DrawerProps) => {
 
   return (
     <Portal>
-      <div className={classNames(cls.Drawer, {}, [className, theme, 'app_drawer'])}>
+      <div
+        className={classNames(cls.Drawer, {}, [className, theme, 'app_drawer'])}
+      >
         <Overlay onClick={close} />
         <Spring.a.div
           className={cls.sheet}

@@ -1,3 +1,1 @@
-export {
-  Text, TextAligns, TextSize, TextVariants,
-} from './Text';
+export { Text, TextAligns, TextSize, TextVariants } from './Text';

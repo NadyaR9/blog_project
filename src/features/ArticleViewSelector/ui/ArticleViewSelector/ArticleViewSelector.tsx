@@ -8,9 +8,9 @@ import { Icon } from '@/shared/ui/Icon';
 import { ArticleView } from '@/entities/Article';
 
 interface ArticleViewSelectorProps {
-  className?: string,
-  view?: ArticleView,
-  onViewChange?: (newView: ArticleView) => void,
+  className?: string;
+  view?: ArticleView;
+  onViewChange?: (newView: ArticleView) => void;
 }
 
 const viewTypes = [
@@ -34,13 +34,12 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
   return (
     <div className={classNames(cls.ArticleViewSelector, {}, [className])}>
       {viewTypes.map((viewType) => (
-        <Button
-          key={viewType.view}
-          onClick={onClick(viewType.view)}
-        >
+        <Button key={viewType.view} onClick={onClick(viewType.view)}>
           <Icon
             Svg={viewType.icon}
-            className={classNames('', { [cls.notSelected]: viewType.view !== view })}
+            className={classNames('', {
+              [cls.notSelected]: viewType.view !== view,
+            })}
           />
         </Button>
       ))}

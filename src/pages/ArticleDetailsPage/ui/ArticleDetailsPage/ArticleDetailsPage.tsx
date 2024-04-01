@@ -2,7 +2,10 @@ import { FC, memo } from 'react';
 import { useParams } from 'react-router-dom';
 import { ArticleDetails } from '@/entities/Article';
 import { classNames } from '@/shared/config/lib/classNames/classNames';
-import { DynamicModuleLoader, ReducerList } from '@/shared/config/lib/components';
+import {
+  DynamicModuleLoader,
+  ReducerList,
+} from '@/shared/config/lib/components';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
@@ -29,7 +32,10 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 
   return (
     <DynamicModuleLoader removeAfterUnmount reducerList={reducerList}>
-      <Page className={classNames('', {}, [className])} data-testid="ArticleDetailsPage">
+      <Page
+        className={classNames('', {}, [className])}
+        data-testid="ArticleDetailsPage"
+      >
         <VStack gap="32" max>
           <VStack gap="16" max>
             <ArticleDetailsPageHeader />

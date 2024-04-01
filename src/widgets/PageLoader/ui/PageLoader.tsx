@@ -4,11 +4,14 @@ import { HStack } from '@/shared/ui/Stack';
 import { Loader } from '@/shared/ui/Loader';
 
 interface PageLoaderProps {
-  className?: string,
+  className?: string;
 }
 
 export const PageLoader = ({ className }: PageLoaderProps) => (
-  <HStack justify="center" className={classNames(cls.PageLoader, {}, [className])}>
+  <HStack
+    justify="center"
+    className={classNames(cls.PageLoader, {}, [className])}
+  >
     <Loader />
   </HStack>
 );

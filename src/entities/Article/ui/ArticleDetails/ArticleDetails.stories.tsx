@@ -89,31 +89,42 @@ const article: Article = {
   ],
 };
 
-const Template: ComponentStory<typeof ArticleDetails> = (args) => <ArticleDetails {...args} />;
+const Template: ComponentStory<typeof ArticleDetails> = (args) => (
+  <ArticleDetails {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {};
 
-Normal.decorators = [StoreDecorator({
-  articleDetails: {
-    data: article,
-  },
-}), ThemeDecorator(Theme.DARK)];
+Normal.decorators = [
+  StoreDecorator({
+    articleDetails: {
+      data: article,
+    },
+  }),
+  ThemeDecorator(Theme.DARK),
+];
 
 export const IsLoading = Template.bind({});
 IsLoading.args = {};
 
-IsLoading.decorators = [StoreDecorator({
-  articleDetails: {
-    isLoading: true,
-  },
-}), ThemeDecorator(Theme.DARK)];
+IsLoading.decorators = [
+  StoreDecorator({
+    articleDetails: {
+      isLoading: true,
+    },
+  }),
+  ThemeDecorator(Theme.DARK),
+];
 
 export const Error = Template.bind({});
 Error.args = {};
 
-Error.decorators = [StoreDecorator({
-  articleDetails: {
-    error: 'error',
-  },
-}), ThemeDecorator(Theme.DARK)];
+Error.decorators = [
+  StoreDecorator({
+    articleDetails: {
+      error: 'error',
+    },
+  }),
+  ThemeDecorator(Theme.DARK),
+];

@@ -11,32 +11,41 @@ import { Button, ButtonVariants } from '@/shared/ui/Button';
 import { Input } from '@/shared/ui/Input';
 
 interface RatingProps {
-  className?: string,
-  rate?: number,
-  onCancel?: (start: number) => void,
-  onAccept?: (start: number, feedback?: string) => void,
-  title?: string,
-  hasFeedback?: boolean,
-  feedbackTitle?: string,
+  className?: string;
+  rate?: number;
+  onCancel?: (start: number) => void;
+  onAccept?: (start: number, feedback?: string) => void;
+  title?: string;
+  hasFeedback?: boolean;
+  feedbackTitle?: string;
 }
 
 export const RatingCard = memo((props: RatingProps) => {
   const {
-    className, feedbackTitle, rate = 0, onCancel, onAccept, title, hasFeedback,
+    className,
+    feedbackTitle,
+    rate = 0,
+    onCancel,
+    onAccept,
+    title,
+    hasFeedback,
   } = props;
   const [feedback, setFeedback] = useState('');
   const [starsCount, setStarsCount] = useState(rate);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { t } = useTranslation();
 
-  const onSelectStar = useCallback((value: number) => {
-    setStarsCount(value);
-    if (hasFeedback) {
-      setIsModalOpen(true);
-    } else {
-      onAccept?.(value);
-    }
-  }, [onAccept, hasFeedback]);
+  const onSelectStar = useCallback(
+    (value: number) => {
+      setStarsCount(value);
+      if (hasFeedback) {
+        setIsModalOpen(true);
+      } else {
+        onAccept?.(value);
+      }
+    },
+    [onAccept, hasFeedback],
+  );
 
   const onSaveHandle = useCallback(() => {
     setIsModalOpen(false);

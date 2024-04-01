@@ -20,19 +20,14 @@ import { AppImage } from '@/shared/ui/AppImage';
 import { Skeleton } from '@/shared/ui/Skeleton';
 
 interface ArticleListItemProps {
-  className?: string,
-  article: Article,
-  view: ArticleView,
-  target?: HTMLAttributeAnchorTarget,
+  className?: string;
+  article: Article;
+  view: ArticleView;
+  target?: HTMLAttributeAnchorTarget;
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
-  const {
-    className,
-    article,
-    view,
-    target = '_self',
-  } = props;
+  const { className, article, view, target = '_self' } = props;
   const [isHover, bindHover] = useHover();
   const { t } = useTranslation('articles');
   const navigate = useNavigate();
@@ -50,9 +45,14 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   );
 
   if (view === ArticleView.BIG) {
-    const textBlock = article.blocks.find((block) => block.type === ArticleBlockType.TEXT) as ArticleBlockText;
+    const textBlock = article.blocks.find(
+      (block) => block.type === ArticleBlockType.TEXT,
+    ) as ArticleBlockText;
     return (
-      <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])} data-testid="ArticleListItem">
+      <div
+        className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
+        data-testid="ArticleListItem"
+      >
         <Card>
           <div className={cls.header}>
             <Avatar size={30} src={article.user.avatar} />
@@ -67,15 +67,15 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             alt={article.title}
             fallback={<Skeleton width="100%" height={250} />}
           />
-          {textBlock && <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />}
+          {textBlock && (
+            <ArticleTextBlockComponent
+              block={textBlock}
+              className={cls.textBlock}
+            />
+          )}
           <div className={cls.footer}>
-            <AppLink
-              to={getRouteArticleDdetails(article.id)}
-              target={target}
-            >
-              <Button
-                variants={ButtonVariants.PRIMARY_OUTLINED}
-              >
+            <AppLink to={getRouteArticleDdetails(article.id)} target={target}>
+              <Button variants={ButtonVariants.PRIMARY_OUTLINED}>
                 {t('Read more')}
               </Button>
             </AppLink>
@@ -86,8 +86,15 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     );
   }
   return (
-    <AppLink to={getRouteArticleDdetails(article.id)} target={target} data-testid="ArticleListItem">
-      <div {...bindHover} className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
+    <AppLink
+      to={getRouteArticleDdetails(article.id)}
+      target={target}
+      data-testid="ArticleListItem"
+    >
+      <div
+        {...bindHover}
+        className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
+      >
         <Card onClick={onOpenArticle}>
           <div className={cls.imageWrapper}>
             <AppImage

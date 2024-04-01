@@ -1,5 +1,9 @@
 import { TestAsyncThunk } from '@/shared/config/tests/TestAsyncThunk/TestAsyncThunk';
-import { ArticleSortField, ArticleTypes, ArticleView } from '@/entities/Article';
+import {
+  ArticleSortField,
+  ArticleTypes,
+  ArticleView,
+} from '@/entities/Article';
 import { fetchNextArticlesPage } from './fetchNextArticlesPage';
 import { fetchArticles } from '../fetchArticles/fetchArticles';
 

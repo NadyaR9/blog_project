@@ -11,7 +11,7 @@ import cls from './Navbar.module.scss';
 import { Button, ButtonVariants } from '@/shared/ui/Button';
 
 interface NavbarProps {
-  className?: string,
+  className?: string;
 }
 
 export const Navbar = memo(({ className }: NavbarProps) => {
@@ -36,17 +36,11 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   }
   return (
     <header className={classNames(cls.Navbar, {}, [className])}>
-      <Button
-        variants={ButtonVariants.SECONDARY}
-        onClick={onOpenModal}
-      >
+      <Button variants={ButtonVariants.SECONDARY} onClick={onOpenModal}>
         {t('LogIn')}
       </Button>
       {isAuthModal && (
-        <LoginModal
-          isOpen={isAuthModal}
-          onClose={onCloseModal}
-        />
+        <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
       )}
     </header>
   );

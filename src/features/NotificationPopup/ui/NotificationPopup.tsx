@@ -10,7 +10,7 @@ import { Button } from '@/shared/ui/Button';
 import { Icon } from '@/shared/ui/Icon';
 
 interface NotificationPopupProps {
-  className?: string,
+  className?: string;
 }
 
 export const NotificationPopup = memo((props: NotificationPopupProps) => {
@@ -25,7 +25,11 @@ export const NotificationPopup = memo((props: NotificationPopupProps) => {
     setIsOpen(false);
   }, []);
 
-  const trigger = (<Button onClick={onDrawerOpen}><Icon Svg={NotificationIcon} /></Button>);
+  const trigger = (
+    <Button onClick={onDrawerOpen}>
+      <Icon Svg={NotificationIcon} />
+    </Button>
+  );
 
   return (
     <div className={classNames(cls.NotificationPopup, {}, [className])}>

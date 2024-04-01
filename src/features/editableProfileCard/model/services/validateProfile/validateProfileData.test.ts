@@ -20,7 +20,11 @@ describe('validateProfileData.test', () => {
   });
 
   test('invalid firstname and last name', async () => {
-    const result = validateProfileData({ ...data, lastname: '', firstname: '' });
+    const result = validateProfileData({
+      ...data,
+      lastname: '',
+      firstname: '',
+    });
     expect(result).toEqual([ValidateProfileError.INVALID_USER_DATA]);
   });
 
