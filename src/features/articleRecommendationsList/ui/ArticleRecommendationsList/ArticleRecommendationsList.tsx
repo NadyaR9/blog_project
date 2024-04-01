@@ -9,31 +9,38 @@ import { Skeleton } from '@/shared/ui/Skeleton';
 import { Text, TextSize } from '@/shared/ui/Text';
 
 interface ArticleRecommendationsListProps {
-    className?: string;
+  className?: string;
 }
 
-export const ArticleRecommendationsList = memo((props: ArticleRecommendationsListProps) => {
-  const { className } = props;
+export const ArticleRecommendationsList = memo(
+  (props: ArticleRecommendationsListProps) => {
+    const { className } = props;
 
-  const { t } = useTranslation('articles');
+    const { t } = useTranslation('articles');
 
-  const { data: articles, isLoading, error } = useArticleRecommendationsList(3);
+    const {
+      data: articles,
+      isLoading,
+      error,
+    } = useArticleRecommendationsList(3);
 
-  if (error || !articles?.length) {
-    return null;
-  }
+    if (error || !articles?.length) {
+      return null;
+    }
 
-  if (isLoading) {
-    return <Skeleton height={100} />;
-  }
+    if (isLoading) {
+      return <Skeleton height={100} />;
+    }
 
-  return (
-    <VStack gap="8" className={classNames('', {}, [className])} data-testid="ArticleRecommendationsList">
-      <Text size={TextSize.L} title={t('Recommendations Block')} />
-      <ArticleList
-        articles={articles}
-        target="_blank"
-      />
-    </VStack>
-  );
-});
+    return (
+      <VStack
+        gap="8"
+        className={classNames('', {}, [className])}
+        data-testid="ArticleRecommendationsList"
+      >
+        <Text size={TextSize.L} title={t('Recommendations Block')} />
+        <ArticleList articles={articles} target="_blank" />
+      </VStack>
+    );
+  },
+);

@@ -6,7 +6,7 @@ export enum RouteName {
   ARTICLES = 'articles',
   ARTICLE_DETAILS = 'article_details',
   ADMIN = 'admin',
-  FORBIDDEN = 'access_denied'
+  FORBIDDEN = 'access_denied',
 }
 
 export const getRouteMain = () => '/';

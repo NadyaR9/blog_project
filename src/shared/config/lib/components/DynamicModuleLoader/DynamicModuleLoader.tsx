@@ -1,18 +1,19 @@
 import { ReactNode, useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
-import { StateSchemaKyes, ReduxStoreWithManager } from '@/app/providers/StoreProvider';
+import {
+  StateSchemaKyes,
+  ReduxStoreWithManager,
+} from '@/app/providers/StoreProvider';
 import { ReducerList } from './types';
 
 export interface DynamicModuleLoaderProps {
-  reducerList: ReducerList,
-  removeAfterUnmount?: boolean,
-  children: ReactNode,
+  reducerList: ReducerList;
+  removeAfterUnmount?: boolean;
+  children: ReactNode;
 }
 
 export const DynamicModuleLoader = (props: DynamicModuleLoaderProps) => {
-  const {
-    children, reducerList, removeAfterUnmount = true,
-  } = props;
+  const { children, reducerList, removeAfterUnmount = true } = props;
   const dispatch = useDispatch();
   const store = useStore() as ReduxStoreWithManager;
 
@@ -34,12 +35,10 @@ export const DynamicModuleLoader = (props: DynamicModuleLoaderProps) => {
         });
       }
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     // eslint-disable-next-line react/jsx-no-useless-fragment
-    <>
-      {children}
-    </>
+    <>{children}</>
   );
 };

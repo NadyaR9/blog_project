@@ -3,11 +3,15 @@ import { MutableRefObject, useEffect } from 'react';
 
 export interface useInfinityScrollOptions {
   callback?: () => void; // call when we cross element
-  triggerRef: MutableRefObject<HTMLElement>;// crossed element
-  wrapperRef : MutableRefObject<HTMLElement>; // ref container
+  triggerRef: MutableRefObject<HTMLElement>; // crossed element
+  wrapperRef: MutableRefObject<HTMLElement>; // ref container
 }
 
-export function useInfinityScroll({ callback, triggerRef, wrapperRef }:useInfinityScrollOptions) {
+export function useInfinityScroll({
+  callback,
+  triggerRef,
+  wrapperRef,
+}: useInfinityScrollOptions) {
   useEffect(() => {
     const wrapperElement = wrapperRef.current;
     const triggerElement = triggerRef.current;

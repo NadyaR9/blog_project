@@ -8,12 +8,12 @@ export enum ArticleTypes {
   IT = 'IT',
   SCIENCE = 'SCIENCE',
   ECONOMICS = 'ECONOMICS',
-  ALL = 'ALL'
+  ALL = 'ALL',
 }
 
 export enum ArticleView {
   SMALL = 'SMALL',
-  BIG = 'BIG'
+  BIG = 'BIG',
 }
 
 export enum ArticleSortField {

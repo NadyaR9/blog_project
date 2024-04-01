@@ -1,6 +1,4 @@
-import {
-  DetailedHTMLProps, HTMLAttributes, ReactNode,
-} from 'react';
+import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 import { Mods, classNames } from '@/shared/config/lib/classNames/classNames';
 import cls from './Flex.module.scss';
 
@@ -34,15 +32,18 @@ const directionClasses: Record<FlexDirection, string> = {
   row: cls.directionRow,
 };
 
-type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+type DivProps = DetailedHTMLProps<
+  HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+>;
 export interface FlexProps extends DivProps {
-  className?: string,
-  children: ReactNode,
-  justify?: FlexJustify,
-  align?: FlexAlign,
-  direction?: FlexDirection,
-  gap?: FlexGap,
-  max?: boolean,
+  className?: string;
+  children: ReactNode;
+  justify?: FlexJustify;
+  align?: FlexAlign;
+  direction?: FlexDirection;
+  gap?: FlexGap;
+  max?: boolean;
 }
 
 export const Flex = (props: FlexProps) => {

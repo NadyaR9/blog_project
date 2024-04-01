@@ -10,7 +10,7 @@ export enum AppLinkTheme {
 }
 
 interface AppLinkProps extends LinkProps {
-  theme?: AppLinkTheme,
+  theme?: AppLinkTheme;
 }
 
 export const AppLink = memo((props: AppLinkProps) => {

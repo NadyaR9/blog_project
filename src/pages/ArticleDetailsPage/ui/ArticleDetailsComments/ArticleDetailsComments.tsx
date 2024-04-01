@@ -15,37 +15,39 @@ import { Loader } from '@/shared/ui/Loader';
 import { Text, TextSize } from '@/shared/ui/Text';
 
 interface ArticleDetailsCommentsProps {
-  className?: string,
-  id?: string,
+  className?: string;
+  id?: string;
 }
 
-export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) => {
-  const { className, id } = props;
-  const { t } = useTranslation('articles');
-  const dispatch = useAppDispatch();
-  const comments = useSelector(getArticleComments.selectAll);
-  const isLoading = useSelector(getArticleCommentsIsLoading);
+export const ArticleDetailsComments = memo(
+  (props: ArticleDetailsCommentsProps) => {
+    const { className, id } = props;
+    const { t } = useTranslation('articles');
+    const dispatch = useAppDispatch();
+    const comments = useSelector(getArticleComments.selectAll);
+    const isLoading = useSelector(getArticleCommentsIsLoading);
 
-  useInitialEffect(() => {
-    if (id) {
-      dispatch(fetchCommentsByArticleId(id));
-    }
-  });
+    useInitialEffect(() => {
+      if (id) {
+        dispatch(fetchCommentsByArticleId(id));
+      }
+    });
 
-  const onSendComment = useCallback((text: string) => {
-    dispatch(addCommentForArticle(text));
-  }, [dispatch]);
+    const onSendComment = useCallback(
+      (text: string) => {
+        dispatch(addCommentForArticle(text));
+      },
+      [dispatch],
+    );
 
-  return (
-    <VStack max gap="8" className={classNames('', {}, [className])}>
-      <Text
-        size={TextSize.L}
-        title={t('Comment Block')}
-      />
-      <Suspense fallback={<Loader />}>
-        <AddNewCommentForm onSendComment={onSendComment} />
-      </Suspense>
-      <CommentList comments={comments} isLoading={isLoading} />
-    </VStack>
-  );
-});
+    return (
+      <VStack max gap="8" className={classNames('', {}, [className])}>
+        <Text size={TextSize.L} title={t('Comment Block')} />
+        <Suspense fallback={<Loader />}>
+          <AddNewCommentForm onSendComment={onSendComment} />
+        </Suspense>
+        <CommentList comments={comments} isLoading={isLoading} />
+      </VStack>
+    );
+  },
+);

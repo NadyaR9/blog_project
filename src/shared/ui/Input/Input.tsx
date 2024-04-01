@@ -1,22 +1,37 @@
 import {
-  InputHTMLAttributes, ChangeEvent, useState, useRef, useEffect, memo,
+  InputHTMLAttributes,
+  ChangeEvent,
+  useState,
+  useRef,
+  useEffect,
+  memo,
 } from 'react';
 import { classNames, Mods } from '@/shared/config/lib/classNames/classNames';
 import cls from './Input.module.scss';
 
-type DefaultInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>;
+type DefaultInputProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  'value' | 'onChange' | 'readOnly'
+>;
 
 interface InputProps extends DefaultInputProps {
-  className?: string,
-  value?: string | number,
-  onChange?: (value: string) => void,
-  autofocus?: boolean,
-  readonly?: boolean,
+  className?: string;
+  value?: string | number;
+  onChange?: (value: string) => void;
+  autofocus?: boolean;
+  readonly?: boolean;
 }
 
 export const Input = memo((props: InputProps) => {
   const {
-    className, value, onChange, type = 'text', placeholder, autofocus, readonly = false, ...other
+    className,
+    value,
+    onChange,
+    type = 'text',
+    placeholder,
+    autofocus,
+    readonly = false,
+    ...other
   } = props;
   const [isFocused, setIsFocused] = useState<boolean>(false);
   const [caretPosition, setCaretPosition] = useState<number>(0);
@@ -53,8 +68,9 @@ export const Input = memo((props: InputProps) => {
 
   return (
     <div className={classNames(cls.InputWrapper, mods, [className])}>
-      {placeholder
-        && <div className={cls.placeholder}>{`${placeholder}>`}</div>}
+      {placeholder && (
+        <div className={cls.placeholder}>{`${placeholder}>`}</div>
+      )}
       <div className={cls.caretWrapper}>
         <input
           className={cls.input}

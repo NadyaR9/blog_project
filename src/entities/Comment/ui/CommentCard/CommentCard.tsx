@@ -11,9 +11,9 @@ import { Avatar } from '@/shared/ui/Avatar';
 import { Skeleton } from '@/shared/ui/Skeleton';
 
 interface CommentCardProps {
-  className?: string,
-  comment?: Comment,
-  isLoading?: boolean,
+  className?: string;
+  comment?: Comment;
+  isLoading?: boolean;
 }
 
 export const CommentCard = memo((props: CommentCardProps) => {
@@ -21,7 +21,11 @@ export const CommentCard = memo((props: CommentCardProps) => {
   const { t } = useTranslation();
   if (isLoading) {
     return (
-      <VStack max gap="8" className={classNames(cls.CommentCard, {}, [className, cls.loading])}>
+      <VStack
+        max
+        gap="8"
+        className={classNames(cls.CommentCard, {}, [className, cls.loading])}
+      >
         <HStack gap="16">
           <Skeleton width={30} height={30} border="50%" />
           <Skeleton width={100} height={16} />
@@ -43,15 +47,12 @@ export const CommentCard = memo((props: CommentCardProps) => {
       data-testid="CommentCard"
     >
       <AppLink className={cls.header} to={getRouteProfile(comment?.user.id)}>
-        {comment?.user.avatar && <Avatar size={30} src={comment?.user.avatar} />}
-        <Text
-          title={comment?.user.username}
-        />
+        {comment?.user.avatar && (
+          <Avatar size={30} src={comment?.user.avatar} />
+        )}
+        <Text title={comment?.user.username} />
       </AppLink>
-      <Text
-        text={comment?.text}
-        className={cls.text}
-      />
+      <Text text={comment?.text} className={cls.text} />
     </VStack>
   );
 });

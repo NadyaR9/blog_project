@@ -1,5 +1,9 @@
 import {
-  AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject,
+  AnyAction,
+  CombinedState,
+  EnhancedStore,
+  Reducer,
+  ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { ArticleDetailsSchema } from '@/entities/Article';
@@ -13,37 +17,37 @@ import { ArticlesPageSchema } from '@/pages/ArticlesPage';
 import { rtkApi } from '@/shared/api/rtkApi';
 
 export interface StateSchema {
-  scrollSaver: ScrollSaverSchema,
-  user: UserSchema,
-  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>,
+  scrollSaver: ScrollSaverSchema;
+  user: UserSchema;
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
-  loginForm?: LoginSchema,
-  profile?: ProfileSchema,
-  articleDetails?: ArticleDetailsSchema,
-  articleDetailsPage?: ArticlesDetailsPageSchema,
-  addNewComment?: AddNewCommentSchema,
-  articles?: ArticlesPageSchema,
+  loginForm?: LoginSchema;
+  profile?: ProfileSchema;
+  articleDetails?: ArticleDetailsSchema;
+  articleDetailsPage?: ArticlesDetailsPageSchema;
+  addNewComment?: AddNewCommentSchema;
+  articles?: ArticlesPageSchema;
 }
 
 export type StateSchemaKyes = keyof StateSchema;
 
 export interface ReducerManager {
-  getReducerMap: () => ReducersMapObject<StateSchema>,
-  reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>,
-  add: (key: StateSchemaKyes, reducer: Reducer) => void,
-  remove: (key: StateSchemaKyes) => void,
+  getReducerMap: () => ReducersMapObject<StateSchema>;
+  reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>;
+  add: (key: StateSchemaKyes, reducer: Reducer) => void;
+  remove: (key: StateSchemaKyes) => void;
 }
 
 export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
-  reducerManager: ReducerManager,
+  reducerManager: ReducerManager;
 }
 
 export interface ThunkExtraArg {
-  api: AxiosInstance,
+  api: AxiosInstance;
 }
 
 export interface ThunkConfig<T> {
-  rejectValue: T,
-  extra: ThunkExtraArg,
-  state: StateSchema,
+  rejectValue: T;
+  extra: ThunkExtraArg;
+  state: StateSchema;
 }

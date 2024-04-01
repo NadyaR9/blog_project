@@ -19,7 +19,13 @@ describe('Edit Profile', () => {
     const newFirstName = 'firstname';
     const newLastname = 'lastname';
     cy.editProfile(newFirstName, newLastname);
-    cy.getByTestId('EditableProfileCard.firstname').should('have.value', newFirstName);
-    cy.getByTestId('EditableProfileCard.lastname').should('have.value', newLastname);
+    cy.getByTestId('EditableProfileCard.firstname').should(
+      'have.value',
+      newFirstName,
+    );
+    cy.getByTestId('EditableProfileCard.lastname').should(
+      'have.value',
+      newLastname,
+    );
   });
 });

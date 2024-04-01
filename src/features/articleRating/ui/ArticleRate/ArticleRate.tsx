@@ -8,8 +8,8 @@ import { RatingCard } from '@/entities/Rating';
 import { Skeleton } from '@/shared/ui/Skeleton';
 
 export interface ArticleRateProps {
-    className?: string,
-    articleId: string,
+  className?: string;
+  articleId: string;
 }
 
 const ArticleRate = memo((props: ArticleRateProps) => {
@@ -17,26 +17,41 @@ const ArticleRate = memo((props: ArticleRateProps) => {
   const authData = useSelector(getUserAuthData);
   const { t } = useTranslation('articles');
 
-  const { data: ratingData, isLoading } = useGetArticleRate({ articleId, userId: authData?.id ?? '' });
+  const { data: ratingData, isLoading } = useGetArticleRate({
+    articleId,
+    userId: authData?.id ?? '',
+  });
   const [rateArticleMutation] = useAddArticleRate();
 
-  const onHandleRating = useCallback((rate: number, feedback?: string) => {
-    try {
-      rateArticleMutation({
-        rate, feedback, articleId, userId: authData?.id ?? '',
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  }, [rateArticleMutation, authData, articleId]);
+  const onHandleRating = useCallback(
+    (rate: number, feedback?: string) => {
+      try {
+        rateArticleMutation({
+          rate,
+          feedback,
+          articleId,
+          userId: authData?.id ?? '',
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    [rateArticleMutation, authData, articleId],
+  );
 
-  const onAccept = useCallback((rate: number, feedback?: string) => {
-    onHandleRating(rate, feedback);
-  }, [onHandleRating]);
+  const onAccept = useCallback(
+    (rate: number, feedback?: string) => {
+      onHandleRating(rate, feedback);
+    },
+    [onHandleRating],
+  );
 
-  const onCancel = useCallback((rate: number) => {
-    onHandleRating(rate);
-  }, [onHandleRating]);
+  const onCancel = useCallback(
+    (rate: number) => {
+      onHandleRating(rate);
+    },
+    [onHandleRating],
+  );
 
   if (isLoading) {
     return <Skeleton width="100%" height={100} />;

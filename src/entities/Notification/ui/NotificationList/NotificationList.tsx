@@ -7,7 +7,7 @@ import { VStack } from '@/shared/ui/Stack';
 import { Skeleton } from '@/shared/ui/Skeleton';
 
 interface NotificationListProps {
-  className?: string,
+  className?: string;
 }
 
 export const NotificationList = memo((props: NotificationListProps) => {
@@ -29,10 +29,7 @@ export const NotificationList = memo((props: NotificationListProps) => {
       max
     >
       {notifications?.map((notification) => (
-        <NotifiactionListItem
-          key={notification.id}
-          item={notification}
-        />
+        <NotifiactionListItem key={notification.id} item={notification} />
       ))}
     </VStack>
   );

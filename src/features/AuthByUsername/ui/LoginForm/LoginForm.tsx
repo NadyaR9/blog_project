@@ -2,7 +2,10 @@ import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/config/lib/classNames/classNames';
-import { DynamicModuleLoader, ReducerList } from '@/shared/config/lib/components';
+import {
+  DynamicModuleLoader,
+  ReducerList,
+} from '@/shared/config/lib/components';
 import { useAppDispatch } from '@/shared/config/lib/hooks/useAppDispatch/useAppDispatch';
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
@@ -16,8 +19,8 @@ import { Text, TextVariants } from '@/shared/ui/Text';
 import { Button, ButtonVariants } from '@/shared/ui/Button';
 
 export interface LoginFormProps {
-  className?: string,
-  onSuccess: () => void,
+  className?: string;
+  onSuccess: () => void;
 }
 
 const initialReducers: ReducerList = {
@@ -36,13 +39,19 @@ const LoginForm = (props: LoginFormProps) => {
 
   const { t } = useTranslation();
 
-  const onChangeUsername = useCallback((value: string) => {
-    dispatch(setUsername(value));
-  }, [dispatch]);
+  const onChangeUsername = useCallback(
+    (value: string) => {
+      dispatch(setUsername(value));
+    },
+    [dispatch],
+  );
 
-  const onChangePassword = useCallback((value: string) => {
-    dispatch(setPassword(value));
-  }, [dispatch]);
+  const onChangePassword = useCallback(
+    (value: string) => {
+      dispatch(setPassword(value));
+    },
+    [dispatch],
+  );
 
   const onLogin = useCallback(async () => {
     const result = await dispatch(loginByUsername({ username, password }));
@@ -52,10 +61,7 @@ const LoginForm = (props: LoginFormProps) => {
   }, [dispatch, username, password, onSuccess]);
 
   return (
-    <DynamicModuleLoader
-      reducerList={initialReducers}
-      removeAfterUnmount
-    >
+    <DynamicModuleLoader reducerList={initialReducers} removeAfterUnmount>
       <div className={classNames(cls.LoginForm, {}, [className])}>
         <Text title={t('auth form')} />
         {error && <Text text={t(error)} variants={TextVariants.ERROR} />}

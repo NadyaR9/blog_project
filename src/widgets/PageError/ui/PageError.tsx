@@ -6,7 +6,7 @@ import { Button } from '@/shared/ui/Button';
 import { VStack } from '@/shared/ui/Stack';
 
 interface PageErrorProps {
-  className?: string,
+  className?: string;
 }
 
 export const PageError = memo(({ className }: PageErrorProps) => {
@@ -17,15 +17,13 @@ export const PageError = memo(({ className }: PageErrorProps) => {
   };
 
   return (
-    <VStack max justify="center" className={classNames(cls.PageError, {}, [className])}>
-      <div className={cls.errorText}>
-        {t('Something went wrong')}
-      </div>
-      <Button
-        onClick={reloadPage}
-      >
-        {t('Please, reload page')}
-      </Button>
+    <VStack
+      max
+      justify="center"
+      className={classNames(cls.PageError, {}, [className])}
+    >
+      <div className={cls.errorText}>{t('Something went wrong')}</div>
+      <Button onClick={reloadPage}>{t('Please, reload page')}</Button>
     </VStack>
   );
 });

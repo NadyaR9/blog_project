@@ -8,21 +8,21 @@ const defaultArticle = {
   views: 111,
   createdAt: '11.11.2111',
   userId: '111',
-  type: [
-    'IT',
-  ],
+  type: ['IT'],
   blocks: [],
 };
 
 export const createArticle = (article?: Article) => {
-  return cy.request({
-    method: 'POST',
-    url: 'http://localhost:8000/articles',
-    headers: {
-      Authorization: 'Authorization',
-    },
-    body: article ?? defaultArticle,
-  }).then(({ body }) => body);
+  return cy
+    .request({
+      method: 'POST',
+      url: 'http://localhost:8000/articles',
+      headers: {
+        Authorization: 'Authorization',
+      },
+      body: article ?? defaultArticle,
+    })
+    .then(({ body }) => body);
 };
 
 export const deleteArticle = (articleId: string) => {
@@ -38,8 +38,8 @@ export const deleteArticle = (articleId: string) => {
 declare global {
   namespace Cypress {
     interface Chainable {
-      createArticle(article?: Article): Chainable<Article>
-      deleteArticle(articleId: string): Chainable<void>
+      createArticle(article?: Article): Chainable<Article>;
+      deleteArticle(articleId: string): Chainable<void>;
     }
   }
 }

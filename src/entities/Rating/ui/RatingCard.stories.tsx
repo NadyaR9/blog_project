@@ -9,7 +9,9 @@ export default {
   },
 } as ComponentMeta<typeof RatingCard>;
 
-const Template: ComponentStory<typeof RatingCard> = (args) => <RatingCard {...args} />;
+const Template: ComponentStory<typeof RatingCard> = (args) => (
+  <RatingCard {...args} />
+);
 
 export const Rated = Template.bind({});
 Rated.args = {

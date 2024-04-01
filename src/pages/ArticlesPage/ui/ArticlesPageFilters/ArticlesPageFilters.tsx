@@ -12,7 +12,11 @@ import { SortOrder } from '@/shared/config/types';
 import { useDebounce } from '@/shared/config/lib/hooks/useDebounce/useDebounce';
 import { fetchArticles } from '../../model/services/fetchArticles/fetchArticles';
 import {
-  getArticlesOrder, getArticlesSearch, getArticlesSort, getArticlesType, getArticlesView,
+  getArticlesOrder,
+  getArticlesSearch,
+  getArticlesSort,
+  getArticlesType,
+  getArticlesView,
 } from '../../model/selectors/getArticlesSelectors';
 import { articlesActions } from '../../model/slices/articlesPageSlice';
 import cls from './ArticlesPageFilters.module.scss';
@@ -24,7 +28,7 @@ import { ArticleViewSelector } from '@/features/ArticleViewSelector';
 import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
 
 interface FiltersProps {
-  className?: string,
+  className?: string;
 }
 
 export const ArticlesPageFilters = memo((props: FiltersProps) => {
@@ -37,9 +41,12 @@ export const ArticlesPageFilters = memo((props: FiltersProps) => {
   const search = useSelector(getArticlesSearch);
   const type = useSelector(getArticlesType);
 
-  const onViewChange = useCallback((newView: ArticleView) => {
-    dispatch(articlesActions.setView(newView));
-  }, [dispatch]);
+  const onViewChange = useCallback(
+    (newView: ArticleView) => {
+      dispatch(articlesActions.setView(newView));
+    },
+    [dispatch],
+  );
 
   const fetachData = useCallback(() => {
     dispatch(fetchArticles({ replace: true }));
@@ -47,47 +54,50 @@ export const ArticlesPageFilters = memo((props: FiltersProps) => {
 
   const debouncedFetachData = useDebounce(fetachData, 800);
 
-  const onSortChange = useCallback((newSort: ArticleSortField) => {
-    dispatch(articlesActions.setSort(newSort));
-    dispatch(articlesActions.setPage(1));
-    fetachData();
-  }, [dispatch, fetachData]);
+  const onSortChange = useCallback(
+    (newSort: ArticleSortField) => {
+      dispatch(articlesActions.setSort(newSort));
+      dispatch(articlesActions.setPage(1));
+      fetachData();
+    },
+    [dispatch, fetachData],
+  );
 
-  const onOrderChange = useCallback((newOrder: SortOrder) => {
-    dispatch(articlesActions.setOrder(newOrder));
-    dispatch(articlesActions.setPage(1));
-    fetachData();
-  }, [dispatch, fetachData]);
+  const onOrderChange = useCallback(
+    (newOrder: SortOrder) => {
+      dispatch(articlesActions.setOrder(newOrder));
+      dispatch(articlesActions.setPage(1));
+      fetachData();
+    },
+    [dispatch, fetachData],
+  );
 
-  const onSearchChange = useCallback((search: string) => {
-    dispatch(articlesActions.setSearch(search));
-    dispatch(articlesActions.setPage(1));
-    debouncedFetachData();
-  }, [dispatch, debouncedFetachData]);
+  const onSearchChange = useCallback(
+    (search: string) => {
+      dispatch(articlesActions.setSearch(search));
+      dispatch(articlesActions.setPage(1));
+      debouncedFetachData();
+    },
+    [dispatch, debouncedFetachData],
+  );
 
-  const onTabChange = useCallback((tab: ArticleTypes) => {
-    dispatch(articlesActions.setType(tab));
-    dispatch(articlesActions.setPage(1));
-    fetachData();
-  }, [dispatch, fetachData]);
+  const onTabChange = useCallback(
+    (tab: ArticleTypes) => {
+      dispatch(articlesActions.setType(tab));
+      dispatch(articlesActions.setPage(1));
+      fetachData();
+    },
+    [dispatch, fetachData],
+  );
 
   return (
     <div className={classNames(cls.Filters, {}, [className])}>
       <div className={cls.filtersWrapper}>
         <div className={cls.sortFilter}>
-          <ArticleSortSelector
-            sort={sort}
-            onChange={onSortChange}
-          />
-          <ArticleOrderSelector
-            order={order}
-            onChange={onOrderChange}
-          />
+          <ArticleSortSelector sort={sort} onChange={onSortChange} />
+          <ArticleOrderSelector order={order} onChange={onOrderChange} />
         </div>
-        <ArticleViewSelector
-          view={view}
-          onViewChange={onViewChange}
-        />
+        <ArticleViewSelector view={view} onViewChange={onViewChange} />
       </div>
       <Card className={cls.search}>
         <Input
@@ -96,10 +106,7 @@ export const ArticlesPageFilters = memo((props: FiltersProps) => {
           onChange={onSearchChange}
         />
       </Card>
-      <ArticleTypeTabs
-        value={type}
-        onChange={onTabChange}
-      />
+      <ArticleTypeTabs value={type} onChange={onTabChange} />
     </div>
   );
 });

@@ -14,7 +14,9 @@ export default {
   },
 } as ComponentMeta<typeof ArticleList>;
 
-const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...args} />;
+const Template: ComponentStory<typeof ArticleList> = (args) => (
+  <ArticleList {...args} />
+);
 const article = {
   id: '1',
   title: 'Javascript news Javascript news Javascript news',
@@ -25,13 +27,10 @@ const article = {
   user: {
     id: '1',
     username: 'admin',
-    avatar: 'https://i.pinimg.com/564x/81/09/1a/81091a8004c62607962adaaea674dc39.jpg',
+    avatar:
+      'https://i.pinimg.com/564x/81/09/1a/81091a8004c62607962adaaea674dc39.jpg',
   },
-  type: [
-    'IT',
-    'ECONOMICS',
-    'POLITICS',
-  ],
+  type: ['IT', 'ECONOMICS', 'POLITICS'],
   blocks: [
     {
       id: '1',

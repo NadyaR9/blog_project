@@ -7,28 +7,24 @@ import popup from '../../styles/popup.module.scss';
 import { mapDirection } from '../../styles/consts';
 
 interface PopoverProps {
-  children: ReactNode,
-  trigger: ReactNode,
-  className: string,
-  directions?: DropdownDirection,
+  children: ReactNode;
+  trigger: ReactNode;
+  className: string;
+  directions?: DropdownDirection;
 }
 
 export function Popover(props: PopoverProps) {
-  const {
-    children, trigger, className, directions = 'bottom right',
-  } = props;
+  const { children, trigger, className, directions = 'bottom right' } = props;
 
   const itemsClasses = [mapDirection[directions]];
 
   return (
     <HPopover className={classNames(cls.Popover, {}, [className, popup.popup])}>
-      <HPopover.Button
-        className={popup.trigger}
-      >
-        {trigger}
-      </HPopover.Button>
+      <HPopover.Button className={popup.trigger}>{trigger}</HPopover.Button>
 
-      <HPopover.Panel className={classNames(cls.panel, {}, [popup.items, ...itemsClasses])}>
+      <HPopover.Panel
+        className={classNames(cls.panel, {}, [popup.items, ...itemsClasses])}
+      >
         {children}
       </HPopover.Panel>
     </HPopover>

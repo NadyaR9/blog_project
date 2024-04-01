@@ -7,9 +7,9 @@ import { VStack } from '@/shared/ui/Stack';
 import { Text } from '@/shared/ui/Text';
 
 interface CommentListProps {
-  className?: string,
-  comments?: Comment[],
-  isLoading?: boolean,
+  className?: string;
+  comments?: Comment[];
+  isLoading?: boolean;
 }
 
 export const CommentList = memo((props: CommentListProps) => {
@@ -27,7 +27,12 @@ export const CommentList = memo((props: CommentListProps) => {
   }
 
   return (
-    <VStack max gap="16" className={classNames('', {}, [className])} data-testid="CommentList">
+    <VStack
+      max
+      gap="16"
+      className={classNames('', {}, [className])}
+      data-testid="CommentList"
+    >
       {comments?.length ? (
         comments.map((comment) => (
           <CommentCard

@@ -6,8 +6,8 @@ import { Notification } from '../../model/types/notification';
 import { Text } from '@/shared/ui/Text';
 
 interface NotifiactionListItemProps {
-  className?: string,
-  item: Notification,
+  className?: string;
+  item: Notification;
 }
 
 export const NotifiactionListItem = memo((props: NotifiactionListItemProps) => {

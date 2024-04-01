@@ -9,9 +9,11 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-  decorators: [StoreDecorator({
-    user: { authData: { id: '1' } },
-  })],
+  decorators: [
+    StoreDecorator({
+      user: { authData: { id: '1' } },
+    }),
+  ],
 } as ComponentMeta<typeof ArticleRate>;
 
 const getSavedRate: PostArticleArgs = {
@@ -21,7 +23,9 @@ const getSavedRate: PostArticleArgs = {
   articleId: '1',
 };
 
-const Template: ComponentStory<typeof ArticleRate> = (args) => <ArticleRate {...args} />;
+const Template: ComponentStory<typeof ArticleRate> = (args) => (
+  <ArticleRate {...args} />
+);
 
 export const GetArticleRate = Template.bind({});
 GetArticleRate.parameters = {

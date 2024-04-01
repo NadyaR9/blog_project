@@ -1,5 +1,3 @@
 import { componentRender } from './componentRender/componentRender';
 
-export {
-  componentRender,
-};
+export { componentRender };

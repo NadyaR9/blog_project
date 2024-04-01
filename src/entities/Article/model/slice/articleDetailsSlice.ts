@@ -15,11 +15,14 @@ export const articleDetailsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchArticleDetailsData.fulfilled, (state, action:PayloadAction<Article>) => {
-        state.isLoading = false;
-        state.error = initialState.error;
-        state.data = action.payload;
-      })
+      .addCase(
+        fetchArticleDetailsData.fulfilled,
+        (state, action: PayloadAction<Article>) => {
+          state.isLoading = false;
+          state.error = initialState.error;
+          state.data = action.payload;
+        },
+      )
       .addCase(fetchArticleDetailsData.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;

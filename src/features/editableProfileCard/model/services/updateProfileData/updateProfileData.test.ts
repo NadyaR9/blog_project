@@ -46,9 +46,7 @@ describe('updateProfileData.test', () => {
     const result = await thunk.callThunk();
 
     expect(result.meta.requestStatus).toBe('rejected');
-    expect(result.payload).toEqual([
-      ValidateProfileError.SERVER_ERROR,
-    ]);
+    expect(result.payload).toEqual([ValidateProfileError.SERVER_ERROR]);
   });
   test('validation error', async () => {
     const thunk = new TestAsyncThunk(updateProfileData, {
@@ -62,8 +60,6 @@ describe('updateProfileData.test', () => {
     const result = await thunk.callThunk();
 
     expect(result.meta.requestStatus).toBe('rejected');
-    expect(result.payload).toEqual([
-      ValidateProfileError.INVALID_USER_DATA,
-    ]);
+    expect(result.payload).toEqual([ValidateProfileError.INVALID_USER_DATA]);
   });
 });

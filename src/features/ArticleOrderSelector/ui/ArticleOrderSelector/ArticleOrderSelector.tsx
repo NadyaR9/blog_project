@@ -5,25 +5,28 @@ import { SortOrder } from '@/shared/config/types';
 import { Select, SelectOption } from '@/shared/ui/Select';
 
 interface FiltersProps {
-  className?: string,
-  order: SortOrder,
-  onChange: (order: SortOrder) => void,
+  className?: string;
+  order: SortOrder;
+  onChange: (order: SortOrder) => void;
 }
 
 export const ArticleOrderSelector = memo((props: FiltersProps) => {
   const { className, order, onChange } = props;
   const { t } = useTranslation('articles');
 
-  const orderOptions = useMemo<SelectOption<SortOrder>[]>(() => [
-    {
-      value: 'asc',
-      content: t('asc'),
-    },
-    {
-      value: 'desc',
-      content: t('desc'),
-    },
-  ], [t]);
+  const orderOptions = useMemo<SelectOption<SortOrder>[]>(
+    () => [
+      {
+        value: 'asc',
+        content: t('asc'),
+      },
+      {
+        value: 'desc',
+        content: t('desc'),
+      },
+    ],
+    [t],
+  );
 
   return (
     <Select
