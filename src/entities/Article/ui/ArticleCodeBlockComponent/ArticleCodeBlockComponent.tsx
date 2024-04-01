@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import { ArticleBlockCode } from '../../model/types/article';
-import { classNames } from '@/shared/config/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { HStack } from '@/shared/ui/Stack';
 import { Code } from '@/shared/ui/Code';
 

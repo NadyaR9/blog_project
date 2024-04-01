@@ -1,15 +1,15 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { classNames } from '@/shared/config/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import {
   ArticleSortField,
   ArticleView,
   ArticleTypes,
 } from '@/entities/Article';
-import { useAppDispatch } from '@/shared/config/lib/hooks/useAppDispatch/useAppDispatch';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { SortOrder } from '@/shared/config/types';
-import { useDebounce } from '@/shared/config/lib/hooks/useDebounce/useDebounce';
+import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import { fetchArticles } from '../../model/services/fetchArticles/fetchArticles';
 import {
   getArticlesOrder,

@@ -1,5 +1,5 @@
 import { memo, useState } from 'react';
-import { classNames } from '@/shared/config/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import Star from '@/shared/assets/icons/star.svg';
 
 import cls from './StarRating.module.scss';

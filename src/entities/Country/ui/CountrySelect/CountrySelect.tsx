@@ -1,6 +1,6 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from '@/shared/config/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { Country } from '../../model/types';
 import cls from './CountrySelect.module.scss';
 import { ListBox } from '@/shared/ui/Popups';

@@ -1,5 +1,5 @@
 import { ChangeEvent, useMemo } from 'react';
-import { classNames, Mods } from '@/shared/config/lib/classNames/classNames';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cls from './Select.module.scss';
 import { HStack } from '../Stack/HStack/HStack';
 

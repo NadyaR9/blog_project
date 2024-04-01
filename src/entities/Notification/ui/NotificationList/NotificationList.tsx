@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { classNames } from '@/shared/config/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './NotificationList.module.scss';
 import { useNotificationList } from '../../api/notificationApi';
 import { NotifiactionListItem } from '../NotifiactionListItem/NotifiactionListItem';
