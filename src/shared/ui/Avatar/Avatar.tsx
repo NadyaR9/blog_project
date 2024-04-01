@@ -1,5 +1,5 @@
 import { CSSProperties, useMemo } from 'react';
-import { classNames, Mods } from '@/shared/config/lib/classNames/classNames';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import ImageAvatar from '../../assets/icons/user-filled.svg';
 import cls from './Avatar.module.scss';
 import { AppImage } from '../AppImage';

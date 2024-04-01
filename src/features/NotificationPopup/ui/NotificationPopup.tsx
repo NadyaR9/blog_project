@@ -1,6 +1,6 @@
 import { memo, useCallback, useState } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
-import { classNames } from '@/shared/config/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { Popover } from '@/shared/ui/Popups';
 import { NotificationList } from '@/entities/Notification';
 import NotificationIcon from '@/shared/assets/icons/notification.svg';

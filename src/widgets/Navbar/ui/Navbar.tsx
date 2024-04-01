@@ -2,7 +2,7 @@ import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { LoginModal } from '@/features/AuthByUsername';
-import { classNames } from '@/shared/config/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { getUserAuthData } from '@/entities/User';
 
 import { AvatarDropdown } from '@/features/AvatarDropdown';

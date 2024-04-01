@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from '@/shared/config/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { Comment } from '../../model/types/comment';
 import cls from './CommentCard.module.scss';
 import { getRouteProfile } from '@/shared/const/router';

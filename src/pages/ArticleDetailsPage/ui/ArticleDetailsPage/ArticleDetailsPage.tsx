@@ -1,11 +1,8 @@
 import { FC, memo } from 'react';
 import { useParams } from 'react-router-dom';
 import { ArticleDetails } from '@/entities/Article';
-import { classNames } from '@/shared/config/lib/classNames/classNames';
-import {
-  DynamicModuleLoader,
-  ReducerList,
-} from '@/shared/config/lib/components';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';

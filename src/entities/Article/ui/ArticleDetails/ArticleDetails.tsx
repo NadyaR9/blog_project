@@ -1,12 +1,9 @@
 import { memo, useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { classNames } from '@/shared/config/lib/classNames/classNames';
-import {
-  DynamicModuleLoader,
-  ReducerList,
-} from '@/shared/config/lib/components';
-import { useAppDispatch } from '@/shared/config/lib/hooks/useAppDispatch/useAppDispatch';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import EyeIcon from '@/shared/assets/icons/eye.svg';
 import CalendarIcon from '@/shared/assets/icons/calendar.svg';
 import { fetchArticleDetailsData } from '../../model/services/fetchArticleDetailsData/fetchArticleDetailsData';

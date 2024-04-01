@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { classNames } from '@/shared/config/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleBlockImage } from '../../model/types/article';
 import { VStack } from '@/shared/ui/Stack';
 import { Text, TextAligns } from '@/shared/ui/Text';
