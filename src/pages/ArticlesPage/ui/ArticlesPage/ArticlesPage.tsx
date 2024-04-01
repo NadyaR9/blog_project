@@ -4,10 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useSearchParams } from 'react-router-dom';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import {
-  DynamicModuleLoader,
-  ReducerList,
-} from '@/shared/lib/components';
+import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 

@@ -6,10 +6,7 @@ import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { ProfileCard } from '@/entities/Profile';
-import {
-  DynamicModuleLoader,
-  ReducerList,
-} from '@/shared/lib/components';
+import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
 import { getProfileLoading } from '../../model/selectors/getProfileLoading/getProfileLoading';
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
