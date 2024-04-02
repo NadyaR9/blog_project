@@ -1144,7 +1144,10 @@
       "username": "testing",
       "password": "123",
       "roles": [],
-      "avatar": "https://i.pinimg.com/564x/81/09/1a/81091a8004c62607962adaaea674dc39.jpg"
+      "avatar": "https://i.pinimg.com/564x/81/09/1a/81091a8004c62607962adaaea674dc39.jpg",
+      "features": {
+        "starRatingFeature": true
+      }
     },
     {
       "id": "1",
@@ -1154,7 +1157,10 @@
         "ADMIN",
         "MANAGER"
       ],
-      "avatar": "https://i.pinimg.com/564x/81/09/1a/81091a8004c62607962adaaea674dc39.jpg"
+      "avatar": "https://i.pinimg.com/564x/81/09/1a/81091a8004c62607962adaaea674dc39.jpg",
+      "features": {
+        "starRatingFeature": true
+      }
     },
     {
       "id": "2",
@@ -1163,7 +1169,10 @@
       "roles": [
         "USER"
       ],
-      "avatar": "https://www.pngall.com/wp-content/uploads/12/Avatar-Profile.png"
+      "avatar": "https://www.pngall.com/wp-content/uploads/12/Avatar-Profile.png",
+      "features": {
+        "starRatingFeature": false
+      }
     },
     {
       "id": "3",
@@ -1172,7 +1181,10 @@
       "roles": [
         "MANAGER"
       ],
-      "avatar": "https://www.pngall.com/wp-content/uploads/12/Avatar-Profile.png"
+      "avatar": "https://www.pngall.com/wp-content/uploads/12/Avatar-Profile.png",
+      "features": {
+        "starRatingFeature": false
+      }
     }
   ],
   "profile": [
