@@ -20,16 +20,17 @@ npm run start:dev или npm run start:dev:vite - запуск сервера + 
 - `npm run lint:ts:fix` - Исправление ts файлов линтером
 - `npm run lint:scss` - Проверка scss файлов style линтером
 - `npm run lint:scss:fix` - Исправление scss файлов style линтером
-- `npm run test:unit` - Хапуск unit тестов с jest
+- `npm run test:unit` - Запуск unit тестов с jest
 - `npm run storybook` - запуск Storybook
 - `npm run storybook:build` - Сборка storybook билда
-- `npm run test:ui` - Хапуск скриншотных тестов с loki
+- `npm run test:ui` - Запуск скриншотных тестов с loki
 - `npm run test:ui:ok` - Подтверждение новых скриншотов
 - `npm run test:ui:report` - Генерация полного отчета для скриншотных тестов
 - `npm run test:ui:json` - Генерация json отчета для скриншотных тестов
 - `npm run test:ui:html` - Генерация HTML отчета для скриншотных тестов
 - `npm run prepare` - прекоммит хуки
 - `npm run generate:slice` - Скрипт для генерации FSD слайсов
+- `npm run remove-feature` - Скрипт для удаления кода по feature flags
 
 ----
 
@@ -164,6 +165,25 @@ TextTitleDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 Для асинхронного подключения редюсеров (чтобы не тянуть их в общий бандл) используется
 [DynamicModuleLoader](/src/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader.tsx)
+
+----
+
+### Работа с feature-flag
+
+Разрешено использование feature flags только с помощью хелпера toggleFeatures
+
+в него передается объект с опциями 
+
+{
+   name: название фича-флага, 
+   on: функция, которая отработает после Включения фичи 
+   of: функция, которая отработает после ВЫключения фичи
+}
+
+Для автоматического удаления фичи использовать скрипт remove-feature.ts,
+который принимает 2 аргумента
+1. Название удаляемого фича-флага
+2. Состояние (on\off)
 
 ----
 

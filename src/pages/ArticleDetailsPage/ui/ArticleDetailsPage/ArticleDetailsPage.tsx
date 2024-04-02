@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unstable-nested-components */
 import { FC, memo } from 'react';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -12,7 +11,7 @@ import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDet
 import { ArticleRate } from '@/features/articleRating';
 import { VStack } from '@/shared/ui/Stack';
 import { Page } from '@/widgets/Page';
-import { toggleFeatures } from '@/shared/lib/features';
+import { ToggleFeature } from '@/shared/lib/features';
 import { Card } from '@/shared/ui/Card';
 
 interface ArticleDetailsPageProps {
@@ -32,11 +31,11 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     return null;
   }
 
-  const articleRating = toggleFeatures({
-    name: 'starRatingFeature',
-    on: () => <ArticleRate articleId={id} />,
-    off: () => <Card>{t('Soon, it will be rate')}</Card>,
-  });
+  // const articleRating = toggleFeatures({
+  //   name: 'starRatingFeature',
+  //   on: () => <ArticleRate articleId={id} />,
+  //   off: () => <Card>{t('Soon, it will be rate')}</Card>,
+  // });
 
   return (
     <DynamicModuleLoader removeAfterUnmount reducerList={reducerList}>
@@ -48,7 +47,12 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
           <VStack gap="16" max>
             <ArticleDetailsPageHeader />
             <ArticleDetails id={id} />
-            {articleRating}
+            {/* {articleRating} */}
+            <ToggleFeature
+              name="starRatingFeature"
+              on={<ArticleRate articleId={id} />}
+              off={<Card>{t('Soon, it will be rate')}</Card>}
+            />
             <ArticleRecommendationsList />
             <ArticleDetailsComments id={id} />
           </VStack>
