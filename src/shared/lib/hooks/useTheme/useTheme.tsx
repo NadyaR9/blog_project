@@ -14,18 +14,18 @@ export const useTheme = (): useThemeResult => {
   const toggleTheme = () => {
     let newtheme: Theme;
     switch (theme) {
-    case Theme.DARK:
-      newtheme = Theme.LIGHT;
-      break;
-    case Theme.LIGHT:
-      newtheme = Theme.BLUE;
-      break;
-    case Theme.BLUE:
-      newtheme = Theme.DARK;
-      break;
-    default:
-      newtheme = Theme.DARK;
-      break;
+      case Theme.DARK:
+        newtheme = Theme.LIGHT;
+        break;
+      case Theme.LIGHT:
+        newtheme = Theme.BLUE;
+        break;
+      case Theme.BLUE:
+        newtheme = Theme.DARK;
+        break;
+      default:
+        newtheme = Theme.DARK;
+        break;
     }
     setTheme?.(newtheme);
     document.body.className = newtheme;
