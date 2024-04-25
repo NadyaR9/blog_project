@@ -6,6 +6,13 @@
   transition: width 0.3s;
 }
 
+.SidebarRedesigned {
+  width: 220px;
+  height: 100%;
+  border-radius: 32px;
+  background: var(--light-bg-redesigned);
+}
+
 .switchers {
   position: absolute;
   bottom: 20px;
@@ -35,4 +42,8 @@
     justify-content: center;
     align-items: center;
   }
+}
+
+.appLogo {
+  padding-top: 20px;
 }

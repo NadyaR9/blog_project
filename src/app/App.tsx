@@ -7,6 +7,8 @@ import { Sidebar } from '@/widgets/Sidebar';
 import { AppRouter } from './providers/router';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { PageLoader } from '@/widgets/PageLoader';
+import { ToggleFeature } from '@/shared/lib/features';
+import { MainLayout } from '@/shared/layouts/MainLayout';
 
 export function App() {
   const dispatch = useAppDispatch();
@@ -21,14 +23,35 @@ export function App() {
   }
 
   return (
-    <div className={classNames('app', { hidden: true, show: false })}>
-      <Suspense fallback>
-        <Navbar />
-        <div className="pages-container">
-          <Sidebar />
-          {inited && <AppRouter />}
+    <ToggleFeature
+      name="isAppRedesigned"
+      off={
+        <div className={classNames('app', { hidden: true, show: false })}>
+          <Suspense fallback>
+            <Navbar />
+            <div className="pages-container">
+              <Sidebar />
+              {inited && <AppRouter />}
+            </div>
+          </Suspense>
         </div>
-      </Suspense>
-    </div>
+      }
+      on={
+        <div
+          className={classNames('app_redesigned', {
+            hidden: true,
+            show: false,
+          })}
+        >
+          <Suspense fallback>
+            <MainLayout
+              header={<Navbar />}
+              content={<AppRouter />}
+              sidebar={<Sidebar />}
+            />
+          </Suspense>
+        </div>
+      }
+    />
   );
 }
