@@ -11,9 +11,9 @@ import { getLoginLoading } from '../../model/selectors/getLoginLoading/getLoginL
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import { LoginActions, LoginReducer } from '../../model/slice/loginSlice';
 import cls from './LoginForm.module.scss';
-import { Input } from '@/shared/ui/Input';
-import { Text, TextVariants } from '@/shared/ui/Text';
-import { Button, ButtonVariants } from '@/shared/ui/Button';
+import { Input } from '@/shared/ui/deprecated/Input';
+import { Text, TextVariants } from '@/shared/ui/deprecated/Text';
+import { Button, ButtonVariants } from '@/shared/ui/deprecated/Button';
 
 export interface LoginFormProps {
   className?: string;

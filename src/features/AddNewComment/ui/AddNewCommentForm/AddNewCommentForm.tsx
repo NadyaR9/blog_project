@@ -13,9 +13,9 @@ import {
   addNewCommentReducer,
 } from '../../model/slices/addNewCommentSlice';
 import cls from './AddNewCommentForm.module.scss';
-import { Input } from '@/shared/ui/Input';
-import { HStack } from '@/shared/ui/Stack';
-import { Button, ButtonVariants } from '@/shared/ui/Button';
+import { Input } from '@/shared/ui/deprecated/Input';
+import { HStack } from '@/shared/ui/deprecated/Stack';
+import { Button, ButtonVariants } from '@/shared/ui/deprecated/Button';
 
 export interface AddNewCommentFormProps {
   className?: string;

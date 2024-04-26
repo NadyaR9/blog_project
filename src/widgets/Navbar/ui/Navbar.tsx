@@ -8,9 +8,9 @@ import { getUserAuthData } from '@/entities/User';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
 import { NotificationPopup } from '@/features/NotificationPopup';
 import cls from './Navbar.module.scss';
-import { Button, ButtonVariants } from '@/shared/ui/Button';
+import { Button, ButtonVariants } from '@/shared/ui/deprecated/Button';
 import { ToggleFeature } from '@/shared/lib/features';
-import { HStack } from '@/shared/ui/Stack';
+import { HStack } from '@/shared/ui/deprecated/Stack';
 
 interface NavbarProps {
   className?: string;

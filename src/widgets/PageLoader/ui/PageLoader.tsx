@@ -1,7 +1,7 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './PageLoader.module.scss';
-import { HStack } from '@/shared/ui/Stack';
-import { Loader } from '@/shared/ui/Loader';
+import { HStack } from '@/shared/ui/deprecated/Stack';
+import { Loader } from '@/shared/ui/deprecated/Loader';
 
 interface PageLoaderProps {
   className?: string;

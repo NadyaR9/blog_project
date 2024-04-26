@@ -20,8 +20,8 @@ import {
 } from '../../model/selectors/getArticlesSelectors';
 import { articlesActions } from '../../model/slices/articlesPageSlice';
 import cls from './ArticlesPageFilters.module.scss';
-import { Card } from '@/shared/ui/Card';
-import { Input } from '@/shared/ui/Input';
+import { Card } from '@/shared/ui/deprecated/Card';
+import { Input } from '@/shared/ui/deprecated/Input';
 import { ArticleSortSelector } from '@/features/ArticleSortSelector';
 import { ArticleOrderSelector } from '@/features/ArticleOrderSelector';
 import { ArticleViewSelector } from '@/features/ArticleViewSelector';

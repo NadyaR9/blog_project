@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button, ButtonVariants } from '@/shared/ui/Button';
+import { Button, ButtonVariants } from '@/shared/ui/deprecated/Button';
 
 export const BugButton = () => {
   const { t } = useTranslation();

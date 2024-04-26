@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { getRouteArticles } from '@/shared/const/router';
-import { Button, ButtonVariants } from '@/shared/ui/Button';
+import { Button, ButtonVariants } from '@/shared/ui/deprecated/Button';
 
 interface ArticleDetailsPageHeaderProps {
   className?: string;
