@@ -10,14 +10,14 @@ import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleT
 
 import cls from './ArticleListItem.module.scss';
 import { getRouteArticleDdetails } from '@/shared/const/router';
-import { Text } from '@/shared/ui/Text';
-import { Icon } from '@/shared/ui/Icon';
-import { Card } from '@/shared/ui/Card';
-import { Avatar } from '@/shared/ui/Avatar';
-import { AppLink } from '@/shared/ui/AppLink';
-import { Button, ButtonVariants } from '@/shared/ui/Button';
-import { AppImage } from '@/shared/ui/AppImage';
-import { Skeleton } from '@/shared/ui/Skeleton';
+import { Text } from '@/shared/ui/deprecated/Text';
+import { Icon } from '@/shared/ui/deprecated/Icon';
+import { Card } from '@/shared/ui/deprecated/Card';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
+import { AppLink } from '@/shared/ui/deprecated/AppLink';
+import { Button, ButtonVariants } from '@/shared/ui/deprecated/Button';
+import { AppImage } from '@/shared/ui/deprecated/AppImage';
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 
 interface ArticleListItemProps {
   className?: string;

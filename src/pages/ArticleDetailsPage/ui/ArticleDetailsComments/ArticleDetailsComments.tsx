@@ -10,9 +10,9 @@ import { getArticleComments } from '../../model/slices/articleDetailsCommentsSli
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
-import { VStack } from '@/shared/ui/Stack';
-import { Loader } from '@/shared/ui/Loader';
-import { Text, TextSize } from '@/shared/ui/Text';
+import { VStack } from '@/shared/ui/deprecated/Stack';
+import { Loader } from '@/shared/ui/deprecated/Loader';
+import { Text, TextSize } from '@/shared/ui/deprecated/Text';
 
 interface ArticleDetailsCommentsProps {
   className?: string;

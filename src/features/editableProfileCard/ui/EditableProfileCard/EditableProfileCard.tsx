@@ -19,8 +19,8 @@ import {
 } from '../../model/slices/profileSlice';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
-import { VStack } from '@/shared/ui/Stack';
-import { Text, TextVariants } from '@/shared/ui/Text';
+import { VStack } from '@/shared/ui/deprecated/Stack';
+import { Text, TextVariants } from '@/shared/ui/deprecated/Text';
 
 interface EditableProfileCardProps {
   id?: string;

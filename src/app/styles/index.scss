@@ -6,7 +6,7 @@
 
 body,
 .app_light_theme,
-.app_daark_theme {
+.app_dark_theme {
   font-size: var(--font-m);
   color: var(--primary-color);
   background: var(--bg-color);
@@ -20,7 +20,15 @@ body,
 }
 
 .app {
+  background: var(--bg-color);
   min-height: 100vh;
+}
+
+.app_redesigned {
+  background: var(--bg-redesigned);
+  min-height: 100vh;
+  font: var(--font-m-redesigned);
+  color: var(--text-redesigned);
 }
 
 .pages-container {
