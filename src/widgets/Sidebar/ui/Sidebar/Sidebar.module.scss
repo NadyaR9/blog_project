@@ -4,34 +4,83 @@
   position: relative;
   background: var(--inverted-bg-color);
   transition: width 0.3s;
+
+  .items {
+    margin-top: 30px;
+    margin-left: 20px;
+    font: var(--font-m);
+  }
+
+  .switchers {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    column-gap: 24px;
+  }
+
+  .collapsedBtn {
+    position: absolute;
+    right: -32px;
+    bottom: 32px;
+  }
 }
 
 .SidebarRedesigned {
+  position: relative;
   width: 220px;
   height: 100%;
   border-radius: 32px;
   background: var(--light-bg-redesigned);
+
+  .appLogo {
+    padding-top: 20px;
+  }
+
+  .items {
+    margin-top: 40px;
+    font: var(--font-m);
+  }
+
+  .collapsedBtn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: rotate(90deg);
+  }
+
+  .switchers {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 16px;
+  }
 }
 
-.switchers {
-  position: absolute;
-  bottom: 20px;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  column-gap: 24px;
-}
+.collapsedRedesigned {
+  width: 50px;
 
-.collapsedBtn {
-  position: absolute;
-  right: -32px;
-  bottom: 32px;
-}
+  .items {
+    margin-top: 40px;
+    margin-left: 0;
+    font: var(--font-m);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-.items {
-  margin-top: 30px;
-  margin-left: 20px;
-  font: var(--font-m);
+  .switchers {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .collapsedBtn {
+    transform: rotate(-90deg);
+  }
 }
 
 .collapsed {
@@ -42,8 +91,4 @@
     justify-content: center;
     align-items: center;
   }
-}
-
-.appLogo {
-  padding-top: 20px;
 }
