@@ -6,7 +6,7 @@ import ThemeIcon from '@/shared/assets/icons/redesigned/ThemeSwitch.svg';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { saveJsonSettings } from '@/entities/User';
-import { Icon as IconDeprecated} from '@/shared/ui/deprecated/Icon';
+import { Icon as IconDeprecated } from '@/shared/ui/deprecated/Icon';
 import { Icon } from '@/shared/ui/redesigned/Icon';
 import { ToggleFeature } from '@/shared/lib/features';
 
@@ -26,10 +26,18 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
 
   return (
     <ToggleFeature
-      name='isAppRedesigned'
+      name="isAppRedesigned"
       off={
-        <ButtonDeprecated onClick={onToggleTheme} className={classNames('', {}, [className])}>
-          <IconDeprecated Svg={ThemeIconDeprecated} width={40} height={40} inverted/>
+        <ButtonDeprecated
+          onClick={onToggleTheme}
+          className={classNames('', {}, [className])}
+        >
+          <IconDeprecated
+            Svg={ThemeIconDeprecated}
+            width={40}
+            height={40}
+            inverted
+          />
         </ButtonDeprecated>
       }
       on={
@@ -43,5 +51,5 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
         />
       }
     />
-  )
+  );
 });

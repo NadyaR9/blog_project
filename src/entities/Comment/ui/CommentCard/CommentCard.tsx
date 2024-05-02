@@ -4,7 +4,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Comment } from '../../model/types/comment';
 import cls from './CommentCard.module.scss';
 import { getRouteProfile } from '@/shared/const/router';
-import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { AppLink } from '@/shared/ui/deprecated/AppLink';
 import { Text } from '@/shared/ui/deprecated/Text';
 import { Avatar } from '@/shared/ui/deprecated/Avatar';

@@ -114,14 +114,14 @@ function isToggleComponent(node: Node) {
 files.forEach((file) => {
   file.forEachDescendant((node) => {
     if (node.isKind(SyntaxKind.CallExpression) && isToggleFunction(node)) {
-      toggleCallExpression(node);
+      return toggleCallExpression(node);
     }
 
     if (
       node.isKind(SyntaxKind.JsxSelfClosingElement) &&
       isToggleComponent(node)
     ) {
-      toggleComponent(node);
+      return toggleComponent(node);
     }
   });
 });

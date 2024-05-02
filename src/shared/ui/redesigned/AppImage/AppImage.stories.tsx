@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { AppImage } from './AppImage';
-import { Skeleton } from '../Skeleton';
-import { Icon } from '../Icon';
+import { Skeleton } from '../../deprecated/Skeleton';
+import { Icon } from '../../deprecated/Icon';
 import DefaultImage from '../../assets/icons/user-filled.svg';
 
 export default {
