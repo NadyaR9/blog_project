@@ -34,7 +34,11 @@ export const Button = memo((props: ButtonProps) => {
     <button
       type="button"
       onClick={onClick}
-      className={classNames(cls.Button, mods, [className, cls[variants], cls[size]])}
+      className={classNames(cls.Button, mods, [
+        className,
+        cls[variants],
+        cls[size],
+      ])}
       {...otherProps}
     >
       {children}

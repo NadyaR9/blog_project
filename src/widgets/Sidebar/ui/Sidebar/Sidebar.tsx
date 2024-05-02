@@ -1,12 +1,16 @@
 import { memo, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import cls from './Sidebar.module.scss';
-import  ArrowIcon from '@/shared/assets/icons/redesigned/ArrowDown.svg';
-import { Button, ButtonSize, ButtonVariants } from '@/shared/ui/deprecated/Button';
+import ArrowIcon from '@/shared/assets/icons/redesigned/ArrowDown.svg';
+import {
+  Button,
+  ButtonSize,
+  ButtonVariants,
+} from '@/shared/ui/deprecated/Button';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import { LanguageSwitcher } from '@/features/LanguageSwitcher';
 import { ToggleFeature } from '@/shared/lib/features';

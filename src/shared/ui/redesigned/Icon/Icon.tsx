@@ -10,36 +10,46 @@ interface IconBaseProps extends SvgProps {
 }
 
 interface NonclickableIconProps extends IconBaseProps {
-  clickable?: false
+  clickable?: false;
 }
 
 interface ClickableIconProps extends IconBaseProps {
-  clickable: true,
+  clickable: true;
   onClick: () => void;
 }
 
 type IconProps = NonclickableIconProps | ClickableIconProps;
 
 export const Icon = memo((props: IconProps) => {
-  const { className, Svg, clickable, width = 32, height=  32, ...otherProps } = props;
+  const {
+    className,
+    Svg,
+    clickable,
+    width = 32,
+    height = 32,
+    ...otherProps
+  } = props;
 
   const icon = (
     <Svg
       width={width}
       height={height}
-      className={classNames(cls.Icon, {}, [
-        className,
-      ])}
+      className={classNames(cls.Icon, {}, [className])}
       {...otherProps}
       onClick={undefined}
     />
-  ); 
+  );
   if (clickable) {
     return (
-      <button type="button" onClick={props.onClick} className={cls.button} style={{ height, width }}>
+      <button
+        type="button"
+        onClick={props.onClick}
+        className={cls.button}
+        style={{ height, width }}
+      >
         {icon}
       </button>
-    )
+    );
   }
   return icon;
 });

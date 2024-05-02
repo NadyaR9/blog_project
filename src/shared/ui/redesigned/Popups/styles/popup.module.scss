@@ -1,0 +1,55 @@
+.menu {
+  border: 1px solid var(--accent-redesigned) !important;
+  border-radius: 18px !important;
+  overflow: hidden;
+}
+
+.popup {
+  position: relative;
+}
+
+.popupItems {
+  position: absolute;
+  z-index: 1000;
+}
+
+.popupItem {
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.active {
+  background-color: var(--light-bg-redesigned);
+}
+
+.disabled {
+  opacity: 0.7;
+}
+
+.trigger {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+.optionsBottomLeft {
+  top: 100%;
+  right: 0;
+}
+
+.optionsBottomRight {
+  top: 100%;
+  left: 0;
+}
+
+.optionsTopRight {
+  bottom: 100%;
+  left: 0;
+}
+
+.optionsTopLeft {
+  right: 0;
+  bottom: 100%;
+}

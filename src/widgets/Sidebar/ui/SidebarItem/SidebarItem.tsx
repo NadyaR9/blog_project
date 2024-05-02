@@ -5,7 +5,10 @@ import { getUserAuthData } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { SidebarItemType } from '../../model/types/sidebar';
 import cls from './SidebarItem.module.scss';
-import { AppLink as AppLinkDeprecated, AppLinkTheme } from '@/shared/ui/deprecated/AppLink';
+import {
+  AppLink as AppLinkDeprecated,
+  AppLinkTheme,
+} from '@/shared/ui/deprecated/AppLink';
 import { AppLink } from '@/shared/ui/redesigned/AppLink';
 import { Icon } from '@/shared/ui/redesigned/Icon';
 import { ToggleFeature } from '@/shared/lib/features';
@@ -23,27 +26,31 @@ export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
   }
   const { path, text } = item;
 
-  return (<ToggleFeature
-    name="isAppRedesigned"
-    off={
-      <AppLinkDeprecated
-        to={path}
-        theme={AppLinkTheme.SECONDARY}
-        className={classNames(cls.item, { [cls.collapsed]: collapsed })}
-    >
-        <item.Icon className={cls.icon} />
-        <span className={cls.link}>{t(text)}</span>
-      </AppLinkDeprecated>
+  return (
+    <ToggleFeature
+      name="isAppRedesigned"
+      off={
+        <AppLinkDeprecated
+          to={path}
+          theme={AppLinkTheme.SECONDARY}
+          className={classNames(cls.item, { [cls.collapsed]: collapsed })}
+        >
+          <item.Icon className={cls.icon} />
+          <span className={cls.link}>{t(text)}</span>
+        </AppLinkDeprecated>
       }
-    on={
-      <AppLink
-        to={path}
-        className={classNames(cls.itemRedesigned, { [cls.collapsedRedesigned]: collapsed })}
-        activeClassname={cls.active}
-    >
-        <Icon Svg={item.Icon} />
-        <span className={cls.link}>{t(text)}</span>
-      </AppLink>
+      on={
+        <AppLink
+          to={path}
+          className={classNames(cls.itemRedesigned, {
+            [cls.collapsedRedesigned]: collapsed,
+          })}
+          activeClassname={cls.active}
+        >
+          <Icon Svg={item.Icon} />
+          <span className={cls.link}>{t(text)}</span>
+        </AppLink>
       }
-    />);
+    />
+  );
 });

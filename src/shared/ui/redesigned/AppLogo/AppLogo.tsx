@@ -21,7 +21,7 @@ export const AppLogo = memo((props: AppLogoProps) => {
     >
       <div className={cls.gradientBig} />
       <div className={cls.gradientSmall} />
-      <Icon Svg={Logo} width={size} height={size}/>
+      <Icon Svg={Logo} width={size} height={size} />
     </HStack>
   );
 });

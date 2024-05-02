@@ -8,7 +8,7 @@ import { profileActions } from '../../model/slices/profileSlice';
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
 import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
-import { HStack } from '@/shared/ui/deprecated/Stack';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/deprecated/Text';
 import { Button, ButtonVariants } from '@/shared/ui/deprecated/Button';
 

@@ -64,7 +64,8 @@ module.exports = {
         'align',
         'direction',
         'gap',
-        'variants'
+        'variants',
+        'size'
       ],
     }],
     'jsx-a11y/no-static-element-interactions': 'off',

@@ -4,7 +4,7 @@ import Star from '@/shared/assets/icons/star.svg';
 
 import cls from './StarRating.module.scss';
 import { Icon } from '../Icon/Icon';
-import { HStack } from '../Stack';
+import { HStack } from '../../redesigned/Stack';
 
 interface StarRatingProps {
   className?: string;

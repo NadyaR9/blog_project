@@ -6,8 +6,9 @@ import { DropdownDirection } from '@/shared/config/types/ui';
 import { Button, ButtonSize, ButtonVariants } from '../../../Button';
 import cls from './ListBox.module.scss';
 import popupCls from '../../styles/popup.module.scss';
-import { HStack } from '../../../Stack/HStack/HStack';
+
 import { mapDirection } from '../../styles/consts';
+import { HStack } from '../../../../redesigned/Stack';
 
 interface ListBoxItems {
   value: string;

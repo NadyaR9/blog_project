@@ -16,7 +16,7 @@ import { Card } from '@/shared/ui/deprecated/Card';
 import { Avatar } from '@/shared/ui/deprecated/Avatar';
 import { AppLink } from '@/shared/ui/deprecated/AppLink';
 import { Button, ButtonVariants } from '@/shared/ui/deprecated/Button';
-import { AppImage } from '@/shared/ui/deprecated/AppImage';
+import { AppImage } from '@/shared/ui/redesigned/AppImage';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 
 interface ArticleListItemProps {
