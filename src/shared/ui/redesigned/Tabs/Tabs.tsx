@@ -40,18 +40,22 @@ export const Tabs = memo((props: TabsProps) => {
       direction={direction}
       className={classNames(cls.Tabs, {}, [className])}
     >
-      {tabs.map((tab) => (
-        <Card
-          key={tab.value}
-          onClick={clickHandler(tab)}
-          className={cls.tab}
-          variants={tab.value === currentValue ? 'light' : 'normal'}
-          border="round"
-          padding="8"
-        >
-          {tab.content}
-        </Card>
-      ))}
+      {tabs.map((tab) => {
+        const isSelected = tab.value === currentValue;
+        return (
+          <Card
+            key={tab.value}
+            onClick={clickHandler(tab)}
+            className={classNames(cls.tab, {
+              [cls.selected]: isSelected,
+            })}
+            variants={isSelected ? 'light' : 'normal'}
+            border="round"
+          >
+            {tab.content}
+          </Card>
+        );
+      })}
     </Flex>
   );
 });

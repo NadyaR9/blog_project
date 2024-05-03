@@ -3,12 +3,14 @@ import { Listbox as HListBox } from '@headlessui/react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DropdownDirection } from '@/shared/config/types/ui';
+import ArrowDowm from '@/shared/assets/icons/redesigned/ArrowDown.svg';
 import { Button } from '../../../Button';
 import cls from './ListBox.module.scss';
 import popupCls from '../../styles/popup.module.scss';
 
 import { mapDirection } from '../../styles/consts';
 import { HStack } from '../../../../redesigned/Stack';
+import { Icon } from '../../../Icon';
 
 interface ListBoxItems<T extends string> {
   value: T;
@@ -62,6 +64,7 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
             variants="filled"
             size="s"
             className={cls.button}
+            addonRight={<Icon Svg={ArrowDowm} />}
           >
             {selectedItem?.content ?? defaultValue}
           </Button>
@@ -84,7 +87,6 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
                     [popupCls.selected]: selected,
                   })}
                 >
-                  {selected && '>'}
                   {item.content}
                 </li>
               )}

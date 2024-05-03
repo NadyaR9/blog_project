@@ -1,16 +1,16 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ArticlePageFiltersContainer } from './FiltersContainer';
+import { FiltersContainer } from './FiltersContainer';
 
 export default {
-  title: 'shared/ArticlePageFiltersContainer',
-  component: ArticlePageFiltersContainer,
+  title: 'shared/FiltersContainer',
+  component: FiltersContainer,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof ArticlePageFiltersContainer>;
+} as ComponentMeta<typeof FiltersContainer>;
 
-const Template: ComponentStory<typeof ArticlePageFiltersContainer> = (args) => (
-  <ArticlePageFiltersContainer {...args} />
+const Template: ComponentStory<typeof FiltersContainer> = (args) => (
+  <FiltersContainer {...args} />
 );
 
 export const Normal = Template.bind({});
