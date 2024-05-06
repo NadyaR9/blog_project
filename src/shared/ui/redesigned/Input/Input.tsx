@@ -9,6 +9,8 @@ import {
 } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
+import { HStack } from '../Stack';
+import { Text } from '../Text';
 
 type DefaultInputProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
@@ -23,6 +25,7 @@ interface InputProps extends DefaultInputProps {
   readonly?: boolean;
   addonLeft?: ReactNode;
   addonRight?: ReactNode;
+  label?: string;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -36,6 +39,7 @@ export const Input = memo((props: InputProps) => {
     readonly = false,
     addonLeft,
     addonRight,
+    label,
     ...other
   } = props;
   const [isFocused, setIsFocused] = useState<boolean>(false);
@@ -67,7 +71,9 @@ export const Input = memo((props: InputProps) => {
     [cls.withAddonRight]: Boolean(addonRight),
   };
 
-  return (
+  console.log('label', label);
+
+  const input = (
     <div className={classNames(cls.InputWrapper, mods, [className])}>
       {addonLeft && <div className={cls.addonLeft}>{addonLeft}</div>}
       <input
@@ -85,4 +91,14 @@ export const Input = memo((props: InputProps) => {
       {addonRight && <div className={cls.addonRight}>{addonRight}</div>}
     </div>
   );
+
+  if (label) {
+    return (
+      <HStack max gap="8">
+        <Text text={`${label}:`} />
+        {input}
+      </HStack>
+    );
+  }
+  return input;
 });
