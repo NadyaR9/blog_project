@@ -5,12 +5,13 @@ import cls from './Flex.module.scss';
 export type FlexJustify = 'between' | 'center' | 'end' | 'start';
 export type FlexAlign = 'center' | 'start' | 'end';
 export type FlexDirection = 'row' | 'column';
-export type FlexGap = '4' | '8' | '16' | '32';
+export type FlexGap = '4' | '8' | '16' | '24' | '32';
 
 const gapClasses: Record<FlexGap, string> = {
   4: cls.gap4,
   8: cls.gap8,
   16: cls.gap16,
+  24: cls.gap24,
   32: cls.gap32,
 };
 
