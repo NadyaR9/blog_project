@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getUserAuthData, userActions } from '@/entities/User';
-import { getRouteProfile } from '@/shared/const/router';
+import { getRouteProfile, getRouteSettings } from '@/shared/const/router';
 import { Dropdown as DropdownDeprecated } from '@/shared/ui/deprecated/Popups';
 import { Avatar as AvatarDeprecated } from '@/shared/ui/deprecated/Avatar';
 import { Dropdown } from '@/shared/ui/redesigned/Popups';
@@ -31,6 +31,11 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
         content: t('User Profile'),
         value: 'profile',
         href: getRouteProfile(authData.id),
+      },
+      {
+        content: t('Settings'),
+        value: 'profile',
+        href: getRouteSettings(),
       },
       {
         content: t('Log Out'),
