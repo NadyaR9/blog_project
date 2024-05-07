@@ -67,3 +67,10 @@
     color: var(--accent-redesigned);
   }
 }
+
+.bold {
+  .text,
+  .title {
+    font-weight: 700;
+  }
+}
