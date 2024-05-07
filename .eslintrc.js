@@ -65,7 +65,8 @@ module.exports = {
         'direction',
         'gap',
         'variants',
-        'size'
+        'size',
+        'wrap'
       ],
     }],
     'jsx-a11y/no-static-element-interactions': 'off',
