@@ -26,7 +26,10 @@ export function App() {
     <ToggleFeature
       name="isAppRedesigned"
       off={
-        <div className={classNames('app', { hidden: true, show: false })}>
+        <div
+          className={classNames('app', { hidden: true, show: false })}
+          id="app"
+        >
           <Suspense fallback>
             <Navbar />
             <div className="pages-container">
@@ -42,6 +45,7 @@ export function App() {
             hidden: true,
             show: false,
           })}
+          id="app"
         >
           <Suspense fallback>
             <MainLayout
