@@ -23,5 +23,9 @@
   "translation": {},
   "main": {
     "User Profile": "Профиль"
-  }
+  },
+  "{{count}} view_zero": "{{count}} просмотров",
+  "{{count}} view_one": "{{count}} просмотр",
+  "{{count}} view_few": "{{count}} просмотра",
+  "{{count}} view_many": "{{count}} просмотров"
 }
