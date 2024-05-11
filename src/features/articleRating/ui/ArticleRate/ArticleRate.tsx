@@ -5,7 +5,10 @@ import { useSelector } from 'react-redux';
 import { useAddArticleRate, useGetArticleRate } from '../../api/articleRate';
 import { getUserAuthData } from '@/entities/User';
 import { RatingCard } from '@/entities/Rating';
-import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
+import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton';
+import { ToggleFeature } from '@/shared/lib/features';
+import { Card } from '@/shared/ui/redesigned/Card';
 
 export interface ArticleRateProps {
   className?: string;
@@ -54,7 +57,17 @@ const ArticleRate = memo((props: ArticleRateProps) => {
   );
 
   if (isLoading) {
-    return <Skeleton width="100%" height={100} />;
+    return (
+      <ToggleFeature
+        name="isAppRedesigned"
+        on={
+          <Card fullWidth border="round" padding="24">
+            <SkeletonRedesigned height={100} />
+          </Card>
+        }
+        off={<SkeletonDeprecated height={100} />}
+      />
+    );
   }
 
   const rating = ratingData?.[0];

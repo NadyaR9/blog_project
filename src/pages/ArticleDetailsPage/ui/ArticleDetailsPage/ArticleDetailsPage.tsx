@@ -49,7 +49,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
                   <VStack gap="16" max>
                     <DetailsContainer />
                     <ArticleRate articleId={id} />
-                    <ArticleRecommendationsList />
+                    {/* <ArticleRecommendationsList /> */}
                     <ArticleDetailsComments id={id} />
                   </VStack>
                 </VStack>

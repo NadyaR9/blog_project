@@ -1261,6 +1261,19 @@
       "articleId": "10",
       "userId": "2",
       "id": "tUhEuGH"
+    },
+    {
+      "rate": 2,
+      "articleId": "8",
+      "userId": "1",
+      "id": "socTPm4"
+    },
+    {
+      "rate": 3,
+      "feedback": "",
+      "articleId": "10",
+      "userId": "1",
+      "id": "6yu9XiD"
     }
   ]
 }
