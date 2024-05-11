@@ -3,10 +3,12 @@ import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
 
 export type ButtonVariants = 'outline' | 'clear' | 'filled';
+export type ButtonColor = 'success' | 'error' | 'normal';
 
 export type ButtonSize = 's' | 'm' | 'l' | 'xl';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  color?: ButtonColor;
   className?: string;
   variants?: ButtonVariants;
   size?: ButtonSize;
@@ -26,6 +28,7 @@ export const Button = memo((props: ButtonProps) => {
     disabled = false,
     addonLeft,
     addonRight,
+    color = 'normal',
     ...otherProps
   } = props;
 
@@ -43,6 +46,7 @@ export const Button = memo((props: ButtonProps) => {
         className,
         cls[variants],
         cls[size],
+        cls[color],
       ])}
       {...otherProps}
     >

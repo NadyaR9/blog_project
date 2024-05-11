@@ -8,7 +8,11 @@ import { getUserAuthData } from '@/entities/User';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
 import { NotificationPopup } from '@/features/NotificationPopup';
 import cls from './Navbar.module.scss';
-import { Button, ButtonVariants } from '@/shared/ui/deprecated/Button';
+import {
+  Button as ButtonDeprecated,
+  ButtonVariants,
+} from '@/shared/ui/deprecated/Button';
+import { Button as ButtonRedesigned } from '@/shared/ui/redesigned/Button';
 import { ToggleFeature } from '@/shared/lib/features';
 import { HStack } from '@/shared/ui/redesigned/Stack';
 
@@ -53,9 +57,22 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   }
   return (
     <header className={classNames(cls.Navbar, {}, [className])}>
-      <Button variants={ButtonVariants.SECONDARY} onClick={onOpenModal}>
-        {t('LogIn')}
-      </Button>
+      <ToggleFeature
+        name="isAppRedesigned"
+        on={
+          <ButtonRedesigned variants="clear" onClick={onOpenModal}>
+            {t('LogIn')}
+          </ButtonRedesigned>
+        }
+        off={
+          <ButtonDeprecated
+            variants={ButtonVariants.SECONDARY}
+            onClick={onOpenModal}
+          >
+            {t('LogIn')}
+          </ButtonDeprecated>
+        }
+      />
       {isAuthModal && (
         <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
       )}
