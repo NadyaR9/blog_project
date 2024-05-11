@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import EyeIcon from '@/shared/assets/icons/redesigned/Eye.svg';
-import { useHover } from '@/shared/lib/hooks/useHover/useHover';
 
 import { getRouteArticleDdetails } from '@/shared/const/router';
 import { Text } from '@/shared/ui/redesigned/Text';
@@ -22,7 +21,6 @@ import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 
 export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
   const { className, article, view, target = '_self' } = props;
-  const [isHover, bindHover] = useHover();
   const { t } = useTranslation('articles');
   const navigate = useNavigate();
 
@@ -39,7 +37,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
 
   const userInfo = (
     <>
-      <Avatar size={32} src={article.user.avatar} />
+      <Avatar size={32} src={article.user.avatar} className={cls.avatar} />
       <Text bold className={cls.username} text={article.user.username} />
     </>
   );
@@ -90,12 +88,17 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
       data-testid="ArticleListItem"
       className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
     >
-      <Card onClick={onOpenArticle} className={cls.card} border="round">
+      <Card
+        onClick={onOpenArticle}
+        className={cls.card}
+        border="round"
+        padding="0"
+      >
         <AppImage
           className={cls.img}
           src={article.img}
           alt={article.title}
-          fallback={<Skeleton width={200} height={200} />}
+          fallback={<Skeleton width="100%" height={200} />}
         />
         <VStack gap="4" className={cls.info}>
           <Text className={cls.title} text={article.title} />

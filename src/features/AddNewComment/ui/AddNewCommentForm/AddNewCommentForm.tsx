@@ -13,9 +13,18 @@ import {
   addNewCommentReducer,
 } from '../../model/slices/addNewCommentSlice';
 import cls from './AddNewCommentForm.module.scss';
-import { Input } from '@/shared/ui/deprecated/Input';
+import SendIcon from '@/shared/assets/icons/redesigned/Send.svg';
+import SearchIcon from '@/shared/assets/icons/redesigned/Search.svg';
+import { Input } from '@/shared/ui/redesigned/Input';
+import { Input as InputDeprecated } from '@/shared/ui/deprecated/Input';
 import { HStack } from '@/shared/ui/redesigned/Stack';
-import { Button, ButtonVariants } from '@/shared/ui/deprecated/Button';
+import {
+  Button as ButtonDeprecated,
+  ButtonVariants,
+} from '@/shared/ui/deprecated/Button';
+import { ToggleFeature } from '@/shared/lib/features';
+import { Icon } from '@/shared/ui/redesigned/Icon';
+import { Card } from '@/shared/ui/redesigned/Card';
 
 export interface AddNewCommentFormProps {
   className?: string;
@@ -47,26 +56,59 @@ const AddNewCommentForm = memo((props: AddNewCommentFormProps) => {
 
   return (
     <DynamicModuleLoader reducerList={reducersList}>
-      <HStack
-        max
-        justify="between"
-        className={classNames(cls.AddNewCommentForm, {}, [className])}
-        data-testid="AddNewCommentForm"
-      >
-        <Input
-          placeholder={t('Type your comment here')}
-          value={text}
-          onChange={onChangeText}
-          data-testid="AddNewCommentForm.Input"
-        />
-        <Button
-          onClick={onSendHandler}
-          variants={ButtonVariants.PRIMARY_OUTLINED}
-          data-testid="AddNewCommentForm.AddComment"
-        >
-          {t('Add New Comment')}
-        </Button>
-      </HStack>
+      <ToggleFeature
+        name="isAppRedesigned"
+        on={
+          <Card padding="24" border="round" fullWidth>
+            <HStack
+              max
+              gap="16"
+              justify="between"
+              className={classNames(cls.AddNewCommentFormRedesigned, {}, [
+                className,
+              ])}
+              data-testid="AddNewCommentForm"
+            >
+              <Input
+                placeholder={t('Type your comment here')}
+                value={text}
+                onChange={onChangeText}
+                data-testid="AddNewCommentForm.Input"
+                className={cls.redesignedInput}
+                addonLeft={<Icon Svg={SearchIcon} />}
+              />
+              <Icon
+                clickable
+                onClick={onSendHandler}
+                Svg={SendIcon}
+                data-testid="AddNewCommentForm.AddComment"
+              />
+            </HStack>
+          </Card>
+        }
+        off={
+          <HStack
+            max
+            justify="between"
+            className={classNames(cls.AddNewCommentForm, {}, [className])}
+            data-testid="AddNewCommentForm"
+          >
+            <InputDeprecated
+              placeholder={t('Type your comment here')}
+              value={text}
+              onChange={onChangeText}
+              data-testid="AddNewCommentForm.Input"
+            />
+            <ButtonDeprecated
+              onClick={onSendHandler}
+              variants={ButtonVariants.PRIMARY_OUTLINED}
+              data-testid="AddNewCommentForm.AddComment"
+            >
+              {t('Add New Comment')}
+            </ButtonDeprecated>
+          </HStack>
+        }
+      />
     </DynamicModuleLoader>
   );
 });

@@ -1179,7 +1179,8 @@
       ],
       "avatar": "https://www.pngall.com/wp-content/uploads/12/Avatar-Profile.png",
       "features": {
-        "starRatingFeature": false
+        "starRatingFeature": false,
+        "isAppRedesigned": true
       },
       "jsonSettings": {
         "theme": "app_blue_theme",
@@ -1260,6 +1261,19 @@
       "articleId": "10",
       "userId": "2",
       "id": "tUhEuGH"
+    },
+    {
+      "rate": 2,
+      "articleId": "8",
+      "userId": "1",
+      "id": "socTPm4"
+    },
+    {
+      "rate": 3,
+      "feedback": "",
+      "articleId": "10",
+      "userId": "1",
+      "id": "6yu9XiD"
     }
   ]
 }

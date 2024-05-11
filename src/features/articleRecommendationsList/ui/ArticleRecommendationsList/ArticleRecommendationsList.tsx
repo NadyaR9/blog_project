@@ -5,8 +5,11 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleList } from '@/entities/Article';
 import { useArticleRecommendationsList } from '../../api/articleRecommendationsApi';
 import { VStack } from '@/shared/ui/redesigned/Stack';
-import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
-import { Text, TextSize } from '@/shared/ui/deprecated/Text';
+import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
+import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton';
+import { Text as TextDeprecated, TextSize } from '@/shared/ui/deprecated/Text';
+import { Text } from '@/shared/ui/redesigned/Text';
+import { ToggleFeature } from '@/shared/lib/features';
 
 interface ArticleRecommendationsListProps {
   className?: string;
@@ -29,7 +32,13 @@ export const ArticleRecommendationsList = memo(
     }
 
     if (isLoading) {
-      return <Skeleton height={100} />;
+      return (
+        <ToggleFeature
+          name="isAppRedesigned"
+          on={<SkeletonRedesigned height={100} />}
+          off={<SkeletonDeprecated height={100} />}
+        />
+      );
     }
 
     return (
@@ -38,7 +47,16 @@ export const ArticleRecommendationsList = memo(
         className={classNames('', {}, [className])}
         data-testid="ArticleRecommendationsList"
       >
-        <Text size={TextSize.L} title={t('Recommendations Block')} />
+        <ToggleFeature
+          name="isAppRedesigned"
+          on={<Text size="l" title={t('Recommendations Block')} />}
+          off={
+            <TextDeprecated
+              size={TextSize.L}
+              title={t('Recommendations Block')}
+            />
+          }
+        />
         <ArticleList articles={articles} target="_blank" />
       </VStack>
     );

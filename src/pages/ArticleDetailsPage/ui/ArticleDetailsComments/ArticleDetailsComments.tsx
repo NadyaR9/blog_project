@@ -11,8 +11,11 @@ import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { VStack } from '@/shared/ui/redesigned/Stack';
-import { Loader } from '@/shared/ui/deprecated/Loader';
-import { Text, TextSize } from '@/shared/ui/deprecated/Text';
+import { Loader as LoaderDeprecated } from '@/shared/ui/deprecated/Loader';
+import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
+import { Text as TextDeprecated, TextSize } from '@/shared/ui/deprecated/Text';
+import { Text } from '@/shared/ui/redesigned/Text';
+import { ToggleFeature } from '@/shared/lib/features';
 
 interface ArticleDetailsCommentsProps {
   className?: string;
@@ -42,8 +45,20 @@ export const ArticleDetailsComments = memo(
 
     return (
       <VStack max gap="8" className={classNames('', {}, [className])}>
-        <Text size={TextSize.L} title={t('Comment Block')} />
-        <Suspense fallback={<Loader />}>
+        <ToggleFeature
+          name="isAppRedesigned"
+          on={<Text size="l" title={t('Comment Block')} />}
+          off={<TextDeprecated size={TextSize.L} title={t('Comment Block')} />}
+        />
+        <Suspense
+          fallback={
+            <ToggleFeature
+              name="isAppRedesigned"
+              on={<Skeleton width="100%" />}
+              off={<LoaderDeprecated />}
+            />
+          }
+        >
           <AddNewCommentForm onSendComment={onSendComment} />
         </Suspense>
         <CommentList comments={comments} isLoading={isLoading} />

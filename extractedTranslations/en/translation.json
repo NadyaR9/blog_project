@@ -14,10 +14,12 @@
   "Comments not found": "Comments not found",
   "Copy": "",
   "Country": "Country",
+  "Edit": "",
   "English": "English",
   "Filter by": "Filter by",
   "Go Back": "Go Back",
   "IT": "IT",
+  "Interface option": "",
   "Lang": "",
   "Leave comment": "Leave comment",
   "Log Out": "Log Out",
@@ -27,6 +29,8 @@
     " Deserunt tempora repellendus doloremque autem odio id quasi, ut magni minus deleniti culpa omnis provident nostrum quae fuga? Ullam eum dolor aliquam?": " Deserunt tempora repellendus doloremque autem odio id quasi, ut magni minus deleniti culpa omnis provident nostrum quae fuga? Ullam eum dolor aliquam?"
   },
   "Main": "Main",
+  "New": "",
+  "Old": "",
   "Page not found": "Page not found",
   "Please, rate": "Please, rate",
   "Please, reload page": "Please, reload page",
@@ -38,6 +42,8 @@
   "Recommendations Block": "Recommendations Block",
   "Save": "Save",
   "Search": "Search",
+  "Settings": "",
+  "Settings Page": "",
   "Short lang": "",
   "Something went wrong": "Something went wrong",
   "Soon, it will be rate": "",
@@ -77,5 +83,9 @@
   "surname": "surname",
   "title": "title",
   "username": "username",
-  "views": "views"
+  "views": "views",
+  "{{count}} view": "",
+  "{{count}} view_plural": "",
+  "{{count}} views": "",
+  "{{count}} views_plural": ""
 }

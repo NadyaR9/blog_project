@@ -12,16 +12,11 @@ body,
   background: var(--bg-color);
 }
 
-.app,
-.app_modal,
-.app_drawer {
-  font: var(--font-m);
-  color: var(--primary-color);
-}
-
 .app {
   background: var(--bg-color);
   min-height: 100vh;
+  font: var(--font-m);
+  color: var(--primary-color);
 }
 
 .app_redesigned {

@@ -24,5 +24,8 @@
   "translation": {},
   "main": {
     "User Profile": "Profile"
-  }
+  },
+  "{{count}} view_zero": "{{count}} views",
+  "{{count}} view_one": "{{count}} view",
+  "{{count}} view_other": "{{count}} views"
 }
