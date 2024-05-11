@@ -13,7 +13,7 @@ import {
   ButtonVariants,
 } from '@/shared/ui/deprecated/Button';
 import { Button as ButtonRedesigned } from '@/shared/ui/redesigned/Button';
-import { ToggleFeature } from '@/shared/lib/features';
+import { ToggleFeature, toggleFeatures } from '@/shared/lib/features';
 import { HStack } from '@/shared/ui/redesigned/Stack';
 
 interface NavbarProps {
@@ -56,7 +56,17 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     );
   }
   return (
-    <header className={classNames(cls.Navbar, {}, [className])}>
+    <header
+      className={classNames(
+        toggleFeatures({
+          name: 'isAppRedesigned',
+          on: () => cls.NavbarRedesigned,
+          off: () => cls.Navbar,
+        }),
+        {},
+        [className],
+      )}
+    >
       <ToggleFeature
         name="isAppRedesigned"
         on={
