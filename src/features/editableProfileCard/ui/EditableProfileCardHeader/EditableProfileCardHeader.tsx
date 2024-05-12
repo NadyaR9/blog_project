@@ -9,8 +9,14 @@ import { updateProfileData } from '../../model/services/updateProfileData/update
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
 import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
 import { HStack } from '@/shared/ui/redesigned/Stack';
-import { Text } from '@/shared/ui/deprecated/Text';
-import { Button, ButtonVariants } from '@/shared/ui/deprecated/Button';
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
+import { Text as TextRedesigned } from '@/shared/ui/redesigned/Text';
+import {
+  Button as ButtonDeprecated,
+  ButtonVariants,
+} from '@/shared/ui/deprecated/Button';
+import { Button as ButtonRedesigned } from '@/shared/ui/redesigned/Button';
+import { ToggleFeature } from '@/shared/lib/features';
 
 interface ProfilePageHeaderProps {
   className?: string;
@@ -38,38 +44,88 @@ export const EditableProfileCardHeader = ({
   }, [dispatch]);
 
   return (
-    <HStack max justify="between" className={classNames('', {}, [className])}>
-      <Text title={t('profile')} />
-      {canEdit && (
-        <div>
-          {readonly ? (
-            <Button
-              variants={ButtonVariants.OUTLINE}
-              onClick={onEdit}
-              data-testid="EditableProfileCardHeader.EditButton"
-            >
-              {t('edit')}
-            </Button>
-          ) : (
-            <HStack gap="16">
-              <Button
-                variants={ButtonVariants.SECONDARY_OUTLINED}
-                onClick={onCancel}
-                data-testid="EditableProfileCardHeader.CancelButton"
-              >
-                {t('cancel')}
-              </Button>
-              <Button
-                variants={ButtonVariants.PRIMARY_OUTLINED}
-                onClick={onSave}
-                data-testid="EditableProfileCardHeader.SaveButton"
-              >
-                {t('save')}
-              </Button>
-            </HStack>
+    <ToggleFeature
+      name="isAppRedesigned"
+      on={
+        <HStack
+          max
+          justify="between"
+          className={classNames('', {}, [className])}
+        >
+          <TextRedesigned title={t('profile')} />
+          {canEdit && (
+            <div>
+              {readonly ? (
+                <ButtonRedesigned
+                  variants="outline"
+                  onClick={onEdit}
+                  data-testid="EditableProfileCardHeader.EditButton"
+                >
+                  {t('edit')}
+                </ButtonRedesigned>
+              ) : (
+                <HStack gap="16">
+                  <ButtonRedesigned
+                    variants="outline"
+                    onClick={onCancel}
+                    data-testid="EditableProfileCardHeader.CancelButton"
+                    color="error"
+                  >
+                    {t('cancel')}
+                  </ButtonRedesigned>
+                  <ButtonRedesigned
+                    variants="outline"
+                    onClick={onSave}
+                    data-testid="EditableProfileCardHeader.SaveButton"
+                    color="success"
+                  >
+                    {t('save')}
+                  </ButtonRedesigned>
+                </HStack>
+              )}
+            </div>
           )}
-        </div>
-      )}
-    </HStack>
+        </HStack>
+      }
+      off={
+        <HStack
+          max
+          justify="between"
+          className={classNames('', {}, [className])}
+        >
+          <TextDeprecated title={t('profile')} />
+          {canEdit && (
+            <div>
+              {readonly ? (
+                <ButtonDeprecated
+                  variants={ButtonVariants.OUTLINE}
+                  onClick={onEdit}
+                  data-testid="EditableProfileCardHeader.EditButton"
+                >
+                  {t('edit')}
+                </ButtonDeprecated>
+              ) : (
+                <HStack gap="16">
+                  <ButtonDeprecated
+                    variants={ButtonVariants.SECONDARY_OUTLINED}
+                    onClick={onCancel}
+                    data-testid="EditableProfileCardHeader.CancelButton"
+                  >
+                    {t('cancel')}
+                  </ButtonDeprecated>
+                  <ButtonDeprecated
+                    variants={ButtonVariants.PRIMARY_OUTLINED}
+                    onClick={onSave}
+                    data-testid="EditableProfileCardHeader.SaveButton"
+                  >
+                    {t('save')}
+                  </ButtonDeprecated>
+                </HStack>
+              )}
+            </div>
+          )}
+        </HStack>
+      }
+    />
   );
 };

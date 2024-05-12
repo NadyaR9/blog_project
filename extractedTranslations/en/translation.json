@@ -87,5 +87,12 @@
   "{{count}} view": "",
   "{{count}} view_plural": "",
   "{{count}} views": "",
-  "{{count}} views_plural": ""
+  "{{count}} views_plural": "",
+  "Читать далее": {
+    "": {
+      "": {
+        "": ""
+      }
+    }
+  }
 }

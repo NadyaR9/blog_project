@@ -1,4 +1,4 @@
-import { memo, useCallback } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button as ButtonDeprecated } from '../../../shared/ui/deprecated/Button/Button';
 import ThemeIconDeprecated from '../assets/theme-light.svg';
@@ -15,7 +15,7 @@ interface ThemeSwitcherProps {
 }
 
 export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
-  const { toggleTheme } = useTheme();
+  const { toggleTheme, theme } = useTheme();
   const dispatch = useAppDispatch();
 
   const onToggleTheme = useCallback(() => {
@@ -23,6 +23,10 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
       dispatch(saveJsonSettings({ theme: newTheme }));
     });
   }, [toggleTheme, dispatch]);
+
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
 
   return (
     <ToggleFeature
