@@ -9,27 +9,39 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { PageLoader } from '@/widgets/PageLoader';
 import { ToggleFeature } from '@/shared/lib/features';
 import { MainLayout } from '@/shared/layouts/MainLayout';
+import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
+import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 
 export function App() {
+  const { theme } = useTheme();
   const dispatch = useAppDispatch();
   const inited = useSelector(getUserInited);
 
   useEffect(() => {
-    dispatch(initAuthData());
-  }, [dispatch]);
+    if (!inited) {
+      dispatch(initAuthData());
+    }
+  }, [dispatch, inited]);
 
   if (!inited) {
-    return <PageLoader />;
+    return (
+      <ToggleFeature
+        name="isAppRedesigned"
+        on={
+          <div id="app" className={classNames('app_redesigned', {}, [theme])}>
+            <AppLoaderLayout />
+          </div>
+        }
+        off={<PageLoader />}
+      />
+    );
   }
 
   return (
     <ToggleFeature
       name="isAppRedesigned"
       off={
-        <div
-          className={classNames('app', { hidden: true, show: false })}
-          id="app"
-        >
+        <div className={classNames('app', {}, [theme])} id="app">
           <Suspense fallback>
             <Navbar />
             <div className="pages-container">
@@ -40,13 +52,7 @@ export function App() {
         </div>
       }
       on={
-        <div
-          className={classNames('app_redesigned', {
-            hidden: true,
-            show: false,
-          })}
-          id="app"
-        >
+        <div id="app" className={classNames('app_redesigned', {}, [theme])}>
           <Suspense fallback>
             <MainLayout
               header={<Navbar />}
