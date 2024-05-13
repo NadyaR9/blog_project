@@ -5,7 +5,6 @@ import { useRouteChange } from '@/shared/lib/router/useRouteChange';
 
 export function useAppToolbar() {
   const appRoute = useRouteChange();
-  console.log('appRoute', appRoute);
   const toolbarByAppRoute: OptionalRecord<RouteName, ReactElement> = {
     [RouteName.ARTICLES]: <ScrollToTopTollbar />,
     [RouteName.ARTICLE_DETAILS]: <ScrollToTopTollbar />,

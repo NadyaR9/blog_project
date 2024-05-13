@@ -71,8 +71,6 @@ export const Input = memo((props: InputProps) => {
     [cls.withAddonRight]: Boolean(addonRight),
   };
 
-  console.log('label', label);
-
   const input = (
     <div className={classNames(cls.InputWrapper, mods, [className])}>
       {addonLeft && <div className={cls.addonLeft}>{addonLeft}</div>}
