@@ -3,9 +3,10 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Text } from '../Text/Text';
 import { Card } from './Card';
 import { Theme } from '@/shared/const/theme';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator';
 
 export default {
-  title: 'shared/Card',
+  title: 'shared/redesigned/Card',
   component: Card,
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -14,21 +15,23 @@ export default {
 
 const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />;
 
+const children = <Text title="Title" text="Text" />;
 export const Normal = Template.bind({});
 Normal.args = {
-  children: <Text title="Title" text="Text" />,
+  children,
 };
+Normal.decorators = [NewDesignDecorator];
 
 export const Dark = Template.bind({});
 Dark.args = {
-  children: <Text title="Title" text="Text" />,
+  children,
 };
 
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Blue = Template.bind({});
 Blue.args = {
-  children: <Text title="Title" text="Text" />,
+  children,
 };
 
 Blue.decorators = [ThemeDecorator(Theme.BLUE)];

@@ -1,7 +1,6 @@
 import { ReactNode, useEffect, useMemo, useState } from 'react';
 import { Theme } from '@/shared/const/theme';
 import { ThemeContext } from '@/shared/lib/context/ThemeContext';
-import { useJsonSettings } from '@/entities/User';
 import { LS_Theme_KEY } from '@/shared/const/localstorage';
 
 interface ThemeProviderProps {
@@ -13,7 +12,6 @@ const fallbackTheme = localStorage.getItem(LS_Theme_KEY) as Theme;
 
 const ThemeProvider = (props: ThemeProviderProps) => {
   const { children, initialTheme } = props;
-  const { theme: defaultTheme } = useJsonSettings();
   const [isThemeInited, setThemeInited] = useState(false);
 
   const [theme, setTheme] = useState<Theme>(
@@ -21,11 +19,11 @@ const ThemeProvider = (props: ThemeProviderProps) => {
   );
 
   useEffect(() => {
-    if (!isThemeInited && defaultTheme) {
-      setTheme(defaultTheme);
+    if (!isThemeInited && initialTheme) {
+      setTheme(initialTheme);
       setThemeInited(true);
     }
-  }, [defaultTheme, isThemeInited]);
+  }, [initialTheme, isThemeInited]);
 
   const defaultValue = useMemo(
     () => ({

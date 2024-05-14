@@ -12,7 +12,7 @@ import {
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import cls from './Page.module.scss';
-import { TestingProps } from '@/shared/const/test';
+import { TestingProps } from '@/shared/const/testProps';
 import { toggleFeatures } from '@/shared/lib/features';
 
 interface PageProps extends TestingProps {
